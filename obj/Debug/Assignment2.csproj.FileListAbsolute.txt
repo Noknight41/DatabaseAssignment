@@ -1,0 +1,14 @@
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.csproj.AssemblyReference.cache
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.AdminUI.resources
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.Login.resources
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.Properties.Resources.resources
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.csproj.GenerateResource.cache
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.csproj.CoreCompileInputs.cache
+D:\My_Stuff\Database\Ass2\Assignment2\bin\Debug\Assignment2.exe.config
+D:\My_Stuff\Database\Ass2\Assignment2\bin\Debug\Assignment2.exe
+D:\My_Stuff\Database\Ass2\Assignment2\bin\Debug\Assignment2.pdb
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.exe
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.pdb
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.MonHoc.resources
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.ChuanDauRa.resources
+D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.GVPT.resources
