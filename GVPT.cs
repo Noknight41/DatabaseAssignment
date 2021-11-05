@@ -14,7 +14,7 @@ namespace Assignment2
     public partial class GVPT : Form
     {
         string Route;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;AttachDbFilename=D:\My_Stuff\Database\Ass2\Assignment2\Database\Test.mdf;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Assignment2;Integrated Security=True");
         public GVPT()
         {
             this.Route = "";
@@ -27,6 +27,7 @@ namespace Assignment2
         {
             if (this.Route == "")
             {
+                Application.Exit();
                 return;
             }
             else
@@ -34,6 +35,21 @@ namespace Assignment2
                 AdminUI UI = new AdminUI();
                 UI.Show();
             }
+        }
+
+        private void GVPT_Load(object sender, EventArgs e)
+        {
+            populate();
+        }
+
+        private void populate()
+        {
+            string query = "SELECT * FROM GIANG_VIEN_PHU_TRACH";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewGVPT.DataSource = ds.Tables[0];
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -58,14 +74,49 @@ namespace Assignment2
                 }
             }
         }
-        private void populate()
+
+        private void Edit_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM GIANG_VIEN_PHU_TRACH";
-            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            ViewGVPT.DataSource = ds.Tables[0];
+            if (MMH.Text == "" || MSCB.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Ma_mon_hoc = '" + MMH.Text + "' WHERE MSCB = '" + MSCB.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (MSCB.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM GIANG_VIEN_PHU_TRACH WHERE MSCB = '" + MSCB.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -73,6 +124,14 @@ namespace Assignment2
             Con.Close();
             this.Route = "Return";
             this.Close();
+        }
+
+        private void ViewGVPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewGVPT.Rows[indexRow];
+            MMH.Text = row.Cells[1].Value.ToString();
+            MSCB.Text = row.Cells[0].Value.ToString();
         }
     }
 }

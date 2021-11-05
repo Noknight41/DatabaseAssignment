@@ -24,6 +24,7 @@ namespace Assignment2
         {
             if(this.Route == "")
             {
+                Application.Exit();
                 return;
             }
             if(this.Route == "Login")
@@ -36,19 +37,30 @@ namespace Assignment2
                 MonHoc UI = new MonHoc();
                 UI.Show();
             }
-            if (this.Route == "CDR")
-            {
-                ChuanDauRa UI = new ChuanDauRa();
-                UI.Show();
-            }
             if (this.Route == "GVPT")
             {
                 GVPT UI = new GVPT();
                 UI.Show();
             }
+            if (this.Route == "GVQL")
+            {
+                GVQL UI = new GVQL();
+                UI.Show();
+            }
+            if (this.Route == "CDR")
+            {
+                ChuanDauRa UI = new ChuanDauRa();
+                UI.Show();
+            }
+            
             if (this.Route == "LT")
             {
                 LanThi UI = new LanThi();
+                UI.Show();
+            }
+            if (this.Route == "SV")
+            {
+                SVA UI = new SVA();
                 UI.Show();
             }
         }
@@ -64,23 +76,32 @@ namespace Assignment2
             this.Route = "MonHoc";
             this.Close();
         }
-
-        private void CDRbutton_Click(object sender, EventArgs e)
-        {
-            this.Route = "CDR";
-            this.Close();
-        }
-
         private void GVPTbutton_Click(object sender, EventArgs e)
         {
             this.Route = "GVPT";
             this.Close();
         }
-
+        private void GVQLbutton_Click(object sender, EventArgs e)
+        {
+            this.Route = "GVQL";
+            this.Close();
+        }
+        private void CDRbutton_Click(object sender, EventArgs e)
+        {
+            this.Route = "CDR";
+            this.Close();
+        }
         private void LTbutton_Click(object sender, EventArgs e)
         {
             this.Route = "LT";
             this.Close();
         }
+        private void SVbutton_Click(object sender, EventArgs e)
+        {
+            this.Route = "SV";
+            this.Close();
+        }
+
+
     }
 }

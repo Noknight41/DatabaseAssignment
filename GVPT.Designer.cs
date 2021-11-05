@@ -59,6 +59,7 @@ namespace Assignment2
             this.EditButton.TabIndex = 12;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.Edit_Click);
             // 
             // DeleteButton
             // 
@@ -68,6 +69,7 @@ namespace Assignment2
             this.DeleteButton.TabIndex = 13;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // ExitButton
             // 
@@ -88,6 +90,7 @@ namespace Assignment2
             this.ViewGVPT.RowTemplate.Height = 24;
             this.ViewGVPT.Size = new System.Drawing.Size(430, 364);
             this.ViewGVPT.TabIndex = 15;
+            this.ViewGVPT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewGVPT_CellContentClick);
             // 
             // MHID
             // 
@@ -141,6 +144,7 @@ namespace Assignment2
             this.Controls.Add(this.AddButton);
             this.Name = "GVPT";
             this.Text = "GVPT";
+            this.Load += new System.EventHandler(this.GVPT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ViewGVPT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

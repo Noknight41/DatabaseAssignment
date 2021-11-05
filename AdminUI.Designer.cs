@@ -135,6 +135,7 @@ namespace Assignment2
             this.GVQLbutton.TabIndex = 8;
             this.GVQLbutton.Text = "GVQL";
             this.GVQLbutton.UseVisualStyleBackColor = true;
+            this.GVQLbutton.Click += new System.EventHandler(this.GVQLbutton_Click);
             // 
             // CDRbutton
             // 
@@ -164,6 +165,7 @@ namespace Assignment2
             this.SVbutton.TabIndex = 11;
             this.SVbutton.Text = "Sinh viên";
             this.SVbutton.UseVisualStyleBackColor = true;
+            this.SVbutton.Click += new System.EventHandler(this.SVbutton_Click);
             // 
             // panel1
             // 
@@ -182,7 +184,7 @@ namespace Assignment2
             this.panel1.Controls.Add(this.MONHOC);
             this.panel1.Location = new System.Drawing.Point(0, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(805, 399);
+            this.panel1.Size = new System.Drawing.Size(805, 346);
             this.panel1.TabIndex = 12;
             // 
             // AdminText
@@ -211,7 +213,7 @@ namespace Assignment2
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 484);
+            this.ClientSize = new System.Drawing.Size(800, 433);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.AdminText);
             this.Controls.Add(this.panel1);

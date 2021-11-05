@@ -14,7 +14,7 @@ namespace Assignment2
     public partial class MonHoc : Form
     {
         string Route;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;AttachDbFilename=D:\My_Stuff\Database\Ass2\Assignment2\Database\Test.mdf;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Assignment2;Integrated Security=True");
         public MonHoc()
         {
             this.Route = "";
@@ -32,6 +32,7 @@ namespace Assignment2
         {
             if(this.Route == "")
             {
+                Application.Exit();
                 return;
             }
             else
@@ -41,28 +42,6 @@ namespace Assignment2
             }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            if(MHID.Text == "" || MHN.Text == "")
-            {
-                MessageBox.Show("Missing Information");
-            }
-            else
-            {
-                try
-                {
-                    string query = "INSERT INTO MON_HOC values('" + MMH.Text +"', '" + MHN.Text + "')";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Add Mon_Hoc successfully");
-                    populate();
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
-            }
-        }
         private void populate()
         {
             string query = "SELECT * FROM MON_HOC";
@@ -73,6 +52,29 @@ namespace Assignment2
             ViewMonHoc.DataSource = ds.Tables[0];
         }
 
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            if(MMH.Text == "" || MHN.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO MON_HOC values('" + MMH.Text +"', '" + MHN.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+        
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Con.Close();
@@ -82,17 +84,54 @@ namespace Assignment2
 
         private void Edit_Click(object sender, EventArgs e)
         {
-
+            if (MMH.Text == "" || MHN.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE MON_HOC SET Ten = '" + MHN.Text + "' WHERE Ma_mon_hoc = '" + MMH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-
+            if (MMH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM MON_HOC WHERE Ma_mon_hoc = '" + MMH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
         private void ViewMonHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewMonHoc.Rows[indexRow];
+            MMH.Text = row.Cells[0].Value.ToString();
+            MHN.Text = row.Cells[1].Value.ToString();
         }
     }
 }
