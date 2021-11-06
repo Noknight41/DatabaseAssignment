@@ -9,9 +9,5 @@ D:\My_Stuff\Database\Ass2\Assignment2\bin\Debug\Assignment2.exe
 D:\My_Stuff\Database\Ass2\Assignment2\bin\Debug\Assignment2.pdb
 D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.exe
 D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.pdb
-D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.MonHoc.resources
-D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.ChuanDauRa.resources
-D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.GVPT.resources
 D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.LanThi.resources
-D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.GVQL.resources
 D:\My_Stuff\Database\Ass2\Assignment2\obj\Debug\Assignment2.SVA.resources
