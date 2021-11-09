@@ -71,7 +71,9 @@ namespace Assignment2
             this.CDRName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LTTab = new System.Windows.Forms.TabPage();
-            this.SV = new System.Windows.Forms.TabPage();
+            this.LT_DB = new System.Windows.Forms.Button();
+            this.LT_EB = new System.Windows.Forms.Button();
+            this.LT_AB = new System.Windows.Forms.Button();
             this.NH = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.HK = new System.Windows.Forms.TextBox();
@@ -79,14 +81,12 @@ namespace Assignment2
             this.LT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ViewLT = new System.Windows.Forms.DataGridView();
-            this.LT_DB = new System.Windows.Forms.Button();
-            this.LT_EB = new System.Windows.Forms.Button();
-            this.LT_AB = new System.Windows.Forms.Button();
+            this.SV = new System.Windows.Forms.TabPage();
+            this.SV_DB = new System.Windows.Forms.Button();
+            this.SV_AB = new System.Windows.Forms.Button();
             this.ViewSV = new System.Windows.Forms.DataGridView();
             this.SV_MSSV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.SV_DB = new System.Windows.Forms.Button();
-            this.SV_AB = new System.Windows.Forms.Button();
             this.AdminControl.SuspendLayout();
             this.MonHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewMonHoc)).BeginInit();
@@ -97,8 +97,8 @@ namespace Assignment2
             this.CDR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewCDR)).BeginInit();
             this.LTTab.SuspendLayout();
-            this.SV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewLT)).BeginInit();
+            this.SV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewSV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -572,20 +572,38 @@ namespace Assignment2
             this.LTTab.Text = "LanThi";
             this.LTTab.UseVisualStyleBackColor = true;
             // 
-            // SV
+            // LT_DB
             // 
-            this.SV.Controls.Add(this.SV_DB);
-            this.SV.Controls.Add(this.SV_AB);
-            this.SV.Controls.Add(this.ViewSV);
-            this.SV.Controls.Add(this.SV_MSSV);
-            this.SV.Controls.Add(this.label9);
-            this.SV.Location = new System.Drawing.Point(4, 40);
-            this.SV.Name = "SV";
-            this.SV.Padding = new System.Windows.Forms.Padding(3);
-            this.SV.Size = new System.Drawing.Size(788, 417);
-            this.SV.TabIndex = 5;
-            this.SV.Text = "SinhVien";
-            this.SV.UseVisualStyleBackColor = true;
+            this.LT_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LT_DB.Location = new System.Drawing.Point(44, 359);
+            this.LT_DB.Name = "LT_DB";
+            this.LT_DB.Size = new System.Drawing.Size(84, 34);
+            this.LT_DB.TabIndex = 41;
+            this.LT_DB.Text = "Delete";
+            this.LT_DB.UseVisualStyleBackColor = true;
+            this.LT_DB.Click += new System.EventHandler(this.LT_DB_Click);
+            // 
+            // LT_EB
+            // 
+            this.LT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LT_EB.Location = new System.Drawing.Point(175, 285);
+            this.LT_EB.Name = "LT_EB";
+            this.LT_EB.Size = new System.Drawing.Size(84, 34);
+            this.LT_EB.TabIndex = 40;
+            this.LT_EB.Text = "Edit";
+            this.LT_EB.UseVisualStyleBackColor = true;
+            this.LT_EB.Click += new System.EventHandler(this.LT_EB_Click);
+            // 
+            // LT_AB
+            // 
+            this.LT_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LT_AB.Location = new System.Drawing.Point(44, 285);
+            this.LT_AB.Name = "LT_AB";
+            this.LT_AB.Size = new System.Drawing.Size(84, 34);
+            this.LT_AB.TabIndex = 39;
+            this.LT_AB.Text = "Add";
+            this.LT_AB.UseVisualStyleBackColor = true;
+            this.LT_AB.Click += new System.EventHandler(this.LT_AB_Click);
             // 
             // NH
             // 
@@ -652,38 +670,42 @@ namespace Assignment2
             this.ViewLT.TabIndex = 32;
             this.ViewLT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewLT_CellContentClick);
             // 
-            // LT_DB
+            // SV
             // 
-            this.LT_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LT_DB.Location = new System.Drawing.Point(44, 359);
-            this.LT_DB.Name = "LT_DB";
-            this.LT_DB.Size = new System.Drawing.Size(84, 34);
-            this.LT_DB.TabIndex = 41;
-            this.LT_DB.Text = "Delete";
-            this.LT_DB.UseVisualStyleBackColor = true;
-            this.LT_DB.Click += new System.EventHandler(this.LT_DB_Click);
+            this.SV.Controls.Add(this.SV_DB);
+            this.SV.Controls.Add(this.SV_AB);
+            this.SV.Controls.Add(this.ViewSV);
+            this.SV.Controls.Add(this.SV_MSSV);
+            this.SV.Controls.Add(this.label9);
+            this.SV.Location = new System.Drawing.Point(4, 40);
+            this.SV.Name = "SV";
+            this.SV.Padding = new System.Windows.Forms.Padding(3);
+            this.SV.Size = new System.Drawing.Size(788, 417);
+            this.SV.TabIndex = 5;
+            this.SV.Text = "SinhVien";
+            this.SV.UseVisualStyleBackColor = true;
             // 
-            // LT_EB
+            // SV_DB
             // 
-            this.LT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LT_EB.Location = new System.Drawing.Point(175, 285);
-            this.LT_EB.Name = "LT_EB";
-            this.LT_EB.Size = new System.Drawing.Size(84, 34);
-            this.LT_EB.TabIndex = 40;
-            this.LT_EB.Text = "Edit";
-            this.LT_EB.UseVisualStyleBackColor = true;
-            this.LT_EB.Click += new System.EventHandler(this.LT_EB_Click);
+            this.SV_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SV_DB.Location = new System.Drawing.Point(159, 286);
+            this.SV_DB.Name = "SV_DB";
+            this.SV_DB.Size = new System.Drawing.Size(84, 34);
+            this.SV_DB.TabIndex = 44;
+            this.SV_DB.Text = "Delete";
+            this.SV_DB.UseVisualStyleBackColor = true;
+            this.SV_DB.Click += new System.EventHandler(this.SV_DB_Click);
             // 
-            // LT_AB
+            // SV_AB
             // 
-            this.LT_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LT_AB.Location = new System.Drawing.Point(44, 285);
-            this.LT_AB.Name = "LT_AB";
-            this.LT_AB.Size = new System.Drawing.Size(84, 34);
-            this.LT_AB.TabIndex = 39;
-            this.LT_AB.Text = "Add";
-            this.LT_AB.UseVisualStyleBackColor = true;
-            this.LT_AB.Click += new System.EventHandler(this.LT_AB_Click);
+            this.SV_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SV_AB.Location = new System.Drawing.Point(30, 286);
+            this.SV_AB.Name = "SV_AB";
+            this.SV_AB.Size = new System.Drawing.Size(84, 34);
+            this.SV_AB.TabIndex = 42;
+            this.SV_AB.Text = "Add";
+            this.SV_AB.UseVisualStyleBackColor = true;
+            this.SV_AB.Click += new System.EventHandler(this.SV_AB_Click);
             // 
             // ViewSV
             // 
@@ -714,28 +736,6 @@ namespace Assignment2
             this.label9.TabIndex = 28;
             this.label9.Text = "MSSV";
             // 
-            // SV_DB
-            // 
-            this.SV_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SV_DB.Location = new System.Drawing.Point(159, 286);
-            this.SV_DB.Name = "SV_DB";
-            this.SV_DB.Size = new System.Drawing.Size(84, 34);
-            this.SV_DB.TabIndex = 44;
-            this.SV_DB.Text = "Delete";
-            this.SV_DB.UseVisualStyleBackColor = true;
-            this.SV_DB.Click += new System.EventHandler(this.SV_DB_Click);
-            // 
-            // SV_AB
-            // 
-            this.SV_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SV_AB.Location = new System.Drawing.Point(30, 286);
-            this.SV_AB.Name = "SV_AB";
-            this.SV_AB.Size = new System.Drawing.Size(84, 34);
-            this.SV_AB.TabIndex = 42;
-            this.SV_AB.Text = "Add";
-            this.SV_AB.UseVisualStyleBackColor = true;
-            this.SV_AB.Click += new System.EventHandler(this.SV_AB_Click);
-            // 
             // AdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -762,9 +762,9 @@ namespace Assignment2
             ((System.ComponentModel.ISupportInitialize)(this.ViewCDR)).EndInit();
             this.LTTab.ResumeLayout(false);
             this.LTTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewLT)).EndInit();
             this.SV.ResumeLayout(false);
             this.SV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewLT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ViewSV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

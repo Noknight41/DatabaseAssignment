@@ -20,10 +20,3 @@ RETURN
 	WHERE Ma_mon_hoc_thuoc = @MH
 GO
 
-CREATE OR ALTER FUNCTION thongtinCauhoi (@MH AS varchar(10))
-RETURNS TABLE AS
-RETURN
-	SELECT *
-	FROM CAU_HOI
-GO
-

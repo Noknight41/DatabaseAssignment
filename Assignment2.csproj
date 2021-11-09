@@ -52,6 +52,24 @@
     <Compile Include="AdminUI.Designer.cs">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="CH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CH.Designer.cs">
+      <DependentUpon>CH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GVPTUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GVPTUI.Designer.cs">
+      <DependentUpon>GVPTUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GVQLUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GVQLUI.Designer.cs">
+      <DependentUpon>GVQLUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +80,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminUI.resx">
       <DependentUpon>AdminUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CH.resx">
+      <DependentUpon>CH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GVPTUI.resx">
+      <DependentUpon>GVPTUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GVQLUI.resx">
+      <DependentUpon>GVQLUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

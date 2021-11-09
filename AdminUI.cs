@@ -142,7 +142,6 @@ namespace Assignment2
             ViewSV.DataSource = ds.Tables[0];
         }
 
-
         private void MHAddButton_Click(object sender, EventArgs e)
         {
             if (MH_MMH.Text == "" || MH_MHN.Text == "")
@@ -209,7 +208,6 @@ namespace Assignment2
             }
         }
 
-
         private void GVPT_AddButton_Click(object sender, EventArgs e)
         {
             if (GVPT_MMH.Text == "" || GVPT_MSCB.Text == "")
@@ -265,7 +263,8 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Ma_mon_hoc = '" + GVPT_MMH.Text + "' WHERE MSCB = '" + GVPT_MSCB.Text + "';";
+                    string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Mon_hoc_phu_trach = '" + GVPT_MMH.Text + "' WHERE MSCB = '" + GVPT_MSCB.Text + "';";
+                    MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     GVPTpopulate();
@@ -276,7 +275,6 @@ namespace Assignment2
                 }
             }
         }
-
 
         private void GVQL_AB_Click(object sender, EventArgs e)
         {
@@ -343,7 +341,6 @@ namespace Assignment2
                 }
             }
         }
-
 
         private void CDR_AB_Click(object sender, EventArgs e)
         {
@@ -478,7 +475,6 @@ namespace Assignment2
             }
         }
 
-
         private void SV_AB_Click(object sender, EventArgs e)
         {
             if (SV_MSSV.Text == "")
@@ -522,7 +518,6 @@ namespace Assignment2
                 }
             }
         }
-
 
         private void ViewMonHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
