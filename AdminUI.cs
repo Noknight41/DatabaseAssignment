@@ -14,7 +14,7 @@ namespace Assignment2
     public partial class AdminUI : Form
     {
         string Route;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Assignment2;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;User ID=MyLogin;Password=123");
         public AdminUI()
         {
             Route = "";
@@ -208,9 +208,17 @@ namespace Assignment2
             }
         }
 
+        private void ViewMonHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewMonHoc.Rows[indexRow];
+            MH_MMH.Text = row.Cells[0].Value.ToString();
+            MH_MHN.Text = row.Cells[1].Value.ToString();
+        }
+
         private void GVPT_AddButton_Click(object sender, EventArgs e)
         {
-            if (GVPT_MMH.Text == "" || GVPT_MSCB.Text == "")
+            if (GVPT_MMH.Text == "" || GVPT_MSCB.Text == "" || pwGVPT.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -218,10 +226,9 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "INSERT INTO GIANG_VIEN_PHU_TRACH values('" + GVPT_MSCB.Text + "', '" + GVPT_MMH.Text + "')";
+                    string query = "INSERT INTO GIANG_VIEN_PHU_TRACH values('" + GVPT_MSCB.Text + "', '" + GVPT_MMH.Text + "', '" + pwGVPT.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Add GVPT successfully");
                     GVPTpopulate();
                 }
                 catch (Exception Ex)
@@ -263,7 +270,7 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Mon_hoc_phu_trach = '" + GVPT_MMH.Text + "' WHERE MSCB = '" + GVPT_MSCB.Text + "';";
+                    string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Mon_hoc_phu_trach = '" + GVPT_MMH.Text + "', Pass = '" + pwGVPT.Text + "' WHERE MSCB = '" + GVPT_MSCB.Text + "';";
                     MessageBox.Show(query);
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
@@ -276,9 +283,18 @@ namespace Assignment2
             }
         }
 
+        private void ViewGVPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewGVPT.Rows[indexRow];
+            GVPT_MMH.Text = row.Cells[1].Value.ToString();
+            GVPT_MSCB.Text = row.Cells[0].Value.ToString();
+            pwGVPT.Text = row.Cells[2].Value.ToString();
+        }
+
         private void GVQL_AB_Click(object sender, EventArgs e)
         {
-            if (GVQL_MMH.Text == "" || GVQL_MSCB.Text == "")
+            if (GVQL_MMH.Text == "" || GVQL_MSCB.Text == "" || pwGVQL.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -286,7 +302,7 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "INSERT INTO GIANG_VIEN_QUAN_LY values('" + GVQL_MSCB.Text + "', '" + GVQL_MMH.Text + "')";
+                    string query = "INSERT INTO GIANG_VIEN_QUAN_LY values('" + GVQL_MSCB.Text + "', '" + GVQL_MMH.Text + "', '" + pwGVQL.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     GVQLpopulate();
@@ -300,7 +316,7 @@ namespace Assignment2
 
         private void GVQL_EB_Click(object sender, EventArgs e)
         {
-            if (GVQL_MMH.Text == "" || GVQL_MSCB.Text == "")
+            if (GVQL_MMH.Text == "" || GVQL_MSCB.Text == "" || pwGVQL.Text == "")
             {
                 MessageBox.Show("Missing Information");
             }
@@ -308,7 +324,7 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "UPDATE GIANG_VIEN_QUAN_LY SET Mon_hoc_quan_ly = '" + GVQL_MMH.Text + "' WHERE MSCB = '" + GVQL_MSCB.Text + "';";
+                    string query = "UPDATE GIANG_VIEN_QUAN_LY SET Mon_hoc_quan_ly = '" + GVQL_MMH.Text + "', Pass = '" + pwGVQL.Text + "' WHERE MSCB = '" + GVQL_MSCB.Text + "';";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     GVQLpopulate();
@@ -342,6 +358,16 @@ namespace Assignment2
             }
         }
 
+        private void ViewGVQL_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewGVQL.Rows[indexRow];
+            GVQL_MSCB.Text = row.Cells[0].Value.ToString();
+            GVQL_MMH.Text = row.Cells[1].Value.ToString();
+            pwGVQL.Text = row.Cells[2].Value.ToString();
+        }
+
+        //Chuan dau ra
         private void CDR_AB_Click(object sender, EventArgs e)
         {
             if (CDR_MMH.Text == "" || CDR_STT.Text == "" || CDRName.Text == "")
@@ -408,7 +434,17 @@ namespace Assignment2
             }
         }
 
+        private void ViewCDR_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewCDR.Rows[indexRow];
+            CDR_STT.Text = row.Cells[0].Value.ToString();
+            CDR_MMH.Text = row.Cells[2].Value.ToString();
+            CDRName.Text = row.Cells[1].Value.ToString();
+        }
 
+
+        //Lan thi
         private void LT_AB_Click(object sender, EventArgs e)
         {
             if (LT.Text == "" || HK.Text == "" || NH.Text == "")
@@ -475,6 +511,17 @@ namespace Assignment2
             }
         }
 
+        private void ViewLT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewLT.Rows[indexRow];
+            LT.Text = row.Cells[0].Value.ToString();
+            HK.Text = row.Cells[1].Value.ToString();
+            NH.Text = row.Cells[2].Value.ToString();
+        }
+
+
+        //Sinh vien
         private void SV_AB_Click(object sender, EventArgs e)
         {
             if (SV_MSSV.Text == "")
@@ -485,7 +532,29 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "INSERT INTO SINH_VIEN values('" + SV_MSSV.Text + "');";
+                    string query = "INSERT INTO SINH_VIEN values('" + SV_MSSV.Text + "', '" + pwSV.Text + "');";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    SVpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void SV_EB_Click(object sender, EventArgs e)
+        {
+            if (SV_MSSV.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE SINH_VIEN SET Pass = '" + pwSV.Text + "' WHERE MSSV = '" + SV_MSSV.Text + "';";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     SVpopulate();
@@ -519,53 +588,14 @@ namespace Assignment2
             }
         }
 
-        private void ViewMonHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex; // get the selected Row Index
-            DataGridViewRow row = ViewMonHoc.Rows[indexRow];
-            MH_MMH.Text = row.Cells[0].Value.ToString();
-            MH_MHN.Text = row.Cells[1].Value.ToString();
-        }
-
-        private void ViewGVPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex; // get the selected Row Index
-            DataGridViewRow row = ViewGVPT.Rows[indexRow];
-            GVPT_MMH.Text = row.Cells[1].Value.ToString();
-            GVPT_MSCB.Text = row.Cells[0].Value.ToString();
-        }
-
-        private void ViewGVQL_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex; // get the selected Row Index
-            DataGridViewRow row = ViewGVQL.Rows[indexRow];
-            GVQL_MSCB.Text = row.Cells[0].Value.ToString();
-            GVQL_MMH.Text = row.Cells[1].Value.ToString();
-        }
-
-        private void ViewCDR_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex; // get the selected Row Index
-            DataGridViewRow row = ViewCDR.Rows[indexRow];
-            CDR_STT.Text = row.Cells[0].Value.ToString();
-            CDR_MMH.Text = row.Cells[2].Value.ToString();
-            CDRName.Text = row.Cells[1].Value.ToString();
-        }
-
-        private void ViewLT_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indexRow = e.RowIndex; // get the selected Row Index
-            DataGridViewRow row = ViewLT.Rows[indexRow];
-            LT.Text = row.Cells[0].Value.ToString();
-            HK.Text = row.Cells[1].Value.ToString();
-            NH.Text = row.Cells[2].Value.ToString();
-        }
-
         private void ViewSV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexRow = e.RowIndex; // get the selected Row Index
             DataGridViewRow row = ViewSV.Rows[indexRow];
             SV_MSSV.Text = row.Cells[0].Value.ToString();
+            pwSV.Text = row.Cells[1].Value.ToString();
         }
+
+        
     }
 }

@@ -53,7 +53,7 @@ namespace Assignment2
             // 
             this.Masocanbo.AutoSize = true;
             this.Masocanbo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Masocanbo.Location = new System.Drawing.Point(706, 19);
+            this.Masocanbo.Location = new System.Drawing.Point(932, 19);
             this.Masocanbo.Name = "Masocanbo";
             this.Masocanbo.Size = new System.Drawing.Size(67, 23);
             this.Masocanbo.TabIndex = 62;
@@ -62,7 +62,7 @@ namespace Assignment2
             // 
             // LogOutButton
             // 
-            this.LogOutButton.Location = new System.Drawing.Point(680, 50);
+            this.LogOutButton.Location = new System.Drawing.Point(914, 56);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(124, 54);
             this.LogOutButton.TabIndex = 63;
@@ -77,7 +77,7 @@ namespace Assignment2
             this.GVQLTab.Location = new System.Drawing.Point(0, 103);
             this.GVQLTab.Name = "GVQLTab";
             this.GVQLTab.SelectedIndex = 0;
-            this.GVQLTab.Size = new System.Drawing.Size(830, 552);
+            this.GVQLTab.Size = new System.Drawing.Size(1059, 650);
             this.GVQLTab.TabIndex = 64;
             // 
             // tabPage1
@@ -85,7 +85,7 @@ namespace Assignment2
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(822, 523);
+            this.tabPage1.Size = new System.Drawing.Size(1051, 621);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "QLMH";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@ namespace Assignment2
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(828, 653);
+            this.ClientSize = new System.Drawing.Size(1060, 756);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.GVQLTab);
             this.Controls.Add(this.Masocanbo);

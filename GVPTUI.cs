@@ -38,10 +38,15 @@ namespace Assignment2
             switch (GVPTControl.SelectedIndex)
             {
                 case 0:
-                    {
-                        FMTpopulate();
-                        break;
-                    }
+                {
+                   FMTpopulate();
+                   break;
+                }
+                case 2:
+                {
+                   PCHpopulate();
+                   break;
+                }
             }
         }
 
@@ -73,7 +78,47 @@ namespace Assignment2
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
-            ViewLT.DataSource = ds.Tables[0];
+            ViewFMT.DataSource = ds.Tables[0];
+        }
+
+        private void PCHFMTpopulate()
+        {
+            string query = "SELECT * FROM PCH_CHUA_FMT";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewFMT.DataSource = ds.Tables[0];
+        }
+
+        private void PTLFMTpopulate()
+        {
+            string query = "SELECT * FROM PTL_CHUA_FMT";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewFMT.DataSource = ds.Tables[0];
+        }
+
+        private void PMTCFMTpopulate()
+        {
+            string query = "SELECT * FROM PMTC_CHUA_FMT";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewFMT.DataSource = ds.Tables[0];
+        }
+
+        private void PCHpopulate()
+        {
+            string query = "SELECT * FROM PHAN_CAU_HOI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewPCH.DataSource = ds.Tables[0];
         }
 
         private void FMT_AB_Click(object sender, EventArgs e)
@@ -117,6 +162,82 @@ namespace Assignment2
                 {
                     MessageBox.Show(Ex.Message);
                 }
+            }
+        }
+
+        private void FMT_DB_Click(object sender, EventArgs e)
+        {
+            if (IDFMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM FILE_MO_TA WHERE ID_FMT = '" + IDFMT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    FMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void LKFMT_AB_Click(object sender, EventArgs e)
+        {
+            if (IDFMT.Text == "" || LKBox.SelectedItem == null || IDLK.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                if(LKBox.SelectedItem.ToString() == "PCH")
+                {
+                    try
+                    {
+                        string query = "INSERT INTO PCH_CHUA_FMT values('" + IDLK.Text + "', '" + IDFMT.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        PCHFMTpopulate();
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
+                }
+                if (LKBox.SelectedItem.ToString() == "PTL")
+                {
+                    try
+                    {
+                        string query = "INSERT INTO PTL_CHUA_FMT values('" + IDLK.Text + "', " + STT.SelectedItem.ToString() + " ,'" + IDFMT.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        PTLFMTpopulate();
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
+                }
+                if (LKBox.SelectedItem.ToString() == "PMTC")
+                {
+                    try
+                    {
+                        string query = "INSERT INTO PMTC_CHUA_FMT values('" + IDLK.Text + "', '" + IDFMT.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        PMTCFMTpopulate();
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
+                }
+
             }
         }
     }

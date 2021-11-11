@@ -87,6 +87,13 @@ namespace Assignment2
             this.ViewSV = new System.Windows.Forms.DataGridView();
             this.SV_MSSV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.SV_EB = new System.Windows.Forms.Button();
+            this.pwGVPT = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pwGVQL = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pwSV = new System.Windows.Forms.TextBox();
             this.AdminControl.SuspendLayout();
             this.MonHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewMonHoc)).BeginInit();
@@ -115,7 +122,7 @@ namespace Assignment2
             // 
             // LogOutButton
             // 
-            this.LogOutButton.Location = new System.Drawing.Point(646, 22);
+            this.LogOutButton.Location = new System.Drawing.Point(934, 22);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(124, 54);
             this.LogOutButton.TabIndex = 12;
@@ -135,7 +142,7 @@ namespace Assignment2
             this.AdminControl.Location = new System.Drawing.Point(0, 82);
             this.AdminControl.Name = "AdminControl";
             this.AdminControl.SelectedIndex = 0;
-            this.AdminControl.Size = new System.Drawing.Size(796, 461);
+            this.AdminControl.Size = new System.Drawing.Size(1090, 686);
             this.AdminControl.TabIndex = 13;
             this.AdminControl.SelectedIndexChanged += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -152,16 +159,16 @@ namespace Assignment2
             this.MonHoc.Location = new System.Drawing.Point(4, 40);
             this.MonHoc.Name = "MonHoc";
             this.MonHoc.Padding = new System.Windows.Forms.Padding(3);
-            this.MonHoc.Size = new System.Drawing.Size(788, 417);
+            this.MonHoc.Size = new System.Drawing.Size(1082, 642);
             this.MonHoc.TabIndex = 0;
-            this.MonHoc.Text = "MonHoc";
+            this.MonHoc.Text = "Môn Học";
             this.MonHoc.UseVisualStyleBackColor = true;
             this.MonHoc.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // MH_DB
             // 
             this.MH_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MH_DB.Location = new System.Drawing.Point(33, 346);
+            this.MH_DB.Location = new System.Drawing.Point(274, 272);
             this.MH_DB.Name = "MH_DB";
             this.MH_DB.Size = new System.Drawing.Size(84, 34);
             this.MH_DB.TabIndex = 29;
@@ -172,7 +179,7 @@ namespace Assignment2
             // MH_EB
             // 
             this.MH_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MH_EB.Location = new System.Drawing.Point(161, 272);
+            this.MH_EB.Location = new System.Drawing.Point(151, 272);
             this.MH_EB.Name = "MH_EB";
             this.MH_EB.Size = new System.Drawing.Size(84, 34);
             this.MH_EB.TabIndex = 28;
@@ -194,11 +201,11 @@ namespace Assignment2
             // ViewMonHoc
             // 
             this.ViewMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewMonHoc.Location = new System.Drawing.Point(308, 22);
+            this.ViewMonHoc.Location = new System.Drawing.Point(474, 13);
             this.ViewMonHoc.Name = "ViewMonHoc";
             this.ViewMonHoc.RowHeadersWidth = 51;
             this.ViewMonHoc.RowTemplate.Height = 24;
-            this.ViewMonHoc.Size = new System.Drawing.Size(458, 378);
+            this.ViewMonHoc.Size = new System.Drawing.Size(591, 613);
             this.ViewMonHoc.TabIndex = 14;
             this.ViewMonHoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewMonHoc_CellContentClick);
             // 
@@ -207,7 +214,7 @@ namespace Assignment2
             this.MH_MHN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MH_MHN.Location = new System.Drawing.Point(33, 144);
             this.MH_MHN.Name = "MH_MHN";
-            this.MH_MHN.Size = new System.Drawing.Size(212, 27);
+            this.MH_MHN.Size = new System.Drawing.Size(325, 27);
             this.MH_MHN.TabIndex = 17;
             // 
             // MHname
@@ -225,7 +232,7 @@ namespace Assignment2
             this.MH_MMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MH_MMH.Location = new System.Drawing.Point(33, 48);
             this.MH_MMH.Name = "MH_MMH";
-            this.MH_MMH.Size = new System.Drawing.Size(212, 27);
+            this.MH_MMH.Size = new System.Drawing.Size(325, 27);
             this.MH_MMH.TabIndex = 15;
             // 
             // MHID
@@ -240,6 +247,8 @@ namespace Assignment2
             // 
             // GVPT
             // 
+            this.GVPT.Controls.Add(this.label10);
+            this.GVPT.Controls.Add(this.pwGVPT);
             this.GVPT.Controls.Add(this.button4);
             this.GVPT.Controls.Add(this.button5);
             this.GVPT.Controls.Add(this.button6);
@@ -251,7 +260,7 @@ namespace Assignment2
             this.GVPT.Location = new System.Drawing.Point(4, 40);
             this.GVPT.Name = "GVPT";
             this.GVPT.Padding = new System.Windows.Forms.Padding(3);
-            this.GVPT.Size = new System.Drawing.Size(788, 417);
+            this.GVPT.Size = new System.Drawing.Size(1082, 642);
             this.GVPT.TabIndex = 1;
             this.GVPT.Text = "GVPT";
             this.GVPT.UseVisualStyleBackColor = true;
@@ -259,7 +268,7 @@ namespace Assignment2
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(34, 357);
+            this.button4.Location = new System.Drawing.Point(275, 385);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 34);
             this.button4.TabIndex = 30;
@@ -270,7 +279,7 @@ namespace Assignment2
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(163, 283);
+            this.button5.Location = new System.Drawing.Point(151, 385);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(84, 34);
             this.button5.TabIndex = 29;
@@ -281,7 +290,7 @@ namespace Assignment2
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(34, 283);
+            this.button6.Location = new System.Drawing.Point(34, 385);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(84, 34);
             this.button6.TabIndex = 28;
@@ -292,11 +301,11 @@ namespace Assignment2
             // ViewGVPT
             // 
             this.ViewGVPT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewGVPT.Location = new System.Drawing.Point(308, 25);
+            this.ViewGVPT.Location = new System.Drawing.Point(447, 15);
             this.ViewGVPT.Name = "ViewGVPT";
             this.ViewGVPT.RowHeadersWidth = 51;
             this.ViewGVPT.RowTemplate.Height = 24;
-            this.ViewGVPT.Size = new System.Drawing.Size(458, 376);
+            this.ViewGVPT.Size = new System.Drawing.Size(617, 611);
             this.ViewGVPT.TabIndex = 27;
             this.ViewGVPT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewGVPT_CellContentClick);
             // 
@@ -305,7 +314,7 @@ namespace Assignment2
             this.GVPT_MSCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVPT_MSCB.Location = new System.Drawing.Point(34, 50);
             this.GVPT_MSCB.Name = "GVPT_MSCB";
-            this.GVPT_MSCB.Size = new System.Drawing.Size(213, 27);
+            this.GVPT_MSCB.Size = new System.Drawing.Size(325, 27);
             this.GVPT_MSCB.TabIndex = 26;
             // 
             // Masocanbo
@@ -323,7 +332,7 @@ namespace Assignment2
             this.GVPT_MMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVPT_MMH.Location = new System.Drawing.Point(34, 154);
             this.GVPT_MMH.Name = "GVPT_MMH";
-            this.GVPT_MMH.Size = new System.Drawing.Size(213, 27);
+            this.GVPT_MMH.Size = new System.Drawing.Size(325, 27);
             this.GVPT_MMH.TabIndex = 24;
             // 
             // label1
@@ -338,6 +347,8 @@ namespace Assignment2
             // 
             // GVQL
             // 
+            this.GVQL.Controls.Add(this.label11);
+            this.GVQL.Controls.Add(this.pwGVQL);
             this.GVQL.Controls.Add(this.GVQL_DB);
             this.GVQL.Controls.Add(this.GVQL_EB);
             this.GVQL.Controls.Add(this.GVQL_AB);
@@ -349,7 +360,7 @@ namespace Assignment2
             this.GVQL.Location = new System.Drawing.Point(4, 40);
             this.GVQL.Name = "GVQL";
             this.GVQL.Padding = new System.Windows.Forms.Padding(3);
-            this.GVQL.Size = new System.Drawing.Size(788, 417);
+            this.GVQL.Size = new System.Drawing.Size(1082, 642);
             this.GVQL.TabIndex = 2;
             this.GVQL.Text = "GVQL";
             this.GVQL.UseVisualStyleBackColor = true;
@@ -357,7 +368,7 @@ namespace Assignment2
             // GVQL_DB
             // 
             this.GVQL_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GVQL_DB.Location = new System.Drawing.Point(39, 356);
+            this.GVQL_DB.Location = new System.Drawing.Point(274, 383);
             this.GVQL_DB.Name = "GVQL_DB";
             this.GVQL_DB.Size = new System.Drawing.Size(84, 34);
             this.GVQL_DB.TabIndex = 38;
@@ -368,7 +379,7 @@ namespace Assignment2
             // GVQL_EB
             // 
             this.GVQL_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GVQL_EB.Location = new System.Drawing.Point(168, 282);
+            this.GVQL_EB.Location = new System.Drawing.Point(156, 383);
             this.GVQL_EB.Name = "GVQL_EB";
             this.GVQL_EB.Size = new System.Drawing.Size(84, 34);
             this.GVQL_EB.TabIndex = 37;
@@ -379,7 +390,7 @@ namespace Assignment2
             // GVQL_AB
             // 
             this.GVQL_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GVQL_AB.Location = new System.Drawing.Point(39, 282);
+            this.GVQL_AB.Location = new System.Drawing.Point(39, 383);
             this.GVQL_AB.Name = "GVQL_AB";
             this.GVQL_AB.Size = new System.Drawing.Size(84, 34);
             this.GVQL_AB.TabIndex = 36;
@@ -390,11 +401,11 @@ namespace Assignment2
             // ViewGVQL
             // 
             this.ViewGVQL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewGVQL.Location = new System.Drawing.Point(313, 24);
+            this.ViewGVQL.Location = new System.Drawing.Point(442, 23);
             this.ViewGVQL.Name = "ViewGVQL";
             this.ViewGVQL.RowHeadersWidth = 51;
             this.ViewGVQL.RowTemplate.Height = 24;
-            this.ViewGVQL.Size = new System.Drawing.Size(458, 376);
+            this.ViewGVQL.Size = new System.Drawing.Size(612, 603);
             this.ViewGVQL.TabIndex = 35;
             this.ViewGVQL.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewGVQL_CellContentClick);
             // 
@@ -403,7 +414,7 @@ namespace Assignment2
             this.GVQL_MSCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVQL_MSCB.Location = new System.Drawing.Point(39, 49);
             this.GVQL_MSCB.Name = "GVQL_MSCB";
-            this.GVQL_MSCB.Size = new System.Drawing.Size(213, 27);
+            this.GVQL_MSCB.Size = new System.Drawing.Size(319, 27);
             this.GVQL_MSCB.TabIndex = 34;
             // 
             // label4
@@ -421,7 +432,7 @@ namespace Assignment2
             this.GVQL_MMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVQL_MMH.Location = new System.Drawing.Point(39, 153);
             this.GVQL_MMH.Name = "GVQL_MMH";
-            this.GVQL_MMH.Size = new System.Drawing.Size(213, 27);
+            this.GVQL_MMH.Size = new System.Drawing.Size(319, 27);
             this.GVQL_MMH.TabIndex = 32;
             // 
             // label5
@@ -449,19 +460,19 @@ namespace Assignment2
             this.CDR.Location = new System.Drawing.Point(4, 40);
             this.CDR.Name = "CDR";
             this.CDR.Padding = new System.Windows.Forms.Padding(3);
-            this.CDR.Size = new System.Drawing.Size(788, 417);
+            this.CDR.Size = new System.Drawing.Size(1082, 642);
             this.CDR.TabIndex = 3;
-            this.CDR.Text = "CDR";
+            this.CDR.Text = "Chuẩn đầu ra";
             this.CDR.UseVisualStyleBackColor = true;
             // 
             // ViewCDR
             // 
             this.ViewCDR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewCDR.Location = new System.Drawing.Point(308, 26);
+            this.ViewCDR.Location = new System.Drawing.Point(413, 17);
             this.ViewCDR.Name = "ViewCDR";
             this.ViewCDR.RowHeadersWidth = 51;
             this.ViewCDR.RowTemplate.Height = 24;
-            this.ViewCDR.Size = new System.Drawing.Size(458, 376);
+            this.ViewCDR.Size = new System.Drawing.Size(641, 609);
             this.ViewCDR.TabIndex = 28;
             this.ViewCDR.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewCDR_CellContentClick);
             // 
@@ -478,7 +489,7 @@ namespace Assignment2
             // CDR_DB
             // 
             this.CDR_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CDR_DB.Location = new System.Drawing.Point(29, 356);
+            this.CDR_DB.Location = new System.Drawing.Point(248, 282);
             this.CDR_DB.Name = "CDR_DB";
             this.CDR_DB.Size = new System.Drawing.Size(84, 34);
             this.CDR_DB.TabIndex = 26;
@@ -491,13 +502,13 @@ namespace Assignment2
             this.CDR_MMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CDR_MMH.Location = new System.Drawing.Point(29, 52);
             this.CDR_MMH.Name = "CDR_MMH";
-            this.CDR_MMH.Size = new System.Drawing.Size(212, 27);
+            this.CDR_MMH.Size = new System.Drawing.Size(303, 27);
             this.CDR_MMH.TabIndex = 19;
             // 
             // CDR_EB
             // 
             this.CDR_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CDR_EB.Location = new System.Drawing.Point(157, 282);
+            this.CDR_EB.Location = new System.Drawing.Point(141, 282);
             this.CDR_EB.Name = "CDR_EB";
             this.CDR_EB.Size = new System.Drawing.Size(84, 34);
             this.CDR_EB.TabIndex = 25;
@@ -531,7 +542,7 @@ namespace Assignment2
             this.CDR_STT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CDR_STT.Location = new System.Drawing.Point(29, 136);
             this.CDR_STT.Name = "CDR_STT";
-            this.CDR_STT.Size = new System.Drawing.Size(212, 27);
+            this.CDR_STT.Size = new System.Drawing.Size(303, 27);
             this.CDR_STT.TabIndex = 21;
             // 
             // CDRName
@@ -539,7 +550,7 @@ namespace Assignment2
             this.CDRName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CDRName.Location = new System.Drawing.Point(29, 221);
             this.CDRName.Name = "CDRName";
-            this.CDRName.Size = new System.Drawing.Size(212, 27);
+            this.CDRName.Size = new System.Drawing.Size(303, 27);
             this.CDRName.TabIndex = 23;
             // 
             // label2
@@ -567,15 +578,15 @@ namespace Assignment2
             this.LTTab.Location = new System.Drawing.Point(4, 40);
             this.LTTab.Name = "LTTab";
             this.LTTab.Padding = new System.Windows.Forms.Padding(3);
-            this.LTTab.Size = new System.Drawing.Size(788, 417);
+            this.LTTab.Size = new System.Drawing.Size(1082, 642);
             this.LTTab.TabIndex = 4;
-            this.LTTab.Text = "LanThi";
+            this.LTTab.Text = "Lần Thi";
             this.LTTab.UseVisualStyleBackColor = true;
             // 
             // LT_DB
             // 
             this.LT_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LT_DB.Location = new System.Drawing.Point(44, 359);
+            this.LT_DB.Location = new System.Drawing.Point(279, 285);
             this.LT_DB.Name = "LT_DB";
             this.LT_DB.Size = new System.Drawing.Size(84, 34);
             this.LT_DB.TabIndex = 41;
@@ -586,7 +597,7 @@ namespace Assignment2
             // LT_EB
             // 
             this.LT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LT_EB.Location = new System.Drawing.Point(175, 285);
+            this.LT_EB.Location = new System.Drawing.Point(160, 285);
             this.LT_EB.Name = "LT_EB";
             this.LT_EB.Size = new System.Drawing.Size(84, 34);
             this.LT_EB.TabIndex = 40;
@@ -610,7 +621,7 @@ namespace Assignment2
             this.NH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NH.Location = new System.Drawing.Point(44, 212);
             this.NH.Name = "NH";
-            this.NH.Size = new System.Drawing.Size(215, 27);
+            this.NH.Size = new System.Drawing.Size(319, 27);
             this.NH.TabIndex = 38;
             // 
             // label6
@@ -628,7 +639,7 @@ namespace Assignment2
             this.HK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HK.Location = new System.Drawing.Point(44, 142);
             this.HK.Name = "HK";
-            this.HK.Size = new System.Drawing.Size(215, 27);
+            this.HK.Size = new System.Drawing.Size(319, 27);
             this.HK.TabIndex = 36;
             // 
             // label7
@@ -646,7 +657,7 @@ namespace Assignment2
             this.LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LT.Location = new System.Drawing.Point(44, 67);
             this.LT.Name = "LT";
-            this.LT.Size = new System.Drawing.Size(215, 27);
+            this.LT.Size = new System.Drawing.Size(319, 27);
             this.LT.TabIndex = 34;
             // 
             // label8
@@ -662,16 +673,19 @@ namespace Assignment2
             // ViewLT
             // 
             this.ViewLT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewLT.Location = new System.Drawing.Point(318, 26);
+            this.ViewLT.Location = new System.Drawing.Point(456, 24);
             this.ViewLT.Name = "ViewLT";
             this.ViewLT.RowHeadersWidth = 51;
             this.ViewLT.RowTemplate.Height = 24;
-            this.ViewLT.Size = new System.Drawing.Size(448, 369);
+            this.ViewLT.Size = new System.Drawing.Size(598, 602);
             this.ViewLT.TabIndex = 32;
             this.ViewLT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewLT_CellContentClick);
             // 
             // SV
             // 
+            this.SV.Controls.Add(this.pwSV);
+            this.SV.Controls.Add(this.label12);
+            this.SV.Controls.Add(this.SV_EB);
             this.SV.Controls.Add(this.SV_DB);
             this.SV.Controls.Add(this.SV_AB);
             this.SV.Controls.Add(this.ViewSV);
@@ -680,15 +694,15 @@ namespace Assignment2
             this.SV.Location = new System.Drawing.Point(4, 40);
             this.SV.Name = "SV";
             this.SV.Padding = new System.Windows.Forms.Padding(3);
-            this.SV.Size = new System.Drawing.Size(788, 417);
+            this.SV.Size = new System.Drawing.Size(1082, 642);
             this.SV.TabIndex = 5;
-            this.SV.Text = "SinhVien";
+            this.SV.Text = "Sinh Viên";
             this.SV.UseVisualStyleBackColor = true;
             // 
             // SV_DB
             // 
             this.SV_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SV_DB.Location = new System.Drawing.Point(159, 286);
+            this.SV_DB.Location = new System.Drawing.Point(300, 286);
             this.SV_DB.Name = "SV_DB";
             this.SV_DB.Size = new System.Drawing.Size(84, 34);
             this.SV_DB.TabIndex = 44;
@@ -710,38 +724,103 @@ namespace Assignment2
             // ViewSV
             // 
             this.ViewSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewSV.Location = new System.Drawing.Point(304, 26);
+            this.ViewSV.Location = new System.Drawing.Point(450, 31);
             this.ViewSV.Name = "ViewSV";
             this.ViewSV.RowHeadersWidth = 51;
             this.ViewSV.RowTemplate.Height = 24;
-            this.ViewSV.Size = new System.Drawing.Size(458, 376);
+            this.ViewSV.Size = new System.Drawing.Size(604, 595);
             this.ViewSV.TabIndex = 30;
             this.ViewSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewSV_CellContentClick);
             // 
             // SV_MSSV
             // 
             this.SV_MSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SV_MSSV.Location = new System.Drawing.Point(30, 51);
+            this.SV_MSSV.Location = new System.Drawing.Point(30, 75);
             this.SV_MSSV.Name = "SV_MSSV";
-            this.SV_MSSV.Size = new System.Drawing.Size(213, 27);
+            this.SV_MSSV.Size = new System.Drawing.Size(354, 27);
             this.SV_MSSV.TabIndex = 29;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(26, 14);
+            this.label9.Location = new System.Drawing.Point(26, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 23);
             this.label9.TabIndex = 28;
             this.label9.Text = "MSSV";
+            // 
+            // SV_EB
+            // 
+            this.SV_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SV_EB.Location = new System.Drawing.Point(164, 286);
+            this.SV_EB.Name = "SV_EB";
+            this.SV_EB.Size = new System.Drawing.Size(84, 34);
+            this.SV_EB.TabIndex = 45;
+            this.SV_EB.Text = "Edit";
+            this.SV_EB.UseVisualStyleBackColor = true;
+            this.SV_EB.Click += new System.EventHandler(this.SV_EB_Click);
+            // 
+            // pwGVPT
+            // 
+            this.pwGVPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwGVPT.Location = new System.Drawing.Point(34, 264);
+            this.pwGVPT.Name = "pwGVPT";
+            this.pwGVPT.Size = new System.Drawing.Size(325, 27);
+            this.pwGVPT.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(30, 216);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 23);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Password";
+            // 
+            // pwGVQL
+            // 
+            this.pwGVQL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwGVQL.Location = new System.Drawing.Point(39, 262);
+            this.pwGVQL.Name = "pwGVQL";
+            this.pwGVQL.Size = new System.Drawing.Size(325, 27);
+            this.pwGVQL.TabIndex = 39;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(35, 219);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 23);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Password";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(26, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 23);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Password";
+            // 
+            // pwSV
+            // 
+            this.pwSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwSV.Location = new System.Drawing.Point(30, 190);
+            this.pwSV.Name = "pwSV";
+            this.pwSV.Size = new System.Drawing.Size(354, 27);
+            this.pwSV.TabIndex = 47;
             // 
             // AdminUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 545);
+            this.ClientSize = new System.Drawing.Size(1090, 760);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.AdminText);
             this.Controls.Add(this.AdminControl);
@@ -830,5 +909,12 @@ namespace Assignment2
         private System.Windows.Forms.DataGridView ViewSV;
         private System.Windows.Forms.TextBox SV_MSSV;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button SV_EB;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox pwGVPT;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox pwGVQL;
+        private System.Windows.Forms.TextBox pwSV;
+        private System.Windows.Forms.Label label12;
     }
 }
