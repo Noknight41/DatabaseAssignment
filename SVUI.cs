@@ -11,27 +11,27 @@ using System.Data.SqlClient;
 
 namespace Assignment2
 {
-    public partial class GVQLUI : Form
+    public partial class SVUI : Form
     {
         string Route;
-        string MSCB;
-        string MMH;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;User ID=GVQLLogin;Password=123");
-        public GVQLUI()
+        string MSSV;
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;User ID=SVLogin;Password=123");
+
+        public SVUI()
         {
             Route = "";
             InitializeComponent();
             Con.Open();
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GVQL_FormClosed);
-        }
-        public void setGVQL(string MSCB, string Maso)
-        {
-            this.MSCB = MSCB;
-            this.MMH = Maso;
-            Masocanbo.Text = MSCB;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SV_FormClosed);
         }
 
-        private void GVQL_FormClosed(object sender, FormClosedEventArgs e)
+        public void setSV(string MSSV)
+        {
+            this.MSSV = MSSV;
+            Masosinhvien.Text = MSSV;
+        }
+
+        private void SV_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (this.Route == "")
             {
@@ -44,7 +44,6 @@ namespace Assignment2
                 UI.Show();
             }
         }
-
 
         private void LogOutButton_Click(object sender, EventArgs e)
         {

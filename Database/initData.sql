@@ -8,6 +8,7 @@ GO
 CREATE TABLE GIANG_VIEN_PHU_TRACH (
     MSCB varchar(10) NOT NULL,
 	Mon_hoc_phu_trach varchar(10),
+	Pass varchar(100),
 
 	CONSTRAINT GVPT_FK FOREIGN KEY (Mon_hoc_phu_trach) REFERENCES MON_HOC(Ma_mon_hoc) on delete no action on update cascade, 
 	CONSTRAINT GVPT_PK PRIMARY KEY (MSCB)
@@ -17,6 +18,7 @@ GO
 CREATE TABLE GIANG_VIEN_QUAN_LY (
     MSCB varchar(10) NOT NULL,
     Mon_hoc_quan_ly varchar(10) UNIQUE,
+	Pass varchar(100),
 
 	CONSTRAINT GVQL_FK FOREIGN KEY (Mon_hoc_quan_ly) REFERENCES MON_HOC(Ma_mon_hoc) on delete no action on update cascade, 
 	CONSTRAINT GVQL_PK PRIMARY KEY (MSCB)
@@ -75,6 +77,7 @@ GO
 
 CREATE TABLE SINH_VIEN(
 	MSSV varchar(10) NOT NULL,
+	Pass varchar(100),
 
     CONSTRAINT IDSV PRIMARY KEY (MSSV)
 );
@@ -203,25 +206,25 @@ INSERT INTO MON_HOC(Ma_mon_hoc, Ten) VALUES
 GO
 
 --GV phutrach
-INSERT INTO GIANG_VIEN_PHU_TRACH(MSCB, Mon_hoc_phu_trach) VALUES
-('PT1001', 'CO2012'), 
-('PT1002', 'CO2012'), 
-('PT1003', 'CO2012'), 
+INSERT INTO GIANG_VIEN_PHU_TRACH(MSCB, Mon_hoc_phu_trach, Pass) VALUES
+('PT1001', 'CO2012', '1'), 
+('PT1002', 'CO2012', '1'), 
+('PT1003', 'CO2012', '1'), 
 
-('PT1011', 'CO2013'), 
-('PT1012', 'CO2013'), 
-('PT1013', 'CO2013'), 
+('PT1011', 'CO2013', '1'), 
+('PT1012', 'CO2013', '1'), 
+('PT1013', 'CO2013', '1'), 
 
-('PT1021', 'CO2014'), 
-('PT1022', 'CO2014'), 
-('PT1023', 'CO2014');
+('PT1021', 'CO2014', '1'), 
+('PT1022', 'CO2014', '1'), 
+('PT1023', 'CO2014', '1');
 GO
 
 --GVQuanly
-INSERT INTO GIANG_VIEN_QUAN_LY(MSCB, Mon_hoc_quan_ly) VALUES 
-('QL1002', 'CO2012'), 
-('QL1003', 'CO2013'), 
-('QL1004', 'CO2014');
+INSERT INTO GIANG_VIEN_QUAN_LY(MSCB, Mon_hoc_quan_ly, Pass) VALUES 
+('QL1002', 'CO2012', '1'), 
+('QL1003', 'CO2013', '1'), 
+('QL1004', 'CO2014', '1');
 GO
 
 --Chuandaura
@@ -300,7 +303,7 @@ INSERT INTO DE_THI(Ma_de_thi, So_luong_cau_hoi, Thoi_gian_lam_bai, Trich_Lan_thi
 GO
 
 --Sinhvien
-INSERT INTO SINH_VIEN(MSSV) VALUES ('1812438'), ('1812439'), ('1812440'), ('1912438'), ('1912439'), ('1912440'), ('2012438'), ('2012439'), ('2012440');
+INSERT INTO SINH_VIEN(MSSV, Pass) VALUES ('1812438', '1'), ('1812439', '1'), ('1812440', '1'), ('1912438', '1'), ('1912439', '1'), ('1912440', '1'), ('2012438', '1'), ('2012439', '1'), ('2012440', '1');
 GO
 
 --Cauhoi
