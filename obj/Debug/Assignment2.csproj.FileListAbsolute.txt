@@ -20,7 +20,6 @@ D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.csproj.Ge
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.csproj.CoreCompileInputs.cache
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.exe
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.pdb
-D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.CH.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.GVPTUI.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.GVQLUI.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.SVUI.resources

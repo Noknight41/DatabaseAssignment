@@ -240,5 +240,79 @@ namespace Assignment2
 
             }
         }
+
+        private void PCH_AB_Click(object sender, EventArgs e)
+        {
+            if (PCH_MCH.Text == "" || NDCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PHAN_CAU_HOI values('" + PCH_MCH.Text + "', '" + NDCH.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void PCH_EB_Click(object sender, EventArgs e)
+        {
+            if (PCH_MCH.Text == "" || NDCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE PHAN_CAU_HOI SET Noi_dung = '" + NDCH.Text + "' WHERE Ma_cau_hoi = '" + PCH_MCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void PCH_DB_Click(object sender, EventArgs e)
+        {
+            if (PCH_MCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PHAN_CAU_HOI WHERE Ma_cau_hoi = '" + PCH_MCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void ViewPCH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indexRow = e.RowIndex; // get the selected Row Index
+            DataGridViewRow row = ViewPCH.Rows[indexRow];
+            PCH_MCH.Text = row.Cells[0].Value.ToString();
+            NDCH.Text = row.Cells[1].Value.ToString();
+        }
     }
 }

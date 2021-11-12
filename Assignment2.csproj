@@ -52,12 +52,6 @@
     <Compile Include="AdminUI.Designer.cs">
       <DependentUpon>AdminUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="CH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CH.Designer.cs">
-      <DependentUpon>CH.cs</DependentUpon>
-    </Compile>
     <Compile Include="GVPTUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +80,6 @@
     </Compile>
     <EmbeddedResource Include="AdminUI.resx">
       <DependentUpon>AdminUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CH.resx">
-      <DependentUpon>CH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GVPTUI.resx">
       <DependentUpon>GVPTUI.cs</DependentUpon>
