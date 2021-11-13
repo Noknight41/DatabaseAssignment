@@ -16,7 +16,7 @@ namespace Assignment2
         string Route;
         string MSCB;
         string MMH;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;User ID=GVPTLogin;Password=123");
+        SqlConnection Con = new SqlConnection(@"Data Source=LEHOANGTHUYLINH\SQLEXPRESS;Initial Catalog=test3;Integrated Security=True");
        
         public GVPTUI()
         {
@@ -239,6 +239,46 @@ namespace Assignment2
                 }
 
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DT_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
