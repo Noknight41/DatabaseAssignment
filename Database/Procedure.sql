@@ -1,22 +1,33 @@
-CREATE OR ALTER PROCEDURE xoaCauhoi @MCH AS varchar(10)
+USE Ass2
+GO
+
+CREATE OR ALTER PROCEDURE i12 @MCH AS varchar(10)
 AS
 BEGIN
-	IF NOT EXISTS(SELECT * FROM TAP_DE_THI_BAO_GOM_CAU_HOI WHERE Ma_cau_hoi = @MCH) AND NOT EXISTS(SELECT * FROM DE_THI_BAO_GOM_CAU_HOI WHERE Ma_cau_hoi = @MCH)
+	TRUNCATE TABLE ti12
+	DECLARE @MyCursor CURSOR;
+	DECLARE @MyField INT;
 	BEGIN
-		DELETE FROM PTL_CHUA_FMT WHERE Ma_cau_hoi = @MCH;
-		DELETE FROM PHAN_TRA_LOI WHERE Ma_cau_hoi = @MCH;
-		DELETE FROM PCH_CHUA_FMT WHERE Ma_cau_hoi = @MCH;
-		DELETE FROM PHAN_CAU_HOI WHERE Ma_cau_hoi = @MCH;
-		DELETE FROM CAU_HOI WHERE Ma_cau_hoi = @MCH;
+    SET @MyCursor = CURSOR FOR
+    SELECT TOP(3) D.Trich_Lan_thi FROM DE_THI AS D WHERE Trich_Mon_hoc = @MCH ORDER BY Trich_Lan_thi ASC    
+
+    OPEN @MyCursor 
+    FETCH NEXT FROM @MyCursor 
+    INTO @MyField
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+		INSERT INTO ti12 SELECT TOP(1) WITH TIES * FROM i8 ('CO2012', @MyField) ORDER BY Ratio ASC
+		FETCH NEXT FROM @MyCursor 
+		INTO @MyField 
+    END; 
+
+    CLOSE @MyCursor ;
+    DEALLOCATE @MyCursor;
 	END;
 END;
 GO
 
-CREATE OR ALTER FUNCTION tatcaCauhoi (@MH AS varchar(10))
-RETURNS TABLE AS
-RETURN
-	SELECT C.Ma_cau_hoi, Noi_dung, Vi_tri_dap_an_dung, STTCDR, ID_phan_mo_ta 
-	FROM CAU_HOI AS C JOIN PHAN_CAU_HOI AS P ON C.Ma_cau_hoi = P.Ma_cau_hoi
-	WHERE Ma_mon_hoc_thuoc = @MH
-GO
+EXEC i12 @MCH = 'CO2012';
+SELECT * FROM ti12
 
