@@ -179,7 +179,70 @@ RETURN
 	WHERE D.Trich_Lan_thi = @LT AND D.Trich_Mon_hoc = @MH AND L.MSSV = @MSSV
 GO
 
+CREATE OR ALTER FUNCTION iii6 (@LT AS int, @MSSV AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT L.MSSV, (SELECT dbo.i6d (@LT, D.Trich_Mon_hoc, L.MSSV)) AS GRADE
+	FROM LAM_BAI AS L JOIN DE_THI AS D ON L.Ma_de_thi = D.Ma_de_thi
+	WHERE D.Trich_Lan_thi = @LT AND L.MSSV = @MSSV
+GO
 
+CREATE OR ALTER FUNCTION iii7 (@DT AS varchar(10), @MSSV AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT C.Ma_mon_hoc_thuoc, C.STTCDR, COUNT(case when L.Tra_loi = C.Vi_tri_dap_an_dung then 1 else null end) AS Correct, COUNT (*) AS Total
+	FROM (LAM_BAI AS L JOIN DE_THI AS D ON L.Ma_de_thi = D.Ma_de_thi) JOIN CAU_HOI AS C ON C.Ma_cau_hoi = L.Ma_cau_hoi
+	WHERE D.Ma_de_thi = @DT AND L.MSSV = @MSSV
+	GROUP BY C.Ma_mon_hoc_thuoc, C.STTCDR
+GO
+
+CREATE OR ALTER FUNCTION NoteDeThi (@DT AS varchar(10))
+RETURNS	varchar(2048)
+AS
+BEGIN
+    Declare @note varchar(2048);
+    SELECT @note = Note
+	FROM DE_THI
+	WHERE Ma_de_thi = @DT
+    RETURN  @note
+END
+GO
+
+CREATE OR ALTER FUNCTION PassGVPT (@MSCB AS varchar(10))
+RETURNS	varchar(256)
+AS
+BEGIN
+    Declare @pw varchar(256);
+    SELECT @pw = Pass
+	FROM GIANG_VIEN_PHU_TRACH
+	WHERE MSCB = @MSCB
+    RETURN  @pw
+END
+GO
+
+CREATE OR ALTER FUNCTION PassGVQL (@MSCB AS varchar(10))
+RETURNS	varchar(256)
+AS
+BEGIN
+    Declare @pw varchar(256);
+    SELECT @pw = Pass
+	FROM GIANG_VIEN_QUAN_LY
+	WHERE MSCB = @MSCB
+    RETURN  @pw
+END
+GO
+
+CREATE OR ALTER FUNCTION PassSV (@MSSV AS varchar(10))
+RETURNS	varchar(256)
+AS
+BEGIN
+    Declare @pw varchar(256);
+    SELECT @pw = Pass
+	FROM SINH_VIEN
+	WHERE MSSV = @MSSV
+    RETURN  @pw
+END
+GO
 
 
 

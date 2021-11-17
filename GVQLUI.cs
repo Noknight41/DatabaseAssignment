@@ -16,7 +16,7 @@ namespace Assignment2
         string Route;
         string MSCB;
         string MMH;
-        SqlConnection Con = new SqlConnection(@"Data Source=LEHOANGTHUYLINH\SQLEXPRESS;Initial Catalog=test3;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=MyLogin;Password=123");
         public GVQLUI()
         {
             Route = "";

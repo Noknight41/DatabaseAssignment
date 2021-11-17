@@ -47,7 +47,20 @@ SELECT * FROM iii4('CO12A1101', '1812438') ORDER BY STTCH;
 SELECT * FROM iii5 (1,'CO2012', '1812438');
 
 --iii6
+SELECT * FROM iii6 (1, '1812438');
+
+--iii7
+SELECT *, (Correct * 10.0 / Total) AS Grade
+FROM iii7 ('CO12A1101', '1812438');
 
 
+-- Them Sua Note, Xem Note
+EXEC SuaNoteDeThi @DT = 'CO12A1101', @Note = 'Nope';
+SELECT dbo.NoteDethi('CO12A1101');
+
+SELECT dbo.PassGVPT('PT1001');
+SELECT dbo.PassGVQL('QL1002');
+SELECT dbo.PassSV('1812438');
 
 
+INSERT INTO CAU_HOI values('CO2012101', 1 ,'dev', getdate(), 'CO2012', 1, null);

@@ -16,7 +16,7 @@ namespace Assignment2
         string Route;
         string MSCB;
         string MMH;
-        SqlConnection Con = new SqlConnection(@"Data Source=LEHOANGTHUYLINH\SQLEXPRESS;Initial Catalog=test3;Integrated Security=True");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=MyLogin;Password=123");
        
         public GVPTUI()
         {
@@ -35,17 +35,72 @@ namespace Assignment2
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            switch (GVPTControl.SelectedIndex)
+            switch (GVPTControl.SelectedTab.Name)
             {
-                case 0:
+                case "FMT":
                 {
                    FMTpopulate();
                    break;
                 }
-                case 2:
+                case "PMTC":
+                {
+                    PMTCpopulate();
+                    break;
+                }
+                case "PCH":
                 {
                    PCHpopulate();
                    break;
+                }
+                case "PTL":
+                {
+                    PTLpopulate();
+                    break;
+                }
+                case "CH":
+                {
+                    CHpopulate();
+                    break;
+                }
+                case "TDT":
+                {
+                    TDTpopulate();
+                    break;
+                }
+                case "DT":
+                {
+                    DTpopulate();
+                    break;
+                }
+                case "NDTDT":
+                {
+                    NDTDTpopulate();
+                    break;
+                }
+                case "NDDT":
+                {
+                    NDDTpopulate();
+                    break;
+                }
+                case "PMTCFMT":
+                {
+                    PMTCFMTpopulate();
+                    break;
+                }
+                case "PCHFMT":
+                {
+                    PCHFMTpopulate();
+                    break;
+                }
+                case "PTLFMT":
+                {
+                    PTLFMTpopulate();
+                    break;
+                }
+                case "Password":
+                {
+                    PWpopulate();
+                    break;
                 }
             }
         }
@@ -71,6 +126,7 @@ namespace Assignment2
             this.Close();
         }
 
+        // Populate
         private void FMTpopulate()
         {
             string query = "SELECT * FROM FILE_MO_TA";
@@ -88,7 +144,7 @@ namespace Assignment2
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
-            ViewFMT.DataSource = ds.Tables[0];
+            ViewFMTPCH.DataSource = ds.Tables[0];
         }
 
         private void PTLFMTpopulate()
@@ -98,7 +154,7 @@ namespace Assignment2
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
-            ViewFMT.DataSource = ds.Tables[0];
+            ViewFMTPTL.DataSource = ds.Tables[0];
         }
 
         private void PMTCFMTpopulate()
@@ -108,7 +164,7 @@ namespace Assignment2
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
-            ViewFMT.DataSource = ds.Tables[0];
+            ViewFMTPMTC.DataSource = ds.Tables[0];
         }
 
         private void PCHpopulate()
@@ -121,6 +177,93 @@ namespace Assignment2
             ViewPCH.DataSource = ds.Tables[0];
         }
 
+        private void PTLpopulate()
+        {
+            string query = "SELECT * FROM PHAN_TRA_LOI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewPTL.DataSource = ds.Tables[0];
+        }
+
+        private void PMTCpopulate()
+        {
+            string query = "SELECT * FROM PHAN_MO_TA_CHUNG";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewPMTC.DataSource = ds.Tables[0];
+        }
+
+        private void CHpopulate()
+        {
+            string query = "SELECT * FROM CAU_HOI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewCH.DataSource = ds.Tables[0];
+        }
+
+        private void TDTpopulate()
+        {
+            string query = "SELECT * FROM TAP_DE_THI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewTDT.DataSource = ds.Tables[0];
+        }
+
+        private void DTpopulate()
+        {
+            string query = "SELECT * FROM DE_THI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewDT.DataSource = ds.Tables[0];
+        }
+
+        private void NDTDTpopulate()
+        {
+            string query = "SELECT * FROM TAP_DE_THI_BAO_GOM_CAU_HOI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewNDTDT.DataSource = ds.Tables[0];
+        }
+
+        private void NDDTpopulate()
+        {
+            string query = "SELECT * FROM DE_THI_BAO_GOM_CAU_HOI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewNDDT.DataSource = ds.Tables[0];
+        }
+
+        private void PWpopulate()
+        {
+            string query = "SELECT dbo.PassGVPT('"+ MSCB + "');";
+            using (var cmd = new SqlCommand(query, Con))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    PW.Text = reader.GetString(0);
+                    reader.Close();
+                    return;
+                }
+                reader.Close();
+            }
+        }
+
+        // Each Tab
         private void FMT_AB_Click(object sender, EventArgs e)
         {
             if (IDFMT.Text == "" || URL.Text == "")
@@ -241,44 +384,299 @@ namespace Assignment2
             }
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        // Phan mo ta chung
+        private void PMTC_AB_Click(object sender, EventArgs e)
         {
-
+            if (ID_PMTC.Text == "" || PMTC_ND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PHAN_MO_TA_CHUNG values('" + ID_PMTC.Text + "', '" + PMTC_ND.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PMTCpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void PMTC_EB_Click(object sender, EventArgs e)
         {
-
+            if (ID_PMTC.Text == "" || PMTC_ND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE PHAN_MO_TA_CHUNG SET Noi_dung = '" + PMTC_ND.Text + "' WHERE ID_phan_mo_ta = '" + ID_PMTC.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PMTCpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void PMTC_DB_Click(object sender, EventArgs e)
         {
-
+            if (ID_PMTC.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PHAN_MO_TA_CHUNG WHERE ID_FMT = '" + ID_PMTC.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PMTCpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void label25_Click(object sender, EventArgs e)
+        // Phan cau hoi
+        private void PCH_AB_Click(object sender, EventArgs e)
         {
-
+            if (PCHMCH.Text == "" || PCHND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PHAN_CAU_HOI values('" + PCHMCH.Text + "', '" + PCHND.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void CH_Click(object sender, EventArgs e)
+        private void PCH_EB_Click(object sender, EventArgs e)
         {
-
+            if (PCHMCH.Text == "" || PCHND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE PHAN_CAU_HOI SET Noi_dung = '" + PCHND.Text + "' WHERE Ma_cau_hoi = '" + PCHMCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void label39_Click(object sender, EventArgs e)
+        private void PCH_DB_Click(object sender, EventArgs e)
         {
-
+            if (PCHMCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PHAN_CAU_HOI WHERE Ma_cau_hoi = '" + PCHMCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void textBox24_TextChanged(object sender, EventArgs e)
+        // Phan tra loi
+        private void PTL_AB_Click(object sender, EventArgs e)
         {
-
+            if (PTLMCH.Text == "" || PTLND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PHAN_TRA_LOI values('" + PTLMCH.Text + "', " + PTLSTT.SelectedItem.ToString() + " ,'" + PTLND.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PTLpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
 
-        private void DT_Click(object sender, EventArgs e)
+        private void PTL_EB_Click(object sender, EventArgs e)
+        {
+            if (PTLMCH.Text == "" || PTLND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE PHAN_TRA_LOI SET Noi_dung = '" + PTLND.Text + "' WHERE Ma_cau_hoi = '" + PTLMCH.Text + "' AND STT = " + PTLSTT.SelectedItem.ToString() + ";";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PTLpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void PTL_DB_Click(object sender, EventArgs e)
+        {
+            if (PTLMCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PHAN_TRA_LOI WHERE Ma_cau_hoi = '" + PTLMCH.Text + "' AND STT = " + PTLSTT.SelectedItem.ToString() + ";";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PTLpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // Cau hoi
+        private void CH_AB_Click(object sender, EventArgs e)
+        {
+            if (CH_MCH.Text == "" || CH_CDR.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    DateTime thisDay = DateTime.Today;
+                    string cdr;
+                    if (CHIDPMTC.Text == "") cdr = "null";
+                    else cdr = "'" + CHIDPMTC.Text + "'";
+                    string query = "INSERT INTO CAU_HOI values('" + CH_MCH.Text + "', " + CHVTDA.SelectedItem.ToString() + " ,'" + MSCB + "', getdate(), '" + MMH + "', " + CHVTDA.SelectedItem.ToString() + ", " + cdr +")";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    CHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void CH_EB_Click(object sender, EventArgs e)
+        {
+            if (CH_MCH.Text == "" || CH_CDR.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string cdr;
+                    if (CHIDPMTC.Text == "") cdr = "null";
+                    else cdr = "'" + CHIDPMTC.Text + "'";
+                    string query = "UPDATE CAU_HOI SET Vi_tri_dap_an_dung = " + CHVTDA.SelectedItem.ToString() + ", STTCDR = " + CH_CDR.Text +", ID_phan_mo_ta = " + cdr +"  WHERE Ma_cau_hoi = '" + CH_MCH.Text + "';";
+                    Console.WriteLine(query);
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    CHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void CH_DB_Click(object sender, EventArgs e)
+        {
+            if (CH_MCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM CAU_HOI WHERE Ma_cau_hoi = '" + PTLMCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    CHpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // Change password 
+        private void PW_Edit_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Pass = '" + PW.Text + "' WHERE MSCB = '" + MSCB + "';";
+                SqlCommand cmd = new SqlCommand(query, Con);
+                cmd.ExecuteNonQuery();
+                FMTpopulate();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
+
+        
     }
 }
