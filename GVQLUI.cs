@@ -29,6 +29,7 @@ namespace Assignment2
             this.MSCB = MSCB;
             this.MMH = Maso;
             Masocanbo.Text = MSCB;
+            Mamonhoc.Text = MMH;
         }
 
         private void GVQL_FormClosed(object sender, FormClosedEventArgs e)
@@ -45,7 +46,6 @@ namespace Assignment2
             }
         }
 
-
         private void LogOutButton_Click(object sender, EventArgs e)
         {
             this.Route = "Login";
@@ -53,64 +53,85 @@ namespace Assignment2
             this.Close();
         }
 
-        private void LKFMT_AB_Click(object sender, EventArgs e)
+        private void DDTpopulate()
         {
-
+            string query = "SELECT Ma_de_thi, Ngay_xac_nhan_ra_de, Ngay_duyet_de, Ngay_thi FROM DE_THI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewDDT.DataSource = ds.Tables[0];
         }
 
-        private void FMT_DB_Click(object sender, EventArgs e)
+        private void PWpopulate()
         {
-
+            string query = "SELECT dbo.PassGVQL('" + MSCB + "');";
+            using (var cmd = new SqlCommand(query, Con))
+            {
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    Password.Text = reader.GetString(0);
+                    reader.Close();
+                    return;
+                }
+                reader.Close();
+            }
         }
 
-        private void FMT_EB_Click(object sender, EventArgs e)
+        private void tabPage2_Click(object sender, EventArgs e)
         {
-
+            switch (GVQLControl.SelectedTab.Name)
+            {
+                case "PW":
+                {
+                    PWpopulate();
+                    break;
+                }
+                case "DDT":
+                {
+                    DDTpopulate();
+                    break;
+                }
+                
+            }
         }
 
-        private void FMT_AB_Click(object sender, EventArgs e)
+        private void PW_Edit_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                string query = "UPDATE GIANG_VIEN_QUAN_LY SET Pass = '" + Password.Text + "' WHERE MSCB = '" + MSCB + "';";
+                SqlCommand cmd = new SqlCommand(query, Con);
+                cmd.ExecuteNonQuery();
+                PWpopulate();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        private void DDT_B_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label39_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox24_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            if (DDT_MDT.Text == "" || DDT_NT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE DE_THI SET Ngay_duyet_de = '" + DDT_NT.Text + "', MSCB_duyet = '" + MSCB +"' WHERE Ma_de_thi = '" + DDT_MDT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    DDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
     }
 }

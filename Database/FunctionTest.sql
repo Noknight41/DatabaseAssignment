@@ -30,7 +30,7 @@ WHERE M.Sno = N.SM
 SELECT TOP(1) WITH TIES * FROM i8 ('CO2012', 3) ORDER BY Ratio ASC;
 
 --i12
-EXEC i12 @MCH = 'CO2012';
+EXEC i12 @MMH = 'CO2012';
 SELECT * FROM ti12;
 
 --ii10
@@ -62,5 +62,3 @@ SELECT dbo.PassGVPT('PT1001');
 SELECT dbo.PassGVQL('QL1002');
 SELECT dbo.PassSV('1812438');
 
-
-INSERT INTO CAU_HOI values('CO2012101', 1 ,'dev', getdate(), 'CO2012', 1, null);

@@ -1,7 +1,7 @@
 USE Ass2
 GO
 
-CREATE OR ALTER PROCEDURE i12 @MCH AS varchar(10)
+CREATE OR ALTER PROCEDURE i12 @MMH AS varchar(10)
 AS
 BEGIN
 	TRUNCATE TABLE ti12
@@ -9,7 +9,7 @@ BEGIN
 	DECLARE @MyField INT;
 	BEGIN
     SET @MyCursor = CURSOR FOR
-    SELECT TOP(3) D.Trich_Lan_thi FROM DE_THI AS D WHERE Trich_Mon_hoc = @MCH ORDER BY Trich_Lan_thi ASC    
+    SELECT TOP(3) D.Trich_Lan_thi FROM DE_THI AS D WHERE Trich_Mon_hoc = @MMH ORDER BY Trich_Lan_thi ASC    
 
     OPEN @MyCursor 
     FETCH NEXT FROM @MyCursor 
@@ -17,34 +17,7 @@ BEGIN
 
     WHILE @@FETCH_STATUS = 0
     BEGIN
-		INSERT INTO ti12 SELECT TOP(1) WITH TIES * FROM i8 ('CO2012', @MyField) ORDER BY Ratio ASC
-		FETCH NEXT FROM @MyCursor 
-		INTO @MyField 
-    END; 
-
-    CLOSE @MyCursor ;
-    DEALLOCATE @MyCursor;
-	END;
-END;
-GO
-
-CREATE OR ALTER PROCEDURE i12 @MCH AS varchar(10)
-AS
-BEGIN
-	TRUNCATE TABLE ti12
-	DECLARE @MyCursor CURSOR;
-	DECLARE @MyField INT;
-	BEGIN
-    SET @MyCursor = CURSOR FOR
-    SELECT TOP(3) D.Trich_Lan_thi FROM DE_THI AS D WHERE Trich_Mon_hoc = @MCH ORDER BY Trich_Lan_thi ASC    
-
-    OPEN @MyCursor 
-    FETCH NEXT FROM @MyCursor 
-    INTO @MyField
-
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-		INSERT INTO ti12 SELECT TOP(1) WITH TIES * FROM i8 ('CO2012', @MyField) ORDER BY Ratio ASC
+		INSERT INTO ti12 SELECT TOP(1) WITH TIES * FROM i8 (@MMH, @MyField) ORDER BY Ratio ASC
 		FETCH NEXT FROM @MyCursor 
 		INTO @MyField 
     END; 

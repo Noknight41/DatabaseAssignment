@@ -30,7 +30,8 @@ namespace Assignment2
         {
             this.MSCB = MSCB;
             this.MMH = Maso;
-            Masocanbo.Text = MSCB;
+            Masocanbo.Text = "MSCB: " + MSCB;
+            Mamonhoc.Text = "MMH: " + MMH;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -330,60 +331,6 @@ namespace Assignment2
             }
         }
 
-        private void LKFMT_AB_Click(object sender, EventArgs e)
-        {
-            if (IDFMT.Text == "" || LKBox.SelectedItem == null || IDLK.Text == "")
-            {
-                MessageBox.Show("Missing Information");
-            }
-            else
-            {
-                if(LKBox.SelectedItem.ToString() == "PCH")
-                {
-                    try
-                    {
-                        string query = "INSERT INTO PCH_CHUA_FMT values('" + IDLK.Text + "', '" + IDFMT.Text + "')";
-                        SqlCommand cmd = new SqlCommand(query, Con);
-                        cmd.ExecuteNonQuery();
-                        PCHFMTpopulate();
-                    }
-                    catch (Exception Ex)
-                    {
-                        MessageBox.Show(Ex.Message);
-                    }
-                }
-                if (LKBox.SelectedItem.ToString() == "PTL")
-                {
-                    try
-                    {
-                        string query = "INSERT INTO PTL_CHUA_FMT values('" + IDLK.Text + "', " + STT.SelectedItem.ToString() + " ,'" + IDFMT.Text + "')";
-                        SqlCommand cmd = new SqlCommand(query, Con);
-                        cmd.ExecuteNonQuery();
-                        PTLFMTpopulate();
-                    }
-                    catch (Exception Ex)
-                    {
-                        MessageBox.Show(Ex.Message);
-                    }
-                }
-                if (LKBox.SelectedItem.ToString() == "PMTC")
-                {
-                    try
-                    {
-                        string query = "INSERT INTO PMTC_CHUA_FMT values('" + IDLK.Text + "', '" + IDFMT.Text + "')";
-                        SqlCommand cmd = new SqlCommand(query, Con);
-                        cmd.ExecuteNonQuery();
-                        PMTCFMTpopulate();
-                    }
-                    catch (Exception Ex)
-                    {
-                        MessageBox.Show(Ex.Message);
-                    }
-                }
-
-            }
-        }
-
         // Phan mo ta chung
         private void PMTC_AB_Click(object sender, EventArgs e)
         {
@@ -660,16 +607,312 @@ namespace Assignment2
             }
         }
 
+        // Tap de thi
+        private void TDT_AB_Click(object sender, EventArgs e)
+        {
+            if (TDT_LT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO TAP_DE_THI values('" + TDT_LT.Text + "', '" + MMH + "' ,'" + MSCB + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    TDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void TDT_DB_Click(object sender, EventArgs e)
+        {
+            if (TDT_LT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM TAP_DE_THI WHERE Ma_mon_hoc_TDT = '" + MMH + "' AND Lan_thi = '" + TDT_LT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    TDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // De Thi
+        private void DT_AB_Click(object sender, EventArgs e)
+        {
+            if (DT.Text == "" || NRD.Text == "" || DTLT.Text == "" || TLB.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO DE_THI(Ma_de_thi, Thoi_gian_lam_bai, Trich_Lan_thi, Trich_Mon_hoc, MSCB_ra_de, Ngay_xac_nhan_ra_de) values ('" + MDT.Text + "', " + TLB.Text + " , " + DTLT.Text + ", '" + MMH + "', '" + MSCB + "', '" + NRD.Text + "');";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    DTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void DT_EB_Click(object sender, EventArgs e)
+        {
+            if (DT.Text == "" || TLB.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string cdr;
+                    if (CHIDPMTC.Text == "") cdr = "null";
+                    else cdr = "'" + CHIDPMTC.Text + "'";
+                    string query = "UPDATE DE_THI SET Thoi_gian_lam_bai = " + TLB.Text + " WHERE Ma_de_thi = '" + MDT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    DTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void DT_DB_Click(object sender, EventArgs e)
+        {
+            if (MDT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM DE_THI WHERE Ma_de_thi = '" + MDT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    DTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // Noi dung TDT
+        private void TDTCH_AB_Click(object sender, EventArgs e)
+        {
+            if (NDTDTLT.Text == "" || TDT_MCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO TAP_DE_THI_BAO_GOM_CAU_HOI values(" + NDTDTLT.Text + ", '" + MMH + "' ,'" + TDT_MCH.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    Console.WriteLine(query);
+                    cmd.ExecuteNonQuery();
+                    NDTDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void TDTCH_DB_Click(object sender, EventArgs e)
+        {
+            if (NDTDTLT.Text == "" || TDT_MCH.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM TAP_DE_THI_BAO_GOM_CAU_HOI WHERE Lan_thi = " + NDTDTLT.Text + " AND Ma_mon_hoc_TDT = '" + MMH + "' AND Ma_cau_hoi = '" + TDT_MCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    NDTDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // PMTC chua FMT
+        private void PF_AB_Click(object sender, EventArgs e)
+        {
+            if (PMTC_ID.Text == "" || PMTCIDFMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PMTC_CHUA_FMT values('" + PMTC_ID.Text + "', '" + PMTCIDFMT.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PMTCFMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void PF_DB_Click(object sender, EventArgs e)
+        {
+            if (PMTC_ID.Text == "" || PMTCIDFMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PMTC_CHUA_FMT WHERE ID_FMT = '" + PMTCIDFMT.Text + "' AND ID_phan_mo_ta = '" + PMTC_ID.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PMTCFMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // PCH chua FMT
+        private void PCF_AB_Click(object sender, EventArgs e)
+        {
+            if (PCH_MCH.Text == "" || PCH_FMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PCH_CHUA_FMT values('" + PCH_MCH.Text + "', '" + PCH_FMT.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHFMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void PCF_DB_Click(object sender, EventArgs e)
+        {
+            if (PCH_MCH.Text == "" || PCH_FMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PCH_CHUA_FMT WHERE ID_FMT = '" + PCH_FMT.Text + "' AND Ma_cau_hoi = '" + PCH_MCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PCHFMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        // PTL chua FMT
+        private void PTF_AB_Click(object sender, EventArgs e)
+        {
+            if (PTL_MCH.Text == "" || PTL_FMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO PTL_CHUA_FMT values('" + PTL_MCH.Text + "', " + PTL_STT.SelectedItem.ToString() + " ,'" + PTL_FMT.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    Console.WriteLine(query);
+                    cmd.ExecuteNonQuery();
+                    PTLFMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void PTF_DB_Click(object sender, EventArgs e)
+        {
+            if (PTL_MCH.Text == "" || PTL_FMT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM PTL_CHUA_FMT WHERE ID_FMT = '" + PTL_FMT.Text + "' AND STT = " + PTL_STT.SelectedItem.ToString() + " AND Ma_cau_hoi = '" + PTL_MCH.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    PTLFMTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
         // Change password 
         private void PW_Edit_Click(object sender, EventArgs e)
         {
-
             try
             {
                 string query = "UPDATE GIANG_VIEN_PHU_TRACH SET Pass = '" + PW.Text + "' WHERE MSCB = '" + MSCB + "';";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
-                FMTpopulate();
+                PWpopulate();
             }
             catch (Exception Ex)
             {
@@ -677,6 +920,70 @@ namespace Assignment2
             }
         }
 
-        
+        private void DTCH_AB_Click(object sender, EventArgs e)
+        {
+            if (NDDTMDT.Text == "" || NDDTMCH.Text == "" || NDDTSTT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "INSERT INTO DE_THI_BAO_GOM_CAU_HOI values('" + NDDTMDT.Text + "', '" + NDDTMCH.Text + "' , " + NDDTSTT.Text + ")";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    NDDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void DTCH_EB_Click(object sender, EventArgs e)
+        {
+            if (NDDTMDT.Text == "" || NDDTMCH.Text == "" || NDDTSTT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE DE_THI_BAO_GOM_CAU_HOI SET Ma_cau_hoi = '" + NDDTMCH.Text + "' WHERE Ma_de_thi = '" + NDDTMDT.Text + "' AND STTCH = " + NDDTSTT.Text + ";";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    NDDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void DTCH_DB_Click(object sender, EventArgs e)
+        {
+            if (NDDTMDT.Text == "" || NDDTSTT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "DELETE FROM DE_THI_BAO_GOM_CAU_HOI WHERE STTCH = " + NDDTSTT.Text + " AND Ma_de_thi = '" + NDDTMDT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    NDDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
     }
 }

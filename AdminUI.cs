@@ -46,36 +46,41 @@ namespace Assignment2
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-            switch (AdminControl.SelectedIndex)
+            switch (AdminControl.SelectedTab.Name)
             {
-                case 0:
+                case "MonHoc":
                 {
                     MHpopulate();
                     break;
                 }
-                case 1:
+                case "GVPT":
                 {
                     GVPTpopulate();
                     break;
                 }
-                case 2:
+                case "GVQL":
                 {
                     GVQLpopulate();
                     break;
                 }
-                case 3:
+                case "CDR":
                 {
                     CDRpopulate();
                     break;
                 }
-                case 4:
+                case "LTTab":
                 {
                     LTpopulate();
                     break;
                 }
-                case 5:
+                case "SV":
                 {
                     SVpopulate();
+                    break;
+                }
+                case "NT":
+                {
+                    DTNTpopulate();
                     break;
                 }
             }
@@ -112,6 +117,16 @@ namespace Assignment2
             ViewGVQL.DataSource = ds.Tables[0];
         }
 
+        private void SVpopulate()
+        {
+            string query = "SELECT * FROM SINH_VIEN";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewSV.DataSource = ds.Tables[0];
+        }
+
         private void CDRpopulate()
         {
             string query = "SELECT * FROM CHUAN_DAU_RA";
@@ -132,14 +147,14 @@ namespace Assignment2
             ViewLT.DataSource = ds.Tables[0];
         }
 
-        private void SVpopulate()
+        private void DTNTpopulate()
         {
-            string query = "SELECT * FROM SINH_VIEN";
+            string query = "SELECT Ma_de_thi, Ngay_xac_nhan_ra_de, Ngay_duyet_de, Ngay_thi FROM DE_THI";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
-            ViewSV.DataSource = ds.Tables[0];
+            ViewNT.DataSource = ds.Tables[0];
         }
 
         private void MHAddButton_Click(object sender, EventArgs e)
@@ -596,6 +611,26 @@ namespace Assignment2
             pwSV.Text = row.Cells[1].Value.ToString();
         }
 
-        
+        private void NT_AEB_Click(object sender, EventArgs e)
+        {
+            if (DT_MDT.Text == "" || DT_NT.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE DE_THI SET Ngay_thi = '" + DT_NT.Text + "' WHERE Ma_de_thi = '" + DT_MDT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    DTNTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
     }
 }

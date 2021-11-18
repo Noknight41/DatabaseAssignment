@@ -33,8 +33,8 @@ namespace Assignment2
             this.LogOutButton = new System.Windows.Forms.Button();
             this.Masocanbo = new System.Windows.Forms.Label();
             this.NDDT = new System.Windows.Forms.TabPage();
-            this.DTCB_EB = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DTCH_EB = new System.Windows.Forms.Button();
+            this.DTCH_DB = new System.Windows.Forms.Button();
             this.DTCH_AB = new System.Windows.Forms.Button();
             this.NDDTSTT = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
@@ -44,42 +44,32 @@ namespace Assignment2
             this.label52 = new System.Windows.Forms.Label();
             this.ViewNDDT = new System.Windows.Forms.DataGridView();
             this.NDTDT = new System.Windows.Forms.TabPage();
-            this.TDTCH_EB = new System.Windows.Forms.Button();
             this.TDTCH_DB = new System.Windows.Forms.Button();
             this.TDTCH_AB = new System.Windows.Forms.Button();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.TDT_MCH = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
             this.NDTDTLT = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.ViewNDTDT = new System.Windows.Forms.DataGridView();
             this.DT = new System.Windows.Forms.TabPage();
             this.label43 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.DTLT = new System.Windows.Forms.TextBox();
+            this.TLB = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.ViewDT = new System.Windows.Forms.DataGridView();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.NRD = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
+            this.MDT = new System.Windows.Forms.TextBox();
+            this.DT_DB = new System.Windows.Forms.Button();
+            this.DT_EB = new System.Windows.Forms.Button();
+            this.DT_AB = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.TDT = new System.Windows.Forms.TabPage();
             this.ViewTDT = new System.Windows.Forms.DataGridView();
             this.TDT_LT = new System.Windows.Forms.TextBox();
-            this.TDT_MMH = new System.Windows.Forms.TextBox();
             this.TDT_DB = new System.Windows.Forms.Button();
-            this.TDT_EB = new System.Windows.Forms.Button();
             this.TDT_AB = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.CH = new System.Windows.Forms.TabPage();
             this.CH_CDR = new System.Windows.Forms.TextBox();
             this.CHIDPMTC = new System.Windows.Forms.TextBox();
@@ -170,19 +160,8 @@ namespace Assignment2
             this.label14 = new System.Windows.Forms.Label();
             this.ViewPMTC = new System.Windows.Forms.DataGridView();
             this.FMT = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.IDLK = new System.Windows.Forms.TextBox();
             this.URL = new System.Windows.Forms.TextBox();
             this.IDFMT = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LKBox = new System.Windows.Forms.ComboBox();
-            this.LKFMT_DB = new System.Windows.Forms.Button();
-            this.LKFMT_EB = new System.Windows.Forms.Button();
-            this.LKFMT_AB = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.FMT_DB = new System.Windows.Forms.Button();
             this.FMT_EB = new System.Windows.Forms.Button();
             this.LT_AB = new System.Windows.Forms.Button();
@@ -191,16 +170,39 @@ namespace Assignment2
             this.ViewFMT = new System.Windows.Forms.DataGridView();
             this.GVPTControl = new System.Windows.Forms.TabControl();
             this.PMTCFMT = new System.Windows.Forms.TabPage();
+            this.PF_DB = new System.Windows.Forms.Button();
+            this.PF_AB = new System.Windows.Forms.Button();
+            this.PMTC_ID = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.PMTCIDFMT = new System.Windows.Forms.TextBox();
             this.ViewFMTPMTC = new System.Windows.Forms.DataGridView();
             this.PCHFMT = new System.Windows.Forms.TabPage();
+            this.PCF_DB = new System.Windows.Forms.Button();
+            this.PCF_AB = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.PCH_MCH = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.PCH_FMT = new System.Windows.Forms.TextBox();
             this.ViewFMTPCH = new System.Windows.Forms.DataGridView();
             this.PTLFMT = new System.Windows.Forms.TabPage();
+            this.PTF_DB = new System.Windows.Forms.Button();
+            this.PTF_AB = new System.Windows.Forms.Button();
+            this.label36 = new System.Windows.Forms.Label();
+            this.PTL_FMT = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.PTL_MCH = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.PTL_STT = new System.Windows.Forms.ComboBox();
             this.ViewFMTPTL = new System.Windows.Forms.DataGridView();
             this.Password = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.PW_Edit = new System.Windows.Forms.Button();
             this.PW = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Mamonhoc = new System.Windows.Forms.Label();
+            this.XCH = new System.Windows.Forms.TabPage();
+            this.XDT = new System.Windows.Forms.TabPage();
             this.NDDT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNDDT)).BeginInit();
             this.NDTDT.SuspendLayout();
@@ -249,7 +251,7 @@ namespace Assignment2
             // 
             // LogOutButton
             // 
-            this.LogOutButton.Location = new System.Drawing.Point(1100, 42);
+            this.LogOutButton.Location = new System.Drawing.Point(1104, 29);
             this.LogOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(124, 54);
@@ -262,7 +264,7 @@ namespace Assignment2
             // 
             this.Masocanbo.AutoSize = true;
             this.Masocanbo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Masocanbo.Location = new System.Drawing.Point(1128, 9);
+            this.Masocanbo.Location = new System.Drawing.Point(196, 42);
             this.Masocanbo.Name = "Masocanbo";
             this.Masocanbo.Size = new System.Drawing.Size(67, 23);
             this.Masocanbo.TabIndex = 61;
@@ -271,8 +273,8 @@ namespace Assignment2
             // 
             // NDDT
             // 
-            this.NDDT.Controls.Add(this.DTCB_EB);
-            this.NDDT.Controls.Add(this.button5);
+            this.NDDT.Controls.Add(this.DTCH_EB);
+            this.NDDT.Controls.Add(this.DTCH_DB);
             this.NDDT.Controls.Add(this.DTCH_AB);
             this.NDDT.Controls.Add(this.NDDTSTT);
             this.NDDT.Controls.Add(this.label50);
@@ -290,27 +292,29 @@ namespace Assignment2
             this.NDDT.Text = "Nội dung DT";
             this.NDDT.UseVisualStyleBackColor = true;
             // 
-            // DTCB_EB
+            // DTCH_EB
             // 
-            this.DTCB_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTCB_EB.Location = new System.Drawing.Point(597, 96);
-            this.DTCB_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DTCB_EB.Name = "DTCB_EB";
-            this.DTCB_EB.Size = new System.Drawing.Size(84, 34);
-            this.DTCB_EB.TabIndex = 146;
-            this.DTCB_EB.Text = "Edit";
-            this.DTCB_EB.UseVisualStyleBackColor = true;
+            this.DTCH_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTCH_EB.Location = new System.Drawing.Point(594, 96);
+            this.DTCH_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTCH_EB.Name = "DTCH_EB";
+            this.DTCH_EB.Size = new System.Drawing.Size(84, 34);
+            this.DTCH_EB.TabIndex = 146;
+            this.DTCH_EB.Text = "Edit";
+            this.DTCH_EB.UseVisualStyleBackColor = true;
+            this.DTCH_EB.Click += new System.EventHandler(this.DTCH_EB_Click);
             // 
-            // button5
+            // DTCH_DB
             // 
-            this.button5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(740, 96);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 34);
-            this.button5.TabIndex = 145;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = true;
+            this.DTCH_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTCH_DB.Location = new System.Drawing.Point(740, 96);
+            this.DTCH_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTCH_DB.Name = "DTCH_DB";
+            this.DTCH_DB.Size = new System.Drawing.Size(84, 34);
+            this.DTCH_DB.TabIndex = 145;
+            this.DTCH_DB.Text = "Delete";
+            this.DTCH_DB.UseVisualStyleBackColor = true;
+            this.DTCH_DB.Click += new System.EventHandler(this.DTCH_DB_Click);
             // 
             // DTCH_AB
             // 
@@ -322,6 +326,7 @@ namespace Assignment2
             this.DTCH_AB.TabIndex = 144;
             this.DTCH_AB.Text = "Add";
             this.DTCH_AB.UseVisualStyleBackColor = true;
+            this.DTCH_AB.Click += new System.EventHandler(this.DTCH_AB_Click);
             // 
             // NDDTSTT
             // 
@@ -393,13 +398,10 @@ namespace Assignment2
             // 
             // NDTDT
             // 
-            this.NDTDT.Controls.Add(this.TDTCH_EB);
             this.NDTDT.Controls.Add(this.TDTCH_DB);
             this.NDTDT.Controls.Add(this.TDTCH_AB);
-            this.NDTDT.Controls.Add(this.textBox30);
+            this.NDTDT.Controls.Add(this.TDT_MCH);
             this.NDTDT.Controls.Add(this.label49);
-            this.NDTDT.Controls.Add(this.textBox28);
-            this.NDTDT.Controls.Add(this.label47);
             this.NDTDT.Controls.Add(this.NDTDTLT);
             this.NDTDT.Controls.Add(this.label48);
             this.NDTDT.Controls.Add(this.ViewNDTDT);
@@ -412,81 +414,53 @@ namespace Assignment2
             this.NDTDT.Text = "Nội dung TDT";
             this.NDTDT.UseVisualStyleBackColor = true;
             // 
-            // TDTCH_EB
-            // 
-            this.TDTCH_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDTCH_EB.Location = new System.Drawing.Point(596, 94);
-            this.TDTCH_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TDTCH_EB.Name = "TDTCH_EB";
-            this.TDTCH_EB.Size = new System.Drawing.Size(84, 34);
-            this.TDTCH_EB.TabIndex = 139;
-            this.TDTCH_EB.Text = "Edit";
-            this.TDTCH_EB.UseVisualStyleBackColor = true;
-            // 
             // TDTCH_DB
             // 
             this.TDTCH_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDTCH_DB.Location = new System.Drawing.Point(740, 94);
+            this.TDTCH_DB.Location = new System.Drawing.Point(727, 94);
             this.TDTCH_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDTCH_DB.Name = "TDTCH_DB";
             this.TDTCH_DB.Size = new System.Drawing.Size(84, 34);
             this.TDTCH_DB.TabIndex = 138;
             this.TDTCH_DB.Text = "Delete";
             this.TDTCH_DB.UseVisualStyleBackColor = true;
+            this.TDTCH_DB.Click += new System.EventHandler(this.TDTCH_DB_Click);
             // 
             // TDTCH_AB
             // 
             this.TDTCH_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDTCH_AB.Location = new System.Drawing.Point(437, 94);
+            this.TDTCH_AB.Location = new System.Drawing.Point(512, 94);
             this.TDTCH_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDTCH_AB.Name = "TDTCH_AB";
             this.TDTCH_AB.Size = new System.Drawing.Size(84, 34);
             this.TDTCH_AB.TabIndex = 137;
             this.TDTCH_AB.Text = "Add";
             this.TDTCH_AB.UseVisualStyleBackColor = true;
+            this.TDTCH_AB.Click += new System.EventHandler(this.TDTCH_AB_Click);
             // 
-            // textBox30
+            // TDT_MCH
             // 
-            this.textBox30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox30.Location = new System.Drawing.Point(855, 44);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(379, 27);
-            this.textBox30.TabIndex = 136;
+            this.TDT_MCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TDT_MCH.Location = new System.Drawing.Point(812, 44);
+            this.TDT_MCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TDT_MCH.Name = "TDT_MCH";
+            this.TDT_MCH.Size = new System.Drawing.Size(379, 27);
+            this.TDT_MCH.TabIndex = 136;
             // 
             // label49
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(851, 18);
+            this.label49.Location = new System.Drawing.Point(683, 48);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(106, 23);
             this.label49.TabIndex = 135;
             this.label49.Text = "Mã câu hỏi";
             // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(437, 44);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(387, 27);
-            this.textBox28.TabIndex = 134;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(436, 18);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(118, 23);
-            this.label47.TabIndex = 133;
-            this.label47.Text = "Mã môn học";
-            // 
             // NDTDTLT
             // 
             this.NDTDTLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NDTDTLT.Location = new System.Drawing.Point(16, 44);
+            this.NDTDTLT.Location = new System.Drawing.Point(110, 44);
             this.NDTDTLT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NDTDTLT.Name = "NDTDTLT";
             this.NDTDTLT.Size = new System.Drawing.Size(401, 27);
@@ -496,7 +470,7 @@ namespace Assignment2
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(15, 18);
+            this.label48.Location = new System.Drawing.Point(22, 48);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(68, 23);
             this.label48.TabIndex = 131;
@@ -516,20 +490,16 @@ namespace Assignment2
             // DT
             // 
             this.DT.Controls.Add(this.label43);
-            this.DT.Controls.Add(this.label37);
-            this.DT.Controls.Add(this.textBox24);
-            this.DT.Controls.Add(this.textBox23);
-            this.DT.Controls.Add(this.textBox26);
+            this.DT.Controls.Add(this.DTLT);
+            this.DT.Controls.Add(this.TLB);
             this.DT.Controls.Add(this.label45);
             this.DT.Controls.Add(this.ViewDT);
-            this.DT.Controls.Add(this.textBox18);
-            this.DT.Controls.Add(this.textBox22);
+            this.DT.Controls.Add(this.NRD);
             this.DT.Controls.Add(this.label38);
-            this.DT.Controls.Add(this.textBox25);
-            this.DT.Controls.Add(this.label42);
-            this.DT.Controls.Add(this.button28);
-            this.DT.Controls.Add(this.button29);
-            this.DT.Controls.Add(this.button30);
+            this.DT.Controls.Add(this.MDT);
+            this.DT.Controls.Add(this.DT_DB);
+            this.DT.Controls.Add(this.DT_EB);
+            this.DT.Controls.Add(this.DT_AB);
             this.DT.Controls.Add(this.label44);
             this.DT.Location = new System.Drawing.Point(4, 29);
             this.DT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -544,54 +514,35 @@ namespace Assignment2
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(39, 434);
+            this.label43.Location = new System.Drawing.Point(33, 356);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(68, 23);
             this.label43.TabIndex = 134;
             this.label43.Text = "Lần thi";
             // 
-            // label37
+            // DTLT
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(39, 356);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(118, 23);
-            this.label37.TabIndex = 133;
-            this.label37.Text = "Mã môn học";
+            this.DTLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTLT.Location = new System.Drawing.Point(37, 405);
+            this.DTLT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DTLT.Name = "DTLT";
+            this.DTLT.Size = new System.Drawing.Size(417, 27);
+            this.DTLT.TabIndex = 132;
             // 
-            // textBox24
+            // TLB
             // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(37, 460);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(417, 27);
-            this.textBox24.TabIndex = 132;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(37, 391);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(417, 27);
-            this.textBox23.TabIndex = 131;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(37, 140);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(197, 27);
-            this.textBox26.TabIndex = 130;
+            this.TLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLB.Location = new System.Drawing.Point(37, 170);
+            this.TLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TLB.Name = "TLB";
+            this.TLB.Size = new System.Drawing.Size(417, 27);
+            this.TLB.TabIndex = 130;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(39, 114);
+            this.label45.Location = new System.Drawing.Point(39, 129);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(160, 23);
             this.label45.TabIndex = 129;
@@ -608,85 +559,69 @@ namespace Assignment2
             this.ViewDT.Size = new System.Drawing.Size(711, 609);
             this.ViewDT.TabIndex = 128;
             // 
-            // textBox18
+            // NRD
             // 
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(39, 218);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(417, 27);
-            this.textBox18.TabIndex = 127;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(39, 311);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(417, 27);
-            this.textBox22.TabIndex = 126;
+            this.NRD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NRD.Location = new System.Drawing.Point(37, 284);
+            this.NRD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NRD.Name = "NRD";
+            this.NRD.Size = new System.Drawing.Size(417, 27);
+            this.NRD.TabIndex = 126;
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(39, 272);
+            this.label38.Location = new System.Drawing.Point(39, 243);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(107, 23);
             this.label38.TabIndex = 123;
             this.label38.Text = "Ngày ra đề";
             // 
-            // textBox25
+            // MDT
             // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(37, 66);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(417, 27);
-            this.textBox25.TabIndex = 116;
+            this.MDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MDT.Location = new System.Drawing.Point(37, 66);
+            this.MDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MDT.Name = "MDT";
+            this.MDT.Size = new System.Drawing.Size(417, 27);
+            this.MDT.TabIndex = 116;
             // 
-            // label42
+            // DT_DB
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(36, 188);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(154, 23);
-            this.label42.TabIndex = 122;
-            this.label42.Text = "MSCB GV ra đề";
+            this.DT_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DB.Location = new System.Drawing.Point(370, 546);
+            this.DT_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DT_DB.Name = "DT_DB";
+            this.DT_DB.Size = new System.Drawing.Size(84, 34);
+            this.DT_DB.TabIndex = 121;
+            this.DT_DB.Text = "Delete";
+            this.DT_DB.UseVisualStyleBackColor = true;
+            this.DT_DB.Click += new System.EventHandler(this.DT_DB_Click);
             // 
-            // button28
+            // DT_EB
             // 
-            this.button28.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(387, 546);
-            this.button28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(84, 34);
-            this.button28.TabIndex = 121;
-            this.button28.Text = "Delete";
-            this.button28.UseVisualStyleBackColor = true;
+            this.DT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_EB.Location = new System.Drawing.Point(205, 546);
+            this.DT_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DT_EB.Name = "DT_EB";
+            this.DT_EB.Size = new System.Drawing.Size(84, 34);
+            this.DT_EB.TabIndex = 120;
+            this.DT_EB.Text = "Edit";
+            this.DT_EB.UseVisualStyleBackColor = true;
+            this.DT_EB.Click += new System.EventHandler(this.DT_EB_Click);
             // 
-            // button29
+            // DT_AB
             // 
-            this.button29.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.Location = new System.Drawing.Point(205, 546);
-            this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(84, 34);
-            this.button29.TabIndex = 120;
-            this.button29.Text = "Edit";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // button30
-            // 
-            this.button30.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button30.Location = new System.Drawing.Point(41, 546);
-            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(84, 34);
-            this.button30.TabIndex = 119;
-            this.button30.Text = "Add";
-            this.button30.UseVisualStyleBackColor = true;
+            this.DT_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_AB.Location = new System.Drawing.Point(41, 546);
+            this.DT_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DT_AB.Name = "DT_AB";
+            this.DT_AB.Size = new System.Drawing.Size(84, 34);
+            this.DT_AB.TabIndex = 119;
+            this.DT_AB.Text = "Add";
+            this.DT_AB.UseVisualStyleBackColor = true;
+            this.DT_AB.Click += new System.EventHandler(this.DT_AB_Click);
             // 
             // label44
             // 
@@ -702,12 +637,9 @@ namespace Assignment2
             // 
             this.TDT.Controls.Add(this.ViewTDT);
             this.TDT.Controls.Add(this.TDT_LT);
-            this.TDT.Controls.Add(this.TDT_MMH);
             this.TDT.Controls.Add(this.TDT_DB);
-            this.TDT.Controls.Add(this.TDT_EB);
             this.TDT.Controls.Add(this.TDT_AB);
             this.TDT.Controls.Add(this.label40);
-            this.TDT.Controls.Add(this.label41);
             this.TDT.Location = new System.Drawing.Point(4, 29);
             this.TDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDT.Name = "TDT";
@@ -731,20 +663,11 @@ namespace Assignment2
             // TDT_LT
             // 
             this.TDT_LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDT_LT.Location = new System.Drawing.Point(37, 174);
+            this.TDT_LT.Location = new System.Drawing.Point(37, 81);
             this.TDT_LT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDT_LT.Name = "TDT_LT";
             this.TDT_LT.Size = new System.Drawing.Size(417, 27);
             this.TDT_LT.TabIndex = 99;
-            // 
-            // TDT_MMH
-            // 
-            this.TDT_MMH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDT_MMH.Location = new System.Drawing.Point(37, 66);
-            this.TDT_MMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TDT_MMH.Name = "TDT_MMH";
-            this.TDT_MMH.Size = new System.Drawing.Size(417, 27);
-            this.TDT_MMH.TabIndex = 97;
             // 
             // TDT_DB
             // 
@@ -756,17 +679,7 @@ namespace Assignment2
             this.TDT_DB.TabIndex = 102;
             this.TDT_DB.Text = "Delete";
             this.TDT_DB.UseVisualStyleBackColor = true;
-            // 
-            // TDT_EB
-            // 
-            this.TDT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TDT_EB.Location = new System.Drawing.Point(200, 546);
-            this.TDT_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TDT_EB.Name = "TDT_EB";
-            this.TDT_EB.Size = new System.Drawing.Size(84, 34);
-            this.TDT_EB.TabIndex = 101;
-            this.TDT_EB.Text = "Edit";
-            this.TDT_EB.UseVisualStyleBackColor = true;
+            this.TDT_DB.Click += new System.EventHandler(this.TDT_DB_Click);
             // 
             // TDT_AB
             // 
@@ -778,26 +691,17 @@ namespace Assignment2
             this.TDT_AB.TabIndex = 100;
             this.TDT_AB.Text = "Add";
             this.TDT_AB.UseVisualStyleBackColor = true;
+            this.TDT_AB.Click += new System.EventHandler(this.TDT_AB_Click);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(33, 132);
+            this.label40.Location = new System.Drawing.Point(33, 37);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(68, 23);
             this.label40.TabIndex = 98;
             this.label40.Text = "Lần thi";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(39, 30);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(118, 23);
-            this.label41.TabIndex = 96;
-            this.label41.Text = "Mã môn học";
             // 
             // CH
             // 
@@ -1638,11 +1542,11 @@ namespace Assignment2
             this.PCH.Controls.Add(this.PCH_AB);
             this.PCH.Controls.Add(this.label6);
             this.PCH.Controls.Add(this.ViewPCH);
-            this.PCH.Location = new System.Drawing.Point(4, 29);
+            this.PCH.Location = new System.Drawing.Point(4, 32);
             this.PCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PCH.Name = "PCH";
             this.PCH.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PCH.Size = new System.Drawing.Size(1251, 643);
+            this.PCH.Size = new System.Drawing.Size(1251, 640);
             this.PCH.TabIndex = 2;
             this.PCH.Text = "Phần câu hỏi";
             this.PCH.UseVisualStyleBackColor = true;
@@ -1838,19 +1742,8 @@ namespace Assignment2
             // 
             // FMT
             // 
-            this.FMT.Controls.Add(this.label5);
-            this.FMT.Controls.Add(this.IDLK);
             this.FMT.Controls.Add(this.URL);
             this.FMT.Controls.Add(this.IDFMT);
-            this.FMT.Controls.Add(this.label4);
-            this.FMT.Controls.Add(this.STT);
-            this.FMT.Controls.Add(this.label3);
-            this.FMT.Controls.Add(this.LKBox);
-            this.FMT.Controls.Add(this.LKFMT_DB);
-            this.FMT.Controls.Add(this.LKFMT_EB);
-            this.FMT.Controls.Add(this.LKFMT_AB);
-            this.FMT.Controls.Add(this.label2);
-            this.FMT.Controls.Add(this.label1);
             this.FMT.Controls.Add(this.FMT_DB);
             this.FMT.Controls.Add(this.FMT_EB);
             this.FMT.Controls.Add(this.LT_AB);
@@ -1865,25 +1758,6 @@ namespace Assignment2
             this.FMT.TabIndex = 0;
             this.FMT.Text = "File mô tả";
             this.FMT.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(391, 265);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 23);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "STT";
-            // 
-            // IDLK
-            // 
-            this.IDLK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLK.Location = new System.Drawing.Point(37, 292);
-            this.IDLK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.IDLK.Name = "IDLK";
-            this.IDLK.Size = new System.Drawing.Size(324, 27);
-            this.IDLK.TabIndex = 59;
             // 
             // URL
             // 
@@ -1903,114 +1777,10 @@ namespace Assignment2
             this.IDFMT.Size = new System.Drawing.Size(417, 27);
             this.IDFMT.TabIndex = 44;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 266);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 23);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "ID phần liên kết";
-            // 
-            // STT
-            // 
-            this.STT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STT.FormattingEnabled = true;
-            this.STT.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.STT.Location = new System.Drawing.Point(395, 290);
-            this.STT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.STT.Name = "STT";
-            this.STT.Size = new System.Drawing.Size(60, 28);
-            this.STT.TabIndex = 57;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 188);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 23);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Liên kết với";
-            // 
-            // LKBox
-            // 
-            this.LKBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LKBox.FormattingEnabled = true;
-            this.LKBox.Items.AddRange(new object[] {
-            "PCH",
-            "PTL",
-            "PMTC"});
-            this.LKBox.Location = new System.Drawing.Point(37, 217);
-            this.LKBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LKBox.Name = "LKBox";
-            this.LKBox.Size = new System.Drawing.Size(417, 28);
-            this.LKBox.TabIndex = 55;
-            // 
-            // LKFMT_DB
-            // 
-            this.LKFMT_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LKFMT_DB.Location = new System.Drawing.Point(387, 546);
-            this.LKFMT_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LKFMT_DB.Name = "LKFMT_DB";
-            this.LKFMT_DB.Size = new System.Drawing.Size(84, 34);
-            this.LKFMT_DB.TabIndex = 54;
-            this.LKFMT_DB.Text = "Delete";
-            this.LKFMT_DB.UseVisualStyleBackColor = true;
-            // 
-            // LKFMT_EB
-            // 
-            this.LKFMT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LKFMT_EB.Location = new System.Drawing.Point(224, 546);
-            this.LKFMT_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LKFMT_EB.Name = "LKFMT_EB";
-            this.LKFMT_EB.Size = new System.Drawing.Size(84, 34);
-            this.LKFMT_EB.TabIndex = 53;
-            this.LKFMT_EB.Text = "Edit";
-            this.LKFMT_EB.UseVisualStyleBackColor = true;
-            // 
-            // LKFMT_AB
-            // 
-            this.LKFMT_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LKFMT_AB.Location = new System.Drawing.Point(41, 546);
-            this.LKFMT_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LKFMT_AB.Name = "LKFMT_AB";
-            this.LKFMT_AB.Size = new System.Drawing.Size(84, 34);
-            this.LKFMT_AB.TabIndex = 52;
-            this.LKFMT_AB.Text = "Add";
-            this.LKFMT_AB.UseVisualStyleBackColor = true;
-            this.LKFMT_AB.Click += new System.EventHandler(this.LKFMT_AB_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 517);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 23);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Liên kết FMT";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 380);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 23);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "FMT";
-            // 
             // FMT_DB
             // 
             this.FMT_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FMT_DB.Location = new System.Drawing.Point(387, 414);
+            this.FMT_DB.Location = new System.Drawing.Point(370, 568);
             this.FMT_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FMT_DB.Name = "FMT_DB";
             this.FMT_DB.Size = new System.Drawing.Size(84, 34);
@@ -2022,7 +1792,7 @@ namespace Assignment2
             // FMT_EB
             // 
             this.FMT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FMT_EB.Location = new System.Drawing.Point(224, 414);
+            this.FMT_EB.Location = new System.Drawing.Point(196, 568);
             this.FMT_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FMT_EB.Name = "FMT_EB";
             this.FMT_EB.Size = new System.Drawing.Size(84, 34);
@@ -2034,7 +1804,7 @@ namespace Assignment2
             // LT_AB
             // 
             this.LT_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LT_AB.Location = new System.Drawing.Point(41, 414);
+            this.LT_AB.Location = new System.Drawing.Point(37, 568);
             this.LT_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LT_AB.Name = "LT_AB";
             this.LT_AB.Size = new System.Drawing.Size(84, 34);
@@ -2077,19 +1847,21 @@ namespace Assignment2
             // GVPTControl
             // 
             this.GVPTControl.Controls.Add(this.FMT);
-            this.GVPTControl.Controls.Add(this.PMTC);
-            this.GVPTControl.Controls.Add(this.PCH);
-            this.GVPTControl.Controls.Add(this.PTL);
             this.GVPTControl.Controls.Add(this.CH);
+            this.GVPTControl.Controls.Add(this.XCH);
+            this.GVPTControl.Controls.Add(this.PCH);
+            this.GVPTControl.Controls.Add(this.PCHFMT);
+            this.GVPTControl.Controls.Add(this.PTL);
+            this.GVPTControl.Controls.Add(this.PTLFMT);
+            this.GVPTControl.Controls.Add(this.PMTC);
+            this.GVPTControl.Controls.Add(this.PMTCFMT);
             this.GVPTControl.Controls.Add(this.TDT);
             this.GVPTControl.Controls.Add(this.DT);
+            this.GVPTControl.Controls.Add(this.XDT);
             this.GVPTControl.Controls.Add(this.NDTDT);
             this.GVPTControl.Controls.Add(this.NDDT);
-            this.GVPTControl.Controls.Add(this.PMTCFMT);
-            this.GVPTControl.Controls.Add(this.PCHFMT);
-            this.GVPTControl.Controls.Add(this.PTLFMT);
             this.GVPTControl.Controls.Add(this.Password);
-            this.GVPTControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GVPTControl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVPTControl.Location = new System.Drawing.Point(0, 102);
             this.GVPTControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GVPTControl.Name = "GVPTControl";
@@ -2101,6 +1873,12 @@ namespace Assignment2
             // 
             // PMTCFMT
             // 
+            this.PMTCFMT.Controls.Add(this.PF_DB);
+            this.PMTCFMT.Controls.Add(this.PF_AB);
+            this.PMTCFMT.Controls.Add(this.PMTC_ID);
+            this.PMTCFMT.Controls.Add(this.label30);
+            this.PMTCFMT.Controls.Add(this.label9);
+            this.PMTCFMT.Controls.Add(this.PMTCIDFMT);
             this.PMTCFMT.Controls.Add(this.ViewFMTPMTC);
             this.PMTCFMT.Location = new System.Drawing.Point(4, 29);
             this.PMTCFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2110,6 +1888,66 @@ namespace Assignment2
             this.PMTCFMT.TabIndex = 9;
             this.PMTCFMT.Text = "Phần mô tả chung +";
             this.PMTCFMT.UseVisualStyleBackColor = true;
+            // 
+            // PF_DB
+            // 
+            this.PF_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PF_DB.Location = new System.Drawing.Point(373, 540);
+            this.PF_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PF_DB.Name = "PF_DB";
+            this.PF_DB.Size = new System.Drawing.Size(84, 34);
+            this.PF_DB.TabIndex = 148;
+            this.PF_DB.Text = "Delete";
+            this.PF_DB.UseVisualStyleBackColor = true;
+            this.PF_DB.Click += new System.EventHandler(this.PF_DB_Click);
+            // 
+            // PF_AB
+            // 
+            this.PF_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PF_AB.Location = new System.Drawing.Point(54, 540);
+            this.PF_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PF_AB.Name = "PF_AB";
+            this.PF_AB.Size = new System.Drawing.Size(84, 34);
+            this.PF_AB.TabIndex = 147;
+            this.PF_AB.Text = "Add";
+            this.PF_AB.UseVisualStyleBackColor = true;
+            this.PF_AB.Click += new System.EventHandler(this.PF_AB_Click);
+            // 
+            // PMTC_ID
+            // 
+            this.PMTC_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMTC_ID.Location = new System.Drawing.Point(40, 78);
+            this.PMTC_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PMTC_ID.Name = "PMTC_ID";
+            this.PMTC_ID.Size = new System.Drawing.Size(417, 27);
+            this.PMTC_ID.TabIndex = 48;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(36, 44);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(193, 23);
+            this.label30.TabIndex = 47;
+            this.label30.Text = "ID Phần mô tả chung";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(36, 162);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 23);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "ID File Mô tả";
+            // 
+            // PMTCIDFMT
+            // 
+            this.PMTCIDFMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMTCIDFMT.Location = new System.Drawing.Point(40, 195);
+            this.PMTCIDFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PMTCIDFMT.Name = "PMTCIDFMT";
+            this.PMTCIDFMT.Size = new System.Drawing.Size(417, 27);
+            this.PMTCIDFMT.TabIndex = 45;
             // 
             // ViewFMTPMTC
             // 
@@ -2124,6 +1962,12 @@ namespace Assignment2
             // 
             // PCHFMT
             // 
+            this.PCHFMT.Controls.Add(this.PCF_DB);
+            this.PCHFMT.Controls.Add(this.PCF_AB);
+            this.PCHFMT.Controls.Add(this.label35);
+            this.PCHFMT.Controls.Add(this.PCH_MCH);
+            this.PCHFMT.Controls.Add(this.label33);
+            this.PCHFMT.Controls.Add(this.PCH_FMT);
             this.PCHFMT.Controls.Add(this.ViewFMTPCH);
             this.PCHFMT.Location = new System.Drawing.Point(4, 29);
             this.PCHFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2134,19 +1978,87 @@ namespace Assignment2
             this.PCHFMT.Text = "Phần câu hỏi +";
             this.PCHFMT.UseVisualStyleBackColor = true;
             // 
+            // PCF_DB
+            // 
+            this.PCF_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PCF_DB.Location = new System.Drawing.Point(378, 524);
+            this.PCF_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PCF_DB.Name = "PCF_DB";
+            this.PCF_DB.Size = new System.Drawing.Size(84, 34);
+            this.PCF_DB.TabIndex = 151;
+            this.PCF_DB.Text = "Delete";
+            this.PCF_DB.UseVisualStyleBackColor = true;
+            this.PCF_DB.Click += new System.EventHandler(this.PCF_DB_Click);
+            // 
+            // PCF_AB
+            // 
+            this.PCF_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PCF_AB.Location = new System.Drawing.Point(45, 524);
+            this.PCF_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PCF_AB.Name = "PCF_AB";
+            this.PCF_AB.Size = new System.Drawing.Size(84, 34);
+            this.PCF_AB.TabIndex = 150;
+            this.PCF_AB.Text = "Add";
+            this.PCF_AB.UseVisualStyleBackColor = true;
+            this.PCF_AB.Click += new System.EventHandler(this.PCF_AB_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(38, 50);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(106, 23);
+            this.label35.TabIndex = 50;
+            this.label35.Text = "Mã câu hỏi";
+            // 
+            // PCH_MCH
+            // 
+            this.PCH_MCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PCH_MCH.Location = new System.Drawing.Point(45, 83);
+            this.PCH_MCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PCH_MCH.Name = "PCH_MCH";
+            this.PCH_MCH.Size = new System.Drawing.Size(417, 27);
+            this.PCH_MCH.TabIndex = 48;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(42, 169);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(124, 23);
+            this.label33.TabIndex = 47;
+            this.label33.Text = "ID File Mô tả";
+            // 
+            // PCH_FMT
+            // 
+            this.PCH_FMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PCH_FMT.Location = new System.Drawing.Point(45, 203);
+            this.PCH_FMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PCH_FMT.Name = "PCH_FMT";
+            this.PCH_FMT.Size = new System.Drawing.Size(417, 27);
+            this.PCH_FMT.TabIndex = 46;
+            // 
             // ViewFMTPCH
             // 
             this.ViewFMTPCH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewFMTPCH.Location = new System.Drawing.Point(572, 25);
+            this.ViewFMTPCH.Location = new System.Drawing.Point(556, 16);
             this.ViewFMTPCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ViewFMTPCH.Name = "ViewFMTPCH";
             this.ViewFMTPCH.RowHeadersWidth = 51;
             this.ViewFMTPCH.RowTemplate.Height = 24;
-            this.ViewFMTPCH.Size = new System.Drawing.Size(663, 609);
+            this.ViewFMTPCH.Size = new System.Drawing.Size(679, 618);
             this.ViewFMTPCH.TabIndex = 2;
             // 
             // PTLFMT
             // 
+            this.PTLFMT.Controls.Add(this.PTF_DB);
+            this.PTLFMT.Controls.Add(this.PTF_AB);
+            this.PTLFMT.Controls.Add(this.label36);
+            this.PTLFMT.Controls.Add(this.PTL_FMT);
+            this.PTLFMT.Controls.Add(this.label39);
+            this.PTLFMT.Controls.Add(this.PTL_MCH);
+            this.PTLFMT.Controls.Add(this.label37);
+            this.PTLFMT.Controls.Add(this.PTL_STT);
             this.PTLFMT.Controls.Add(this.ViewFMTPTL);
             this.PTLFMT.Location = new System.Drawing.Point(4, 29);
             this.PTLFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2156,6 +2068,91 @@ namespace Assignment2
             this.PTLFMT.TabIndex = 11;
             this.PTLFMT.Text = "Phần trả lời +";
             this.PTLFMT.UseVisualStyleBackColor = true;
+            // 
+            // PTF_DB
+            // 
+            this.PTF_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PTF_DB.Location = new System.Drawing.Point(399, 522);
+            this.PTF_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PTF_DB.Name = "PTF_DB";
+            this.PTF_DB.Size = new System.Drawing.Size(84, 34);
+            this.PTF_DB.TabIndex = 158;
+            this.PTF_DB.Text = "Delete";
+            this.PTF_DB.UseVisualStyleBackColor = true;
+            this.PTF_DB.Click += new System.EventHandler(this.PTF_DB_Click);
+            // 
+            // PTF_AB
+            // 
+            this.PTF_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PTF_AB.Location = new System.Drawing.Point(66, 522);
+            this.PTF_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PTF_AB.Name = "PTF_AB";
+            this.PTF_AB.Size = new System.Drawing.Size(84, 34);
+            this.PTF_AB.TabIndex = 157;
+            this.PTF_AB.Text = "Add";
+            this.PTF_AB.UseVisualStyleBackColor = true;
+            this.PTF_AB.Click += new System.EventHandler(this.PTF_AB_Click);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(62, 66);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(106, 23);
+            this.label36.TabIndex = 156;
+            this.label36.Text = "Mã câu hỏi";
+            // 
+            // PTL_FMT
+            // 
+            this.PTL_FMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PTL_FMT.Location = new System.Drawing.Point(66, 318);
+            this.PTL_FMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PTL_FMT.Name = "PTL_FMT";
+            this.PTL_FMT.Size = new System.Drawing.Size(417, 27);
+            this.PTL_FMT.TabIndex = 155;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(62, 282);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(124, 23);
+            this.label39.TabIndex = 154;
+            this.label39.Text = "ID File Mô tả";
+            // 
+            // PTL_MCH
+            // 
+            this.PTL_MCH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PTL_MCH.Location = new System.Drawing.Point(66, 105);
+            this.PTL_MCH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PTL_MCH.Name = "PTL_MCH";
+            this.PTL_MCH.Size = new System.Drawing.Size(417, 27);
+            this.PTL_MCH.TabIndex = 153;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(62, 173);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(47, 23);
+            this.label37.TabIndex = 152;
+            this.label37.Text = "STT";
+            // 
+            // PTL_STT
+            // 
+            this.PTL_STT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PTL_STT.FormattingEnabled = true;
+            this.PTL_STT.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.PTL_STT.Location = new System.Drawing.Point(66, 208);
+            this.PTL_STT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PTL_STT.Name = "PTL_STT";
+            this.PTL_STT.Size = new System.Drawing.Size(155, 28);
+            this.PTL_STT.TabIndex = 151;
             // 
             // ViewFMTPTL
             // 
@@ -2188,7 +2185,7 @@ namespace Assignment2
             this.label25.Location = new System.Drawing.Point(331, 81);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 20);
+            this.label25.Size = new System.Drawing.Size(98, 23);
             this.label25.TabIndex = 149;
             this.label25.Text = "Password";
             // 
@@ -2209,8 +2206,37 @@ namespace Assignment2
             this.PW.Location = new System.Drawing.Point(336, 129);
             this.PW.Margin = new System.Windows.Forms.Padding(4);
             this.PW.Name = "PW";
-            this.PW.Size = new System.Drawing.Size(677, 27);
+            this.PW.Size = new System.Drawing.Size(677, 30);
             this.PW.TabIndex = 0;
+            // 
+            // Mamonhoc
+            // 
+            this.Mamonhoc.AutoSize = true;
+            this.Mamonhoc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mamonhoc.Location = new System.Drawing.Point(370, 42);
+            this.Mamonhoc.Name = "Mamonhoc";
+            this.Mamonhoc.Size = new System.Drawing.Size(57, 23);
+            this.Mamonhoc.TabIndex = 62;
+            this.Mamonhoc.Text = "MMH";
+            this.Mamonhoc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // XCH
+            // 
+            this.XCH.Location = new System.Drawing.Point(4, 29);
+            this.XCH.Name = "XCH";
+            this.XCH.Size = new System.Drawing.Size(1251, 643);
+            this.XCH.TabIndex = 13;
+            this.XCH.Text = "Xem Câu hỏi";
+            this.XCH.UseVisualStyleBackColor = true;
+            // 
+            // XDT
+            // 
+            this.XDT.Location = new System.Drawing.Point(4, 29);
+            this.XDT.Name = "XDT";
+            this.XDT.Size = new System.Drawing.Size(1251, 643);
+            this.XDT.TabIndex = 14;
+            this.XDT.Text = "Xem Đề thi";
+            this.XDT.UseVisualStyleBackColor = true;
             // 
             // GVPTUI
             // 
@@ -2218,6 +2244,7 @@ namespace Assignment2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1255, 774);
+            this.Controls.Add(this.Mamonhoc);
             this.Controls.Add(this.Masocanbo);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.AdminText);
@@ -2264,10 +2291,13 @@ namespace Assignment2
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMT)).EndInit();
             this.GVPTControl.ResumeLayout(false);
             this.PMTCFMT.ResumeLayout(false);
+            this.PMTCFMT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPMTC)).EndInit();
             this.PCHFMT.ResumeLayout(false);
+            this.PCHFMT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPCH)).EndInit();
             this.PTLFMT.ResumeLayout(false);
+            this.PTLFMT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPTL)).EndInit();
             this.Password.ResumeLayout(false);
             this.Password.PerformLayout();
@@ -2289,19 +2319,8 @@ namespace Assignment2
         private System.Windows.Forms.TabPage PCH;
         private System.Windows.Forms.TabPage PMTC;
         private System.Windows.Forms.TabPage FMT;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox IDLK;
         private System.Windows.Forms.TextBox URL;
         private System.Windows.Forms.TextBox IDFMT;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox STT;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox LKBox;
-        private System.Windows.Forms.Button LKFMT_DB;
-        private System.Windows.Forms.Button LKFMT_EB;
-        private System.Windows.Forms.Button LKFMT_AB;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button FMT_DB;
         private System.Windows.Forms.Button FMT_EB;
         private System.Windows.Forms.Button LT_AB;
@@ -2396,23 +2415,19 @@ namespace Assignment2
         private System.Windows.Forms.TextBox CH_CDR;
         private System.Windows.Forms.TextBox CHIDPMTC;
         private System.Windows.Forms.TextBox TDT_LT;
-        private System.Windows.Forms.TextBox TDT_MMH;
         private System.Windows.Forms.Button TDT_DB;
-        private System.Windows.Forms.Button TDT_EB;
         private System.Windows.Forms.Button TDT_AB;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
         private System.Windows.Forms.DataGridView ViewTDT;
         private System.Windows.Forms.DataGridView ViewDT;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox NRD;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.TextBox MDT;
+        private System.Windows.Forms.Button DT_DB;
+        private System.Windows.Forms.Button DT_EB;
+        private System.Windows.Forms.Button DT_AB;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox TLB;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.DataGridView ViewNDTDT;
         private System.Windows.Forms.TextBox NDDTSTT;
@@ -2422,22 +2437,16 @@ namespace Assignment2
         private System.Windows.Forms.TextBox NDDTMDT;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.DataGridView ViewNDDT;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox TDT_MCH;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox NDTDTLT;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox DTLT;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Button TDTCH_DB;
         private System.Windows.Forms.Button TDTCH_AB;
-        private System.Windows.Forms.Button TDTCH_EB;
-        private System.Windows.Forms.Button DTCB_EB;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button DTCH_EB;
+        private System.Windows.Forms.Button DTCH_DB;
         private System.Windows.Forms.Button DTCH_AB;
         private System.Windows.Forms.TabPage PMTCFMT;
         private System.Windows.Forms.TabPage PCHFMT;
@@ -2449,5 +2458,28 @@ namespace Assignment2
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button PW_Edit;
         private System.Windows.Forms.TextBox PW;
+        private System.Windows.Forms.Button PF_DB;
+        private System.Windows.Forms.Button PF_AB;
+        private System.Windows.Forms.TextBox PMTC_ID;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox PMTCIDFMT;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox PCH_FMT;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox PCH_MCH;
+        private System.Windows.Forms.Button PCF_DB;
+        private System.Windows.Forms.Button PCF_AB;
+        private System.Windows.Forms.ComboBox PTL_STT;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox PTL_FMT;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox PTL_MCH;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button PTF_DB;
+        private System.Windows.Forms.Button PTF_AB;
+        private System.Windows.Forms.Label Mamonhoc;
+        private System.Windows.Forms.TabPage XCH;
+        private System.Windows.Forms.TabPage XDT;
     }
 }
