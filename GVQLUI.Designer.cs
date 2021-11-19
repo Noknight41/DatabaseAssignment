@@ -39,14 +39,15 @@ namespace Assignment2
             this.DDT_MDT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ViewDDT = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.label52 = new System.Windows.Forms.Label();
             this.GVQLControl = new System.Windows.Forms.TabControl();
+            this.XDT = new System.Windows.Forms.TabPage();
+            this.NDT = new System.Windows.Forms.TabPage();
+            this.NDT_EB = new System.Windows.Forms.Button();
+            this.NDT_ND = new System.Windows.Forms.RichTextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.NDT_MDT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ViewNote = new System.Windows.Forms.DataGridView();
             this.PW = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.PW_Edit = new System.Windows.Forms.Button();
@@ -54,9 +55,9 @@ namespace Assignment2
             this.Mamonhoc = new System.Windows.Forms.Label();
             this.DDT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewDDT)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
             this.GVQLControl.SuspendLayout();
+            this.NDT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewNote)).BeginInit();
             this.PW.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,86 +171,11 @@ namespace Assignment2
             this.ViewDDT.Size = new System.Drawing.Size(1167, 513);
             this.ViewDDT.TabIndex = 144;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.textBox32);
-            this.tabPage1.Controls.Add(this.label51);
-            this.tabPage1.Controls.Add(this.textBox33);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.dataGridView10);
-            this.tabPage1.Controls.Add(this.label52);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1245, 634);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "QLMH";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // textBox32
-            // 
-            this.textBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox32.Location = new System.Drawing.Point(437, 44);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(387, 27);
-            this.textBox32.TabIndex = 150;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(436, 18);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(118, 23);
-            this.label51.TabIndex = 149;
-            this.label51.Text = "Mã môn học";
-            // 
-            // textBox33
-            // 
-            this.textBox33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox33.Location = new System.Drawing.Point(16, 44);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(401, 27);
-            this.textBox33.TabIndex = 148;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 23);
-            this.label1.TabIndex = 147;
-            this.label1.Text = "Mã đề thi";
-            // 
-            // dataGridView10
-            // 
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(16, 111);
-            this.dataGridView10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.RowHeadersWidth = 51;
-            this.dataGridView10.RowTemplate.Height = 24;
-            this.dataGridView10.Size = new System.Drawing.Size(1219, 513);
-            this.dataGridView10.TabIndex = 146;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(-85, 6);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(92, 23);
-            this.label52.TabIndex = 145;
-            this.label52.Text = "Mã đề thi";
-            // 
             // GVQLControl
             // 
-            this.GVQLControl.Controls.Add(this.tabPage1);
+            this.GVQLControl.Controls.Add(this.XDT);
             this.GVQLControl.Controls.Add(this.DDT);
+            this.GVQLControl.Controls.Add(this.NDT);
             this.GVQLControl.Controls.Add(this.PW);
             this.GVQLControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.GVQLControl.Location = new System.Drawing.Point(0, 103);
@@ -259,6 +185,91 @@ namespace Assignment2
             this.GVQLControl.Size = new System.Drawing.Size(1253, 667);
             this.GVQLControl.TabIndex = 64;
             this.GVQLControl.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // XDT
+            // 
+            this.XDT.Location = new System.Drawing.Point(4, 29);
+            this.XDT.Name = "XDT";
+            this.XDT.Size = new System.Drawing.Size(1245, 634);
+            this.XDT.TabIndex = 3;
+            this.XDT.Text = "Xem đề thi";
+            this.XDT.UseVisualStyleBackColor = true;
+            // 
+            // NDT
+            // 
+            this.NDT.Controls.Add(this.NDT_EB);
+            this.NDT.Controls.Add(this.NDT_ND);
+            this.NDT.Controls.Add(this.label26);
+            this.NDT.Controls.Add(this.NDT_MDT);
+            this.NDT.Controls.Add(this.label1);
+            this.NDT.Controls.Add(this.ViewNote);
+            this.NDT.Location = new System.Drawing.Point(4, 29);
+            this.NDT.Name = "NDT";
+            this.NDT.Size = new System.Drawing.Size(1245, 634);
+            this.NDT.TabIndex = 4;
+            this.NDT.Text = "Note đề thi";
+            this.NDT.UseVisualStyleBackColor = true;
+            // 
+            // NDT_EB
+            // 
+            this.NDT_EB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NDT_EB.Location = new System.Drawing.Point(310, 572);
+            this.NDT_EB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NDT_EB.Name = "NDT_EB";
+            this.NDT_EB.Size = new System.Drawing.Size(84, 34);
+            this.NDT_EB.TabIndex = 152;
+            this.NDT_EB.Text = "Edit";
+            this.NDT_EB.UseVisualStyleBackColor = true;
+            this.NDT_EB.Click += new System.EventHandler(this.NDT_EB_Click);
+            // 
+            // NDT_ND
+            // 
+            this.NDT_ND.Location = new System.Drawing.Point(38, 147);
+            this.NDT_ND.Margin = new System.Windows.Forms.Padding(4);
+            this.NDT_ND.Name = "NDT_ND";
+            this.NDT_ND.Size = new System.Drawing.Size(356, 397);
+            this.NDT_ND.TabIndex = 151;
+            this.NDT_ND.Text = "";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(34, 104);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(86, 23);
+            this.label26.TabIndex = 150;
+            this.label26.Text = "Nội dung";
+            // 
+            // NDT_MDT
+            // 
+            this.NDT_MDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NDT_MDT.Location = new System.Drawing.Point(41, 42);
+            this.NDT_MDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NDT_MDT.Name = "NDT_MDT";
+            this.NDT_MDT.Size = new System.Drawing.Size(353, 27);
+            this.NDT_MDT.TabIndex = 149;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 23);
+            this.label1.TabIndex = 148;
+            this.label1.Text = "Mã đề thi";
+            // 
+            // ViewNote
+            // 
+            this.ViewNote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewNote.Location = new System.Drawing.Point(464, 42);
+            this.ViewNote.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ViewNote.Name = "ViewNote";
+            this.ViewNote.RowHeadersWidth = 51;
+            this.ViewNote.RowTemplate.Height = 24;
+            this.ViewNote.Size = new System.Drawing.Size(744, 578);
+            this.ViewNote.TabIndex = 147;
             // 
             // PW
             // 
@@ -330,10 +341,10 @@ namespace Assignment2
             this.DDT.ResumeLayout(false);
             this.DDT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewDDT)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
             this.GVQLControl.ResumeLayout(false);
+            this.NDT.ResumeLayout(false);
+            this.NDT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewNote)).EndInit();
             this.PW.ResumeLayout(false);
             this.PW.PerformLayout();
             this.ResumeLayout(false);
@@ -347,14 +358,7 @@ namespace Assignment2
         private System.Windows.Forms.Label Masocanbo;
         private System.Windows.Forms.Button LogOutButton;
         private System.Windows.Forms.TabPage DDT;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TabControl GVQLControl;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView10;
         private System.Windows.Forms.TextBox DDT_NT;
         private System.Windows.Forms.Label sada;
         private System.Windows.Forms.TextBox DDT_MDT;
@@ -366,5 +370,13 @@ namespace Assignment2
         private System.Windows.Forms.Button PW_Edit;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label Mamonhoc;
+        private System.Windows.Forms.TabPage XDT;
+        private System.Windows.Forms.TabPage NDT;
+        private System.Windows.Forms.TextBox NDT_MDT;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView ViewNote;
+        private System.Windows.Forms.RichTextBox NDT_ND;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button NDT_EB;
     }
 }

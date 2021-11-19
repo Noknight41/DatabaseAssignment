@@ -71,7 +71,7 @@ CREATE TABLE DE_THI (
 	Ngay_xac_nhan_ra_de date,
 	Ngay_duyet_de date,
 	Ngay_thi date,
-	Note nvarchar(2048),
+	Note nvarchar(2048) default '',
 
 	CONSTRAINT TDTDT FOREIGN KEY (Trich_Lan_thi, Trich_Mon_hoc) REFERENCES TAP_DE_THI(Lan_thi, Ma_mon_hoc_TDT) on delete no action on update cascade,
 	CONSTRAINT GVPTDT FOREIGN KEY (MSCB_ra_de) REFERENCES GIANG_VIEN_PHU_TRACH(MSCB),
@@ -106,13 +106,14 @@ GO
 CREATE TABLE LAM_BAI(
 	MSSV varchar(10) NOT NULL,
 	Ma_de_thi varchar(10) NOT NULL,
+	STTCH int NOT NULL,
 	Ma_cau_hoi varchar(10) NOT NULL,
 	Tra_loi int NOT NULL default 0,
 
 	CONSTRAINT LamDE_THI FOREIGN KEY (Ma_de_thi) REFERENCES DE_THI(Ma_de_thi) on delete no action on update cascade,
 	CONSTRAINT LamCAU_HOI FOREIGN KEY (Ma_cau_hoi) REFERENCES CAU_HOI(Ma_cau_hoi) on delete no action on update cascade,
 	CONSTRAINT SVlamde FOREIGN KEY (MSSV) REFERENCES SINH_VIEN(MSSV) on delete no action on update cascade,
-	CONSTRAINT Lamde PRIMARY KEY (MSSV, Ma_de_thi, Ma_cau_hoi)
+	CONSTRAINT Lamde PRIMARY KEY (MSSV, Ma_de_thi, STTCH)
 );
 GO
 
@@ -361,14 +362,19 @@ INSERT INTO CAU_HOI(Ma_cau_hoi, Vi_tri_dap_an_dung, MSCB_GV_tao, Thoi_gian_tao ,
 GO
 
 --Lambai
-INSERT INTO LAM_BAI(MSSV, Ma_de_thi, Ma_cau_hoi, Tra_loi) VALUES 
-('1812438', 'CO12A1101', 'CH20120001', 2),
-('1812438', 'CO12A1101', 'CH20120002', 1),
-('1812438', 'CO13A1101', 'CH20130001', 3),
-('1812438', 'CO13A1102', 'CH20130002', 3),
-('1812438', 'CO14A1101', 'CH20140001', 2),
-('1812438', 'CO14A1102', 'CH20140002', 1);
+INSERT INTO LAM_BAI(MSSV, Ma_de_thi, Ma_cau_hoi, Tra_loi, STTCH) VALUES 
+('1812438', 'CO12A1101', 'CH20120001', 2, 1),
+('1812438', 'CO12A1101', 'CH20120004', 1, 2),
+('1812438', 'CO12A1101', 'CH20120007', 1, 3),
+('1812438', 'CO13A1101', 'CH20130001', 3, 1),
+('1812438', 'CO13A1102', 'CH20130004', 3, 2),
+('1812438', 'CO13A1102', 'CH20130004', 3, 3),
+('1812438', 'CO14A1101', 'CH20140001', 2, 1),
+('1812438', 'CO14A1102', 'CH20140004', 1, 2),
+('1812438', 'CO14A1102', 'CH20140007', 1, 3);
 GO
+
+
 
 --TDTchuaCauhoi
 INSERT INTO TAP_DE_THI_BAO_GOM_CAU_HOI(Lan_thi, Ma_mon_hoc_TDT, Ma_cau_hoi) VALUES 
@@ -543,5 +549,7 @@ INSERT INTO PMTC_CHUA_FMT(ID_phan_mo_ta, ID_FMT) VALUES
 ('20140102', '20140012'), ('20140304', '20140034');
 GO
 
+INSERT INTO NOTE(MSSV, Ma_de_thi, Note) VALUES 
+('1812438', 'CO12A1101', 'No');
 
 

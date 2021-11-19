@@ -157,6 +157,7 @@ namespace Assignment2
             ViewNT.DataSource = ds.Tables[0];
         }
 
+        // MH
         private void MHAddButton_Click(object sender, EventArgs e)
         {
             if (MH_MMH.Text == "" || MH_MHN.Text == "")
@@ -231,6 +232,7 @@ namespace Assignment2
             MH_MHN.Text = row.Cells[1].Value.ToString();
         }
 
+        // GVPT
         private void GVPT_AddButton_Click(object sender, EventArgs e)
         {
             if (GVPT_MMH.Text == "" || GVPT_MSCB.Text == "" || pwGVPT.Text == "")
@@ -307,6 +309,7 @@ namespace Assignment2
             pwGVPT.Text = row.Cells[2].Value.ToString();
         }
 
+        // GVQL
         private void GVQL_AB_Click(object sender, EventArgs e)
         {
             if (GVQL_MMH.Text == "" || GVQL_MSCB.Text == "" || pwGVQL.Text == "")

@@ -28,8 +28,8 @@ namespace Assignment2
         {
             this.MSCB = MSCB;
             this.MMH = Maso;
-            Masocanbo.Text = MSCB;
-            Mamonhoc.Text = MMH;
+            Masocanbo.Text = "MSCB: " + MSCB;
+            Mamonhoc.Text = "MMH: " + MMH;
         }
 
         private void GVQL_FormClosed(object sender, FormClosedEventArgs e)
@@ -55,7 +55,7 @@ namespace Assignment2
 
         private void DDTpopulate()
         {
-            string query = "SELECT Ma_de_thi, Ngay_xac_nhan_ra_de, Ngay_duyet_de, Ngay_thi FROM DE_THI";
+            string query = "SELECT Ma_de_thi, Ngay_xac_nhan_ra_de, Ngay_duyet_de, Ngay_thi FROM DE_THI WHERE Trich_Mon_hoc = '" + MMH + "';";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -79,6 +79,16 @@ namespace Assignment2
             }
         }
 
+        private void NDTpopulate()
+        {
+            string query = "SELECT Ma_de_thi, Note FROM DE_THI WHERE Trich_Mon_hoc = '" + MMH + "';";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewNote.DataSource = ds.Tables[0];
+        }
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
             switch (GVQLControl.SelectedTab.Name)
@@ -91,6 +101,11 @@ namespace Assignment2
                 case "DDT":
                 {
                     DDTpopulate();
+                    break;
+                }
+                case "NDT":
+                {
+                    NDTpopulate();
                     break;
                 }
                 
@@ -126,6 +141,28 @@ namespace Assignment2
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     DDTpopulate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
+
+        private void NDT_EB_Click(object sender, EventArgs e)
+        {
+            if (NDT_MDT.Text == "" || NDT_ND.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE DE_THI SET Note = '" + NDT_ND.Text + "' WHERE Ma_de_thi = '" + NDT_MDT.Text + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    NDTpopulate();
                 }
                 catch (Exception Ex)
                 {

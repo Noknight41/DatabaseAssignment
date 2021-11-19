@@ -169,14 +169,7 @@ namespace Assignment2
             this.label8 = new System.Windows.Forms.Label();
             this.ViewFMT = new System.Windows.Forms.DataGridView();
             this.GVPTControl = new System.Windows.Forms.TabControl();
-            this.PMTCFMT = new System.Windows.Forms.TabPage();
-            this.PF_DB = new System.Windows.Forms.Button();
-            this.PF_AB = new System.Windows.Forms.Button();
-            this.PMTC_ID = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.PMTCIDFMT = new System.Windows.Forms.TextBox();
-            this.ViewFMTPMTC = new System.Windows.Forms.DataGridView();
+            this.XCH = new System.Windows.Forms.TabPage();
             this.PCHFMT = new System.Windows.Forms.TabPage();
             this.PCF_DB = new System.Windows.Forms.Button();
             this.PCF_AB = new System.Windows.Forms.Button();
@@ -195,14 +188,25 @@ namespace Assignment2
             this.label37 = new System.Windows.Forms.Label();
             this.PTL_STT = new System.Windows.Forms.ComboBox();
             this.ViewFMTPTL = new System.Windows.Forms.DataGridView();
+            this.PMTCFMT = new System.Windows.Forms.TabPage();
+            this.PF_DB = new System.Windows.Forms.Button();
+            this.PF_AB = new System.Windows.Forms.Button();
+            this.PMTC_ID = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.PMTCIDFMT = new System.Windows.Forms.TextBox();
+            this.ViewFMTPMTC = new System.Windows.Forms.DataGridView();
+            this.XDT = new System.Windows.Forms.TabPage();
             this.Password = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.PW_Edit = new System.Windows.Forms.Button();
             this.PW = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Mamonhoc = new System.Windows.Forms.Label();
-            this.XCH = new System.Windows.Forms.TabPage();
-            this.XDT = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.NDDT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNDDT)).BeginInit();
             this.NDTDT.SuspendLayout();
@@ -229,12 +233,13 @@ namespace Assignment2
             this.FMT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMT)).BeginInit();
             this.GVPTControl.SuspendLayout();
-            this.PMTCFMT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPMTC)).BeginInit();
+            this.XCH.SuspendLayout();
             this.PCHFMT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPCH)).BeginInit();
             this.PTLFMT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPTL)).BeginInit();
+            this.PMTCFMT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPMTC)).BeginInit();
             this.Password.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -283,11 +288,11 @@ namespace Assignment2
             this.NDDT.Controls.Add(this.NDDTMDT);
             this.NDDT.Controls.Add(this.label52);
             this.NDDT.Controls.Add(this.ViewNDDT);
-            this.NDDT.Location = new System.Drawing.Point(4, 29);
+            this.NDDT.Location = new System.Drawing.Point(4, 32);
             this.NDDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NDDT.Name = "NDDT";
             this.NDDT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NDDT.Size = new System.Drawing.Size(1251, 643);
+            this.NDDT.Size = new System.Drawing.Size(1251, 640);
             this.NDDT.TabIndex = 8;
             this.NDDT.Text = "Nội dung DT";
             this.NDDT.UseVisualStyleBackColor = true;
@@ -405,11 +410,11 @@ namespace Assignment2
             this.NDTDT.Controls.Add(this.NDTDTLT);
             this.NDTDT.Controls.Add(this.label48);
             this.NDTDT.Controls.Add(this.ViewNDTDT);
-            this.NDTDT.Location = new System.Drawing.Point(4, 29);
+            this.NDTDT.Location = new System.Drawing.Point(4, 32);
             this.NDTDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NDTDT.Name = "NDTDT";
             this.NDTDT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NDTDT.Size = new System.Drawing.Size(1251, 643);
+            this.NDTDT.Size = new System.Drawing.Size(1251, 640);
             this.NDTDT.TabIndex = 7;
             this.NDTDT.Text = "Nội dung TDT";
             this.NDTDT.UseVisualStyleBackColor = true;
@@ -501,11 +506,11 @@ namespace Assignment2
             this.DT.Controls.Add(this.DT_EB);
             this.DT.Controls.Add(this.DT_AB);
             this.DT.Controls.Add(this.label44);
-            this.DT.Location = new System.Drawing.Point(4, 29);
+            this.DT.Location = new System.Drawing.Point(4, 32);
             this.DT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DT.Name = "DT";
             this.DT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DT.Size = new System.Drawing.Size(1251, 643);
+            this.DT.Size = new System.Drawing.Size(1251, 640);
             this.DT.TabIndex = 6;
             this.DT.Text = "Đề thi";
             this.DT.UseVisualStyleBackColor = true;
@@ -640,11 +645,11 @@ namespace Assignment2
             this.TDT.Controls.Add(this.TDT_DB);
             this.TDT.Controls.Add(this.TDT_AB);
             this.TDT.Controls.Add(this.label40);
-            this.TDT.Location = new System.Drawing.Point(4, 29);
+            this.TDT.Location = new System.Drawing.Point(4, 32);
             this.TDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TDT.Name = "TDT";
             this.TDT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TDT.Size = new System.Drawing.Size(1251, 643);
+            this.TDT.Size = new System.Drawing.Size(1251, 640);
             this.TDT.TabIndex = 5;
             this.TDT.Text = "Tập đề thi";
             this.TDT.UseVisualStyleBackColor = true;
@@ -717,11 +722,11 @@ namespace Assignment2
             this.CH.Controls.Add(this.CH_EB);
             this.CH.Controls.Add(this.CH_AB);
             this.CH.Controls.Add(this.label34);
-            this.CH.Location = new System.Drawing.Point(4, 29);
+            this.CH.Location = new System.Drawing.Point(4, 32);
             this.CH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CH.Name = "CH";
             this.CH.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CH.Size = new System.Drawing.Size(1251, 643);
+            this.CH.Size = new System.Drawing.Size(1251, 640);
             this.CH.TabIndex = 4;
             this.CH.Text = "Câu hỏi";
             this.CH.UseVisualStyleBackColor = true;
@@ -869,11 +874,11 @@ namespace Assignment2
             this.PTL.Controls.Add(this.PTL_AB);
             this.PTL.Controls.Add(this.label26);
             this.PTL.Controls.Add(this.tabControl1);
-            this.PTL.Location = new System.Drawing.Point(4, 29);
+            this.PTL.Location = new System.Drawing.Point(4, 32);
             this.PTL.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PTL.Name = "PTL";
             this.PTL.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PTL.Size = new System.Drawing.Size(1251, 643);
+            this.PTL.Size = new System.Drawing.Size(1251, 640);
             this.PTL.TabIndex = 3;
             this.PTL.Text = "Phần trả lời";
             this.PTL.UseVisualStyleBackColor = true;
@@ -1646,11 +1651,11 @@ namespace Assignment2
             this.PMTC.Controls.Add(this.label13);
             this.PMTC.Controls.Add(this.label14);
             this.PMTC.Controls.Add(this.ViewPMTC);
-            this.PMTC.Location = new System.Drawing.Point(4, 29);
+            this.PMTC.Location = new System.Drawing.Point(4, 32);
             this.PMTC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PMTC.Name = "PMTC";
             this.PMTC.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PMTC.Size = new System.Drawing.Size(1251, 643);
+            this.PMTC.Size = new System.Drawing.Size(1251, 640);
             this.PMTC.TabIndex = 1;
             this.PMTC.Text = "Phần mô tả chung";
             this.PMTC.UseVisualStyleBackColor = true;
@@ -1750,11 +1755,11 @@ namespace Assignment2
             this.FMT.Controls.Add(this.label7);
             this.FMT.Controls.Add(this.label8);
             this.FMT.Controls.Add(this.ViewFMT);
-            this.FMT.Location = new System.Drawing.Point(4, 29);
+            this.FMT.Location = new System.Drawing.Point(4, 32);
             this.FMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FMT.Name = "FMT";
             this.FMT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.FMT.Size = new System.Drawing.Size(1251, 643);
+            this.FMT.Size = new System.Drawing.Size(1251, 640);
             this.FMT.TabIndex = 0;
             this.FMT.Text = "File mô tả";
             this.FMT.UseVisualStyleBackColor = true;
@@ -1871,94 +1876,18 @@ namespace Assignment2
             this.GVPTControl.TabStop = false;
             this.GVPTControl.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // PMTCFMT
+            // XCH
             // 
-            this.PMTCFMT.Controls.Add(this.PF_DB);
-            this.PMTCFMT.Controls.Add(this.PF_AB);
-            this.PMTCFMT.Controls.Add(this.PMTC_ID);
-            this.PMTCFMT.Controls.Add(this.label30);
-            this.PMTCFMT.Controls.Add(this.label9);
-            this.PMTCFMT.Controls.Add(this.PMTCIDFMT);
-            this.PMTCFMT.Controls.Add(this.ViewFMTPMTC);
-            this.PMTCFMT.Location = new System.Drawing.Point(4, 29);
-            this.PMTCFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PMTCFMT.Name = "PMTCFMT";
-            this.PMTCFMT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PMTCFMT.Size = new System.Drawing.Size(1251, 643);
-            this.PMTCFMT.TabIndex = 9;
-            this.PMTCFMT.Text = "Phần mô tả chung +";
-            this.PMTCFMT.UseVisualStyleBackColor = true;
-            // 
-            // PF_DB
-            // 
-            this.PF_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PF_DB.Location = new System.Drawing.Point(373, 540);
-            this.PF_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PF_DB.Name = "PF_DB";
-            this.PF_DB.Size = new System.Drawing.Size(84, 34);
-            this.PF_DB.TabIndex = 148;
-            this.PF_DB.Text = "Delete";
-            this.PF_DB.UseVisualStyleBackColor = true;
-            this.PF_DB.Click += new System.EventHandler(this.PF_DB_Click);
-            // 
-            // PF_AB
-            // 
-            this.PF_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PF_AB.Location = new System.Drawing.Point(54, 540);
-            this.PF_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PF_AB.Name = "PF_AB";
-            this.PF_AB.Size = new System.Drawing.Size(84, 34);
-            this.PF_AB.TabIndex = 147;
-            this.PF_AB.Text = "Add";
-            this.PF_AB.UseVisualStyleBackColor = true;
-            this.PF_AB.Click += new System.EventHandler(this.PF_AB_Click);
-            // 
-            // PMTC_ID
-            // 
-            this.PMTC_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PMTC_ID.Location = new System.Drawing.Point(40, 78);
-            this.PMTC_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PMTC_ID.Name = "PMTC_ID";
-            this.PMTC_ID.Size = new System.Drawing.Size(417, 27);
-            this.PMTC_ID.TabIndex = 48;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(36, 44);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(193, 23);
-            this.label30.TabIndex = 47;
-            this.label30.Text = "ID Phần mô tả chung";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 162);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 23);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "ID File Mô tả";
-            // 
-            // PMTCIDFMT
-            // 
-            this.PMTCIDFMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PMTCIDFMT.Location = new System.Drawing.Point(40, 195);
-            this.PMTCIDFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PMTCIDFMT.Name = "PMTCIDFMT";
-            this.PMTCIDFMT.Size = new System.Drawing.Size(417, 27);
-            this.PMTCIDFMT.TabIndex = 45;
-            // 
-            // ViewFMTPMTC
-            // 
-            this.ViewFMTPMTC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ViewFMTPMTC.Location = new System.Drawing.Point(556, 17);
-            this.ViewFMTPMTC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ViewFMTPMTC.Name = "ViewFMTPMTC";
-            this.ViewFMTPMTC.RowHeadersWidth = 51;
-            this.ViewFMTPMTC.RowTemplate.Height = 24;
-            this.ViewFMTPMTC.Size = new System.Drawing.Size(663, 609);
-            this.ViewFMTPMTC.TabIndex = 2;
+            this.XCH.Controls.Add(this.button1);
+            this.XCH.Controls.Add(this.textBox1);
+            this.XCH.Controls.Add(this.label1);
+            this.XCH.Controls.Add(this.richTextBox1);
+            this.XCH.Location = new System.Drawing.Point(4, 32);
+            this.XCH.Name = "XCH";
+            this.XCH.Size = new System.Drawing.Size(1251, 640);
+            this.XCH.TabIndex = 13;
+            this.XCH.Text = "Xem Câu hỏi";
+            this.XCH.UseVisualStyleBackColor = true;
             // 
             // PCHFMT
             // 
@@ -1969,11 +1898,11 @@ namespace Assignment2
             this.PCHFMT.Controls.Add(this.label33);
             this.PCHFMT.Controls.Add(this.PCH_FMT);
             this.PCHFMT.Controls.Add(this.ViewFMTPCH);
-            this.PCHFMT.Location = new System.Drawing.Point(4, 29);
+            this.PCHFMT.Location = new System.Drawing.Point(4, 32);
             this.PCHFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PCHFMT.Name = "PCHFMT";
             this.PCHFMT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PCHFMT.Size = new System.Drawing.Size(1251, 643);
+            this.PCHFMT.Size = new System.Drawing.Size(1251, 640);
             this.PCHFMT.TabIndex = 10;
             this.PCHFMT.Text = "Phần câu hỏi +";
             this.PCHFMT.UseVisualStyleBackColor = true;
@@ -2060,11 +1989,11 @@ namespace Assignment2
             this.PTLFMT.Controls.Add(this.label37);
             this.PTLFMT.Controls.Add(this.PTL_STT);
             this.PTLFMT.Controls.Add(this.ViewFMTPTL);
-            this.PTLFMT.Location = new System.Drawing.Point(4, 29);
+            this.PTLFMT.Location = new System.Drawing.Point(4, 32);
             this.PTLFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PTLFMT.Name = "PTLFMT";
             this.PTLFMT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PTLFMT.Size = new System.Drawing.Size(1251, 643);
+            this.PTLFMT.Size = new System.Drawing.Size(1251, 640);
             this.PTLFMT.TabIndex = 11;
             this.PTLFMT.Text = "Phần trả lời +";
             this.PTLFMT.UseVisualStyleBackColor = true;
@@ -2165,16 +2094,114 @@ namespace Assignment2
             this.ViewFMTPTL.Size = new System.Drawing.Size(663, 609);
             this.ViewFMTPTL.TabIndex = 2;
             // 
+            // PMTCFMT
+            // 
+            this.PMTCFMT.Controls.Add(this.PF_DB);
+            this.PMTCFMT.Controls.Add(this.PF_AB);
+            this.PMTCFMT.Controls.Add(this.PMTC_ID);
+            this.PMTCFMT.Controls.Add(this.label30);
+            this.PMTCFMT.Controls.Add(this.label9);
+            this.PMTCFMT.Controls.Add(this.PMTCIDFMT);
+            this.PMTCFMT.Controls.Add(this.ViewFMTPMTC);
+            this.PMTCFMT.Location = new System.Drawing.Point(4, 32);
+            this.PMTCFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PMTCFMT.Name = "PMTCFMT";
+            this.PMTCFMT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PMTCFMT.Size = new System.Drawing.Size(1251, 640);
+            this.PMTCFMT.TabIndex = 9;
+            this.PMTCFMT.Text = "Phần mô tả chung +";
+            this.PMTCFMT.UseVisualStyleBackColor = true;
+            // 
+            // PF_DB
+            // 
+            this.PF_DB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PF_DB.Location = new System.Drawing.Point(373, 540);
+            this.PF_DB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PF_DB.Name = "PF_DB";
+            this.PF_DB.Size = new System.Drawing.Size(84, 34);
+            this.PF_DB.TabIndex = 148;
+            this.PF_DB.Text = "Delete";
+            this.PF_DB.UseVisualStyleBackColor = true;
+            this.PF_DB.Click += new System.EventHandler(this.PF_DB_Click);
+            // 
+            // PF_AB
+            // 
+            this.PF_AB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PF_AB.Location = new System.Drawing.Point(54, 540);
+            this.PF_AB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PF_AB.Name = "PF_AB";
+            this.PF_AB.Size = new System.Drawing.Size(84, 34);
+            this.PF_AB.TabIndex = 147;
+            this.PF_AB.Text = "Add";
+            this.PF_AB.UseVisualStyleBackColor = true;
+            this.PF_AB.Click += new System.EventHandler(this.PF_AB_Click);
+            // 
+            // PMTC_ID
+            // 
+            this.PMTC_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMTC_ID.Location = new System.Drawing.Point(40, 78);
+            this.PMTC_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PMTC_ID.Name = "PMTC_ID";
+            this.PMTC_ID.Size = new System.Drawing.Size(417, 27);
+            this.PMTC_ID.TabIndex = 48;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(36, 44);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(193, 23);
+            this.label30.TabIndex = 47;
+            this.label30.Text = "ID Phần mô tả chung";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(36, 162);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 23);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "ID File Mô tả";
+            // 
+            // PMTCIDFMT
+            // 
+            this.PMTCIDFMT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PMTCIDFMT.Location = new System.Drawing.Point(40, 195);
+            this.PMTCIDFMT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PMTCIDFMT.Name = "PMTCIDFMT";
+            this.PMTCIDFMT.Size = new System.Drawing.Size(417, 27);
+            this.PMTCIDFMT.TabIndex = 45;
+            // 
+            // ViewFMTPMTC
+            // 
+            this.ViewFMTPMTC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewFMTPMTC.Location = new System.Drawing.Point(556, 17);
+            this.ViewFMTPMTC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ViewFMTPMTC.Name = "ViewFMTPMTC";
+            this.ViewFMTPMTC.RowHeadersWidth = 51;
+            this.ViewFMTPMTC.RowTemplate.Height = 24;
+            this.ViewFMTPMTC.Size = new System.Drawing.Size(663, 609);
+            this.ViewFMTPMTC.TabIndex = 2;
+            // 
+            // XDT
+            // 
+            this.XDT.Location = new System.Drawing.Point(4, 32);
+            this.XDT.Name = "XDT";
+            this.XDT.Size = new System.Drawing.Size(1251, 640);
+            this.XDT.TabIndex = 14;
+            this.XDT.Text = "Xem Đề thi";
+            this.XDT.UseVisualStyleBackColor = true;
+            // 
             // Password
             // 
             this.Password.Controls.Add(this.label25);
             this.Password.Controls.Add(this.PW_Edit);
             this.Password.Controls.Add(this.PW);
-            this.Password.Location = new System.Drawing.Point(4, 29);
+            this.Password.Location = new System.Drawing.Point(4, 32);
             this.Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Password.Name = "Password";
             this.Password.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Password.Size = new System.Drawing.Size(1251, 643);
+            this.Password.Size = new System.Drawing.Size(1251, 640);
             this.Password.TabIndex = 12;
             this.Password.Text = "Password";
             this.Password.UseVisualStyleBackColor = true;
@@ -2220,23 +2247,44 @@ namespace Assignment2
             this.Mamonhoc.Text = "MMH";
             this.Mamonhoc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // XCH
+            // richTextBox1
             // 
-            this.XCH.Location = new System.Drawing.Point(4, 29);
-            this.XCH.Name = "XCH";
-            this.XCH.Size = new System.Drawing.Size(1251, 643);
-            this.XCH.TabIndex = 13;
-            this.XCH.Text = "Xem Câu hỏi";
-            this.XCH.UseVisualStyleBackColor = true;
+            this.richTextBox1.Location = new System.Drawing.Point(51, 100);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(1145, 496);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
-            // XDT
+            // textBox1
             // 
-            this.XDT.Location = new System.Drawing.Point(4, 29);
-            this.XDT.Name = "XDT";
-            this.XDT.Size = new System.Drawing.Size(1251, 643);
-            this.XDT.TabIndex = 14;
-            this.XDT.Text = "Xem Đề thi";
-            this.XDT.UseVisualStyleBackColor = true;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(176, 29);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(379, 27);
+            this.textBox1.TabIndex = 138;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(47, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 23);
+            this.label1.TabIndex = 137;
+            this.label1.Text = "Mã câu hỏi";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(630, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 34);
+            this.button1.TabIndex = 139;
+            this.button1.Text = "Xem";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GVPTUI
             // 
@@ -2290,15 +2338,17 @@ namespace Assignment2
             this.FMT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMT)).EndInit();
             this.GVPTControl.ResumeLayout(false);
-            this.PMTCFMT.ResumeLayout(false);
-            this.PMTCFMT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPMTC)).EndInit();
+            this.XCH.ResumeLayout(false);
+            this.XCH.PerformLayout();
             this.PCHFMT.ResumeLayout(false);
             this.PCHFMT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPCH)).EndInit();
             this.PTLFMT.ResumeLayout(false);
             this.PTLFMT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPTL)).EndInit();
+            this.PMTCFMT.ResumeLayout(false);
+            this.PMTCFMT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewFMTPMTC)).EndInit();
             this.Password.ResumeLayout(false);
             this.Password.PerformLayout();
             this.ResumeLayout(false);
@@ -2481,5 +2531,9 @@ namespace Assignment2
         private System.Windows.Forms.Label Mamonhoc;
         private System.Windows.Forms.TabPage XCH;
         private System.Windows.Forms.TabPage XDT;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

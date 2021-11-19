@@ -52,7 +52,7 @@ namespace Assignment2
             }
             if (User.SelectedItem.ToString() == "SV")
             {
-                SVUI UI = new SVUI();
+                SV UI = new SV();
                 UI.setSV(MSSV);
                 UI.Show();
             }

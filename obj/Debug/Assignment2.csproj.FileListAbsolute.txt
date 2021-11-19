@@ -23,4 +23,4 @@ D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.pdb
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.CH.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.GVPTUI.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.GVQLUI.resources
-D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.SVUI.resources
+D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.SV.resources
