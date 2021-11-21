@@ -37,27 +37,25 @@ namespace Assignment2
             this.asdad = new System.Windows.Forms.Label();
             this.sdafasd = new System.Windows.Forms.Label();
             this.N_MDT = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.STT = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LB = new System.Windows.Forms.TabPage();
+            this.LD = new System.Windows.Forms.Button();
+            this.sadsda = new System.Windows.Forms.Label();
             this.GVQLLogo = new System.Windows.Forms.Label();
             this.Note = new System.Windows.Forms.Button();
             this.Masosinhvien = new System.Windows.Forms.Label();
+            this.ViewDT = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SVControl.SuspendLayout();
             this.GC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNote)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.LB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewDT)).BeginInit();
             this.SuspendLayout();
             // 
             // SVControl
             // 
             this.SVControl.Controls.Add(this.GC);
-            this.SVControl.Controls.Add(this.tabPage1);
+            this.SVControl.Controls.Add(this.LB);
             this.SVControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.SVControl.Location = new System.Drawing.Point(1, 89);
             this.SVControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -138,96 +136,41 @@ namespace Assignment2
             this.N_MDT.Size = new System.Drawing.Size(312, 27);
             this.N_MDT.TabIndex = 0;
             // 
-            // tabPage1
+            // LB
             // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.STT);
-            this.tabPage1.Controls.Add(this.maskedTextBox1);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.richTextBox1);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1108, 625);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Làm bài";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.LB.Controls.Add(this.textBox1);
+            this.LB.Controls.Add(this.ViewDT);
+            this.LB.Controls.Add(this.LD);
+            this.LB.Controls.Add(this.sadsda);
+            this.LB.Location = new System.Drawing.Point(4, 29);
+            this.LB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LB.Name = "LB";
+            this.LB.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LB.Size = new System.Drawing.Size(1108, 625);
+            this.LB.TabIndex = 0;
+            this.LB.Text = "Làm bài";
+            this.LB.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // LD
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(389, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 24);
-            this.label2.TabIndex = 153;
-            this.label2.Text = "Thời gian";
+            this.LD.Location = new System.Drawing.Point(941, 26);
+            this.LD.Margin = new System.Windows.Forms.Padding(4);
+            this.LD.Name = "LD";
+            this.LD.Size = new System.Drawing.Size(143, 43);
+            this.LD.TabIndex = 152;
+            this.LD.Text = "Làm đề";
+            this.LD.UseVisualStyleBackColor = true;
+            this.LD.Click += new System.EventHandler(this.LD_Click);
             // 
-            // button1
+            // sadsda
             // 
-            this.button1.Location = new System.Drawing.Point(891, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 43);
-            this.button1.TabIndex = 152;
-            this.button1.Text = "Nộp bài";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // STT
-            // 
-            this.STT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STT.FormattingEnabled = true;
-            this.STT.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.STT.Location = new System.Drawing.Point(119, 16);
-            this.STT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.STT.Name = "STT";
-            this.STT.Size = new System.Drawing.Size(60, 28);
-            this.STT.TabIndex = 150;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(149, 565);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(883, 27);
-            this.maskedTextBox1.TabIndex = 149;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 567);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 24);
-            this.label1.TabIndex = 148;
-            this.label1.Text = "Trả lời";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(27, 60);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1005, 468);
-            this.richTextBox1.TabIndex = 147;
-            this.richTextBox1.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 24);
-            this.label3.TabIndex = 146;
-            this.label3.Text = "Câu hỏi";
+            this.sadsda.AutoSize = true;
+            this.sadsda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sadsda.Location = new System.Drawing.Point(26, 37);
+            this.sadsda.Name = "sadsda";
+            this.sadsda.Size = new System.Drawing.Size(97, 24);
+            this.sadsda.TabIndex = 146;
+            this.sadsda.Text = "Mã đề thi";
             // 
             // GVQLLogo
             // 
@@ -262,6 +205,23 @@ namespace Assignment2
             this.Masosinhvien.Text = "MSSV";
             this.Masosinhvien.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ViewDT
+            // 
+            this.ViewDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewDT.Location = new System.Drawing.Point(30, 92);
+            this.ViewDT.Name = "ViewDT";
+            this.ViewDT.RowHeadersWidth = 51;
+            this.ViewDT.RowTemplate.Height = 24;
+            this.ViewDT.Size = new System.Drawing.Size(1054, 503);
+            this.ViewDT.TabIndex = 153;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(136, 34);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(470, 27);
+            this.textBox1.TabIndex = 154;
+            // 
             // SV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,8 +238,9 @@ namespace Assignment2
             this.GC.ResumeLayout(false);
             this.GC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNote)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.LB.ResumeLayout(false);
+            this.LB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewDT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,17 +255,14 @@ namespace Assignment2
         private System.Windows.Forms.Label asdad;
         private System.Windows.Forms.Label sdafasd;
         private System.Windows.Forms.TextBox N_MDT;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox STT;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabPage LB;
+        private System.Windows.Forms.Button LD;
+        private System.Windows.Forms.Label sadsda;
         private System.Windows.Forms.Label GVQLLogo;
         private System.Windows.Forms.Button Note;
         private System.Windows.Forms.Label Masosinhvien;
         private System.Windows.Forms.Button N_EB;
+        private System.Windows.Forms.DataGridView ViewDT;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

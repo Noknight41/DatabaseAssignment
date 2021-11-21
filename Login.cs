@@ -40,7 +40,7 @@ namespace Assignment2
             }
             if(User.SelectedItem.ToString() == "GVPT")
             {
-                GVPTUI UI = new GVPTUI();
+                ViewXDT UI = new ViewXDT();
                 UI.setGVPT(MSCB, MMH);
                 UI.Show();
             }

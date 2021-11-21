@@ -150,7 +150,7 @@ RETURN
 	WHERE D.Trich_Mon_hoc = @MH
 GO
 
---ii10
+--GVPQL
 CREATE OR ALTER FUNCTION ii10all (@LT AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -159,7 +159,7 @@ RETURN
 	WHERE D.Trich_Lan_thi = @LT
 GO
 
---
+--GVQL
 CREATE OR ALTER FUNCTION ii10 (@LT AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -168,6 +168,7 @@ RETURN
 	GROUP BY T.Trich_Mon_hoc
 GO
 
+--SV
 CREATE OR ALTER FUNCTION iii3 (@DT AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -176,6 +177,7 @@ RETURN
 	WHERE DTCH.Ma_de_thi = @DT
 GO
 
+--SV
 CREATE OR ALTER FUNCTION iii4 (@DT AS varchar(10), @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -184,7 +186,7 @@ RETURN
 	WHERE DTCH.Ma_de_thi = @DT AND LB.MSSV = @MSSV
 GO
 
-
+-- SV
 CREATE OR ALTER FUNCTION iii5 (@LT AS int, @MH AS varchar(10), @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -193,6 +195,7 @@ RETURN
 	WHERE D.Trich_Lan_thi = @LT AND D.Trich_Mon_hoc = @MH AND L.MSSV = @MSSV
 GO
 
+--SV
 CREATE OR ALTER FUNCTION iii6 (@LT AS int, @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -201,6 +204,7 @@ RETURN
 	WHERE D.Trich_Lan_thi = @LT AND L.MSSV = @MSSV
 GO
 
+--SV
 CREATE OR ALTER FUNCTION iii7 (@DT AS varchar(10), @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -210,6 +214,7 @@ RETURN
 	GROUP BY C.Ma_mon_hoc_thuoc, C.STTCDR
 GO
 
+-- GVQL
 CREATE OR ALTER FUNCTION NoteDeThi (@DT AS varchar(10))
 RETURNS	varchar(2048)
 AS
@@ -222,6 +227,7 @@ BEGIN
 END
 GO
 
+-- GVPT
 CREATE OR ALTER FUNCTION PassGVPT (@MSCB AS varchar(10))
 RETURNS	varchar(256)
 AS
@@ -234,6 +240,7 @@ BEGIN
 END
 GO
 
+-- GVQL
 CREATE OR ALTER FUNCTION PassGVQL (@MSCB AS varchar(10))
 RETURNS	varchar(256)
 AS
@@ -246,6 +253,7 @@ BEGIN
 END
 GO
 
+-- SV
 CREATE OR ALTER FUNCTION PassSV (@MSSV AS varchar(10))
 RETURNS	varchar(256)
 AS
@@ -257,6 +265,92 @@ BEGIN
     RETURN  @pw
 END
 GO
+
+-- SV
+CREATE OR ALTER FUNCTION checkLamBai (@MSSV AS varchar(10), @DT AS varchar(10))
+RETURNS	INT
+AS
+BEGIN
+	Declare @lt INT;
+	Declare @mh varchar(10);
+	Declare @count INT;
+	SELECT @lt = Trich_Lan_thi, @mh = Trich_Mon_hoc
+	FROM DE_THI 
+	WHERE Ma_de_thi = @DT
+    SELECT @count = COUNT(*)
+	FROM LAM_BAI AS L JOIN DE_THI AS D ON L.Ma_de_thi = D.Ma_de_thi
+	WHERE Trich_Lan_thi = @lt AND Trich_Mon_hoc = @mh AND MSSV = @MSSV
+    RETURN @count
+END
+GO
+
+-- SV
+CREATE OR ALTER FUNCTION socauhoiDT (@DT AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT STTCH
+	FROM DE_THI_BAO_GOM_CAU_HOI
+	WHERE Ma_de_thi = @DT
+GO
+
+-- CH
+CREATE OR ALTER FUNCTION CH1 (@MCH AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT C.Ma_cau_hoi, C.Ma_mon_hoc_thuoc AS MMH, C.STTCDR , C.ID_phan_mo_ta, PCH.Noi_dung AS PCH, PMTC.Noi_dung AS PMTC
+	FROM (CAU_HOI AS C JOIN PHAN_CAU_HOI AS PCH ON C.Ma_cau_hoi = PCH.Ma_cau_hoi) LEFT JOIN PHAN_MO_TA_CHUNG AS PMTC ON C.ID_phan_mo_ta = PMTC.ID_phan_mo_ta 
+	WHERE C.Ma_cau_hoi = @MCH
+GO
+
+CREATE OR ALTER FUNCTION CHDA (@MCH AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT STT, Noi_dung
+	FROM PHAN_TRA_LOI
+	WHERE Ma_cau_hoi = @MCH
+GO
+
+CREATE OR ALTER FUNCTION FMTPMTC (@IDP AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT F.URL_hinh_anh
+	FROM PMTC_CHUA_FMT AS P JOIN FILE_MO_TA AS F ON P.ID_FMT = F.ID_FMT
+	WHERE ID_phan_mo_ta = @IDP
+GO
+
+CREATE OR ALTER FUNCTION FMTPCH (@MCH AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT F.URL_hinh_anh
+	FROM PCH_CHUA_FMT AS P JOIN FILE_MO_TA AS F ON P.ID_FMT = F.ID_FMT
+	WHERE Ma_cau_hoi = @MCH
+GO
+
+CREATE OR ALTER FUNCTION FMTPTL (@MCH AS varchar(10), @STT AS int)
+RETURNS	TABLE AS
+RETURN
+	SELECT F.URL_hinh_anh
+	FROM PTL_CHUA_FMT AS P JOIN FILE_MO_TA AS F ON P.ID_FMT = F.ID_FMT
+	WHERE Ma_cau_hoi = @MCH AND STT = @STT
+GO
+
+CREATE OR ALTER FUNCTION viewDT ()
+RETURNS	TABLE AS
+RETURN
+	SELECT Ma_de_thi, Ten AS Monhoc, Trich_Lan_thi AS Lan_thi, So_luong_cau_hoi, Thoi_gian_lam_bai
+	FROM DE_THI AS D JOIN MON_HOC AS M ON D.Trich_Mon_hoc = M.Ma_mon_hoc
+GO 
+
+CREATE OR ALTER FUNCTION viewDTGV (@MMH AS varchar(10))
+RETURNS	TABLE AS
+RETURN
+	SELECT *
+	FROM DE_THI 
+	WHERE Trich_Mon_hoc = @MMH AND Ngay_duyet_de IS Null
+GO 
+
+
+
 
 
 

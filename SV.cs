@@ -62,6 +62,16 @@ namespace Assignment2
             ViewNote.DataSource = ds.Tables[0];
         }
 
+        private void DTpopulate()
+        {
+            string query = "SELECT * FROM viewDT();";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewDT.DataSource = ds.Tables[0];
+        }
+
         private void N_EB_Click(object sender, EventArgs e)
         {
             if (N_MDT.Text == "" || N_N.Text == "")
@@ -89,11 +99,21 @@ namespace Assignment2
             switch (SVControl.SelectedTab.Name)
             {
                 case "GC":
-                    {
-                        NDTpopulate();
-                        break;
-                    }
+                {
+                    NDTpopulate();
+                    break;
+                }
+                case "LB":
+                {
+                    DTpopulate();
+                    break;
+                }
             }
+        }
+
+        private void LD_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
