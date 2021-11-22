@@ -44,6 +44,12 @@ namespace Assignment2
                 Login UI = new Login();
                 UI.Show();
             }
+            if (this.Route == "XDT")
+            {
+                XDT UI = new XDT();
+                UI.setDTGVQL(XMDT.Text, MSCB, MMH);
+                UI.Show();
+            }
         }
 
         private void LogOutButton_Click(object sender, EventArgs e)
@@ -51,6 +57,16 @@ namespace Assignment2
             this.Route = "Login";
             Con.Close();
             this.Close();
+        }
+
+        private void XDTpopulate()
+        {
+            string query = "SELECT * FROM DE_THI";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            VXDT.DataSource = ds.Tables[0];
         }
 
         private void DDTpopulate()
@@ -61,6 +77,16 @@ namespace Assignment2
             var ds = new DataSet();
             sda.Fill(ds);
             ViewDDT.DataSource = ds.Tables[0];
+        }
+
+        private void NDTpopulate()
+        {
+            string query = "SELECT Ma_de_thi, Note FROM DE_THI WHERE Trich_Mon_hoc = '" + MMH + "';";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ViewNote.DataSource = ds.Tables[0];
         }
 
         private void PWpopulate()
@@ -79,23 +105,13 @@ namespace Assignment2
             }
         }
 
-        private void NDTpopulate()
-        {
-            string query = "SELECT Ma_de_thi, Note FROM DE_THI WHERE Trich_Mon_hoc = '" + MMH + "';";
-            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            ViewNote.DataSource = ds.Tables[0];
-        }
-
         private void tabPage2_Click(object sender, EventArgs e)
         {
             switch (GVQLControl.SelectedTab.Name)
             {
-                case "PW":
+                case "XDT":
                 {
-                    PWpopulate();
+                    XDTpopulate();
                     break;
                 }
                 case "DDT":
@@ -108,22 +124,25 @@ namespace Assignment2
                     NDTpopulate();
                     break;
                 }
-                
+                case "PW":
+                {
+                    PWpopulate();
+                    break;
+                }
             }
         }
 
-        private void PW_Edit_Click(object sender, EventArgs e)
+        private void XD_Click(object sender, EventArgs e)
         {
-            try
+            if (XMDT.Text == "")
             {
-                string query = "UPDATE GIANG_VIEN_QUAN_LY SET Pass = '" + Password.Text + "' WHERE MSCB = '" + MSCB + "';";
-                SqlCommand cmd = new SqlCommand(query, Con);
-                cmd.ExecuteNonQuery();
-                PWpopulate();
+                MessageBox.Show("Missing Information");
             }
-            catch (Exception Ex)
+            else
             {
-                MessageBox.Show(Ex.Message);
+                this.Route = "XDT";
+                Con.Close();
+                this.Close();
             }
         }
 
@@ -170,5 +189,22 @@ namespace Assignment2
                 }
             }
         }
+
+        private void PW_Edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = "UPDATE GIANG_VIEN_QUAN_LY SET Pass = '" + Password.Text + "' WHERE MSCB = '" + MSCB + "';";
+                SqlCommand cmd = new SqlCommand(query, Con);
+                cmd.ExecuteNonQuery();
+                PWpopulate();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        
     }
 }

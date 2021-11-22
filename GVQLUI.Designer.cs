@@ -53,12 +53,18 @@ namespace Assignment2
             this.PW_Edit = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
             this.Mamonhoc = new System.Windows.Forms.Label();
+            this.XMDT = new System.Windows.Forms.TextBox();
+            this.VXDT = new System.Windows.Forms.DataGridView();
+            this.XD = new System.Windows.Forms.Button();
+            this.sadsda = new System.Windows.Forms.Label();
             this.DDT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewDDT)).BeginInit();
             this.GVQLControl.SuspendLayout();
+            this.XDT.SuspendLayout();
             this.NDT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNote)).BeginInit();
             this.PW.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VXDT)).BeginInit();
             this.SuspendLayout();
             // 
             // GVQLLogo
@@ -177,7 +183,7 @@ namespace Assignment2
             this.GVQLControl.Controls.Add(this.DDT);
             this.GVQLControl.Controls.Add(this.NDT);
             this.GVQLControl.Controls.Add(this.PW);
-            this.GVQLControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.GVQLControl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVQLControl.Location = new System.Drawing.Point(0, 103);
             this.GVQLControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GVQLControl.Name = "GVQLControl";
@@ -188,9 +194,13 @@ namespace Assignment2
             // 
             // XDT
             // 
-            this.XDT.Location = new System.Drawing.Point(4, 29);
+            this.XDT.Controls.Add(this.XMDT);
+            this.XDT.Controls.Add(this.VXDT);
+            this.XDT.Controls.Add(this.XD);
+            this.XDT.Controls.Add(this.sadsda);
+            this.XDT.Location = new System.Drawing.Point(4, 32);
             this.XDT.Name = "XDT";
-            this.XDT.Size = new System.Drawing.Size(1245, 634);
+            this.XDT.Size = new System.Drawing.Size(1245, 631);
             this.XDT.TabIndex = 3;
             this.XDT.Text = "Xem đề thi";
             this.XDT.UseVisualStyleBackColor = true;
@@ -290,7 +300,7 @@ namespace Assignment2
             this.label25.Location = new System.Drawing.Point(306, 164);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(89, 22);
+            this.label25.Size = new System.Drawing.Size(98, 23);
             this.label25.TabIndex = 152;
             this.label25.Text = "Password";
             // 
@@ -311,7 +321,7 @@ namespace Assignment2
             this.Password.Location = new System.Drawing.Point(311, 212);
             this.Password.Margin = new System.Windows.Forms.Padding(4);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(677, 27);
+            this.Password.Size = new System.Drawing.Size(677, 30);
             this.Password.TabIndex = 150;
             // 
             // Mamonhoc
@@ -324,6 +334,44 @@ namespace Assignment2
             this.Mamonhoc.TabIndex = 65;
             this.Mamonhoc.Text = "MMH";
             this.Mamonhoc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // XMDT
+            // 
+            this.XMDT.Location = new System.Drawing.Point(203, 41);
+            this.XMDT.Name = "XMDT";
+            this.XMDT.Size = new System.Drawing.Size(470, 30);
+            this.XMDT.TabIndex = 162;
+            // 
+            // VXDT
+            // 
+            this.VXDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VXDT.Location = new System.Drawing.Point(97, 99);
+            this.VXDT.Name = "VXDT";
+            this.VXDT.RowHeadersWidth = 51;
+            this.VXDT.RowTemplate.Height = 24;
+            this.VXDT.Size = new System.Drawing.Size(1054, 503);
+            this.VXDT.TabIndex = 161;
+            // 
+            // XD
+            // 
+            this.XD.Location = new System.Drawing.Point(1008, 33);
+            this.XD.Margin = new System.Windows.Forms.Padding(4);
+            this.XD.Name = "XD";
+            this.XD.Size = new System.Drawing.Size(143, 43);
+            this.XD.TabIndex = 160;
+            this.XD.Text = "Xem đề thi";
+            this.XD.UseVisualStyleBackColor = true;
+            this.XD.Click += new System.EventHandler(this.XD_Click);
+            // 
+            // sadsda
+            // 
+            this.sadsda.AutoSize = true;
+            this.sadsda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sadsda.Location = new System.Drawing.Point(93, 44);
+            this.sadsda.Name = "sadsda";
+            this.sadsda.Size = new System.Drawing.Size(97, 24);
+            this.sadsda.TabIndex = 159;
+            this.sadsda.Text = "Mã đề thi";
             // 
             // GVQLUI
             // 
@@ -342,11 +390,14 @@ namespace Assignment2
             this.DDT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewDDT)).EndInit();
             this.GVQLControl.ResumeLayout(false);
+            this.XDT.ResumeLayout(false);
+            this.XDT.PerformLayout();
             this.NDT.ResumeLayout(false);
             this.NDT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNote)).EndInit();
             this.PW.ResumeLayout(false);
             this.PW.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VXDT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,5 +429,9 @@ namespace Assignment2
         private System.Windows.Forms.RichTextBox NDT_ND;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button NDT_EB;
+        private System.Windows.Forms.TextBox XMDT;
+        private System.Windows.Forms.DataGridView VXDT;
+        private System.Windows.Forms.Button XD;
+        private System.Windows.Forms.Label sadsda;
     }
 }

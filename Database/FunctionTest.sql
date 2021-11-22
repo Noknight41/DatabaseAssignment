@@ -50,7 +50,7 @@ SELECT * FROM iii4('CO12A1101', '1812438') ORDER BY STTCH;
 SELECT * FROM iii5 (1,'CO2012', '1812438');
 
 --iii6
-SELECT * FROM iii6 (1, '1812438');
+SELECT DISTINCT MSSV, Ma_de_thi, GRADE FROM iii6 (1, '1812438');
 
 --iii7
 SELECT *, (Correct * 10.0 / Total) AS Grade
@@ -66,10 +66,10 @@ SELECT dbo.PassGVQL('QL1002');
 SELECT dbo.PassSV('1812438');
 
 -- Kiem tra da lam bai ky nay chua
-SELECT dbo.checkLamBai('2012440', 'CO12A1101');
+SELECT dbo.checkLamBai('2012440', 'CO12A1101') AS DT;
 
 --  Them bai lam moi
-EXEC setUpLamBai @DT = 'CO12A1101', @MSSV = '2012440';
+EXEC setUpLamBai @DT = 'CO12A1102', @MSSV = '2012440';
 
 -- get Cac cau hoi
 SELECT * FROM socauhoiDT('CO12A1101') ORDER BY STTCH;
@@ -87,6 +87,7 @@ SELECT * FROM FMTPTL('CH20120001', 4);
 
 SELECT * FROM viewDT();
 SELECT * FROM viewDTGV('CO2012');
+
 
 
 

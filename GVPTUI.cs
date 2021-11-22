@@ -147,6 +147,81 @@ namespace Assignment2
             }
         }
 
+        private string getCH(string MCH)
+        {
+            string result = "Error";
+            try
+            {
+                string PCH = "Error";
+                string PMTC = "";
+                string CDR = "";
+                List<int> DAP = new List<int>();
+                string query1 = "SELECT * FROM CH1('" + MCH + "');";
+                string query2 = "SELECT * FROM CHDA('" + MCH + "') ORDER BY STT;";
+                SqlCommand cmd1 = new SqlCommand(query1, Con);
+                SqlCommand cmd2 = new SqlCommand(query2, Con);
+                SqlDataReader dr = null;
+                string[] da = new string[5] { "A. ", "B. ", "C. ", "D. ", "E. " };
+                using (dr = cmd1.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        if (!String.IsNullOrEmpty(dr["PMTC"].ToString()))
+                        {
+                            PMTC = "PMTC: " + (string)dr["PMTC"] + "\n";
+                        }
+                        result = PMTC;
+                        CDR = "[" + (string)dr["MMH"] + "." + (int)dr["STTCDR"] + "]\n";
+                        result = result + CDR;
+                        PCH = "Question: " + (string)dr["PCH"] + "\n";
+                        result = result + PCH;
+                    };
+                };
+                string query3 = "SELECT * FROM FMTPCH('" + MCH + "');";
+                SqlCommand cmd3 = new SqlCommand(query3, Con);
+                using (dr = cmd3.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        result = result + "+ " + (string)dr["URL_hinh_anh"] + "\n";
+                    };
+                };
+                using (dr = cmd2.ExecuteReader())
+                {
+                    int i = 0;
+                    while (dr.Read())
+                    {
+                        string DA = (string)dr["Noi_dung"];
+                        da[i] = "   " + da[i] + DA;
+                        DAP.Add((int)dr["STT"]);
+                        i++;
+                    };
+                };
+                int j = 0;
+                foreach (int d in DAP)
+                {
+                    string query4 = "SELECT * FROM FMTPTL('" + MCH + "', " + d + ");";
+                    SqlCommand cmd4 = new SqlCommand(query4, Con);
+                    result = result + da[j];
+                    using (dr = cmd4.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            result = result + " (" + (string)dr["URL_hinh_anh"] + ")";
+                        };
+                    };
+                    result = result + "\n";
+                    j = j + 1;
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return result;
+            }
+        }
+
         // Populate
         private void FMTpopulate()
         {
@@ -1025,81 +1100,6 @@ namespace Assignment2
             else
             {
                 CH_ND.Text = getCH(X_MCH.Text);
-            }
-        }
-
-        private string getCH(string MCH)
-        {
-            string result = "Error";
-            try
-            {
-                string PCH = "Error";
-                string PMTC = "";
-                string CDR = "";
-                List<int> DAP = new List<int>();
-                string query1 = "SELECT * FROM CH1('" + MCH + "');";
-                string query2 = "SELECT * FROM CHDA('"+ MCH + "') ORDER BY STT;";
-                SqlCommand cmd1 = new SqlCommand(query1, Con);
-                SqlCommand cmd2 = new SqlCommand(query2, Con);
-                SqlDataReader dr = null;
-                string[] da = new string[5] { "A. ", "B. ", "C. ", "D. ", "E. " };
-                using (dr = cmd1.ExecuteReader())
-                {
-                    while (dr.Read())
-                    {
-                        if (!String.IsNullOrEmpty(dr["PMTC"].ToString()))
-                        {
-                            PMTC = "PMTC: " + (string)dr["PMTC"] + "\n";
-                        }
-                        result = PMTC;
-                        CDR = "[" + (string)dr["MMH"] + "." + (int)dr["STTCDR"] + "]\n";
-                        result = result + CDR;
-                        PCH = "Question: " + (string)dr["PCH"] + "\n";
-                        result = result + PCH;
-                    };
-                };
-                string query3 = "SELECT * FROM FMTPCH('" + MCH + "');";
-                SqlCommand cmd3 = new SqlCommand(query3, Con);
-                using (dr = cmd3.ExecuteReader())
-                {
-                    while (dr.Read())
-                    {
-                        result = result + "+ " + (string)dr["URL_hinh_anh"] + "\n";
-                    };
-                };
-                using (dr = cmd2.ExecuteReader())
-                {
-                    int i = 0;
-                    while (dr.Read())
-                    {
-                        string DA = (string)dr["Noi_dung"];
-                        da[i] = "   " + da[i] + DA;
-                        DAP.Add((int)dr["STT"]);
-                        i++;
-                    };
-                };
-                int j = 0;
-                foreach(int d in DAP)
-                {
-                    string query4 = "SELECT * FROM FMTPTL('" + MCH + "', " + d + ");";
-                    SqlCommand cmd4 = new SqlCommand(query4, Con);
-                    result = result + da[j];
-                    using (dr = cmd4.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            result = result + " (" + (string)dr["URL_hinh_anh"] + ")";
-                        };
-                    };
-                    result = result + "\n";
-                    j = j + 1;
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-                return result;
             }
         }
 

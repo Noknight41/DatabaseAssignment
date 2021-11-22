@@ -199,7 +199,7 @@ GO
 CREATE OR ALTER FUNCTION iii6 (@LT AS int, @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
-	SELECT L.MSSV, (SELECT dbo.i6d (@LT, D.Trich_Mon_hoc, L.MSSV)) AS GRADE
+	SELECT L.MSSV, L.Ma_de_thi, (SELECT dbo.i6d (@LT, D.Trich_Mon_hoc, L.MSSV)) AS GRADE
 	FROM LAM_BAI AS L JOIN DE_THI AS D ON L.Ma_de_thi = D.Ma_de_thi
 	WHERE D.Trich_Lan_thi = @LT AND L.MSSV = @MSSV
 GO

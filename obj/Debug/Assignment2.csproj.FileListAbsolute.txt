@@ -24,3 +24,4 @@ D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.GVQLUI.re
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.SV.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.ViewXDT.resources
 D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.XDT.resources
+D:\My_Stuff\Database\Ass2\git\DatabaseAssignment\obj\Debug\Assignment2.LDT.resources

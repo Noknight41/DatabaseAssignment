@@ -11,70 +11,25 @@ using System.Data.SqlClient;
 
 namespace Assignment2
 {
-    public partial class XDT : Form
+    public partial class LDT : Form
     {
         string MDT;
-        string MSCB;
-        string MMH;
         string MSSV;
-        string User;
-        string Route = "";
         List<int> STT = new List<int>();
         SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=MyLogin;Password=123");
         
-
-        public XDT()
+        public LDT()
         {
             InitializeComponent();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SV_FormClosed);
             Con.Open();
         }
 
-        public void setDTGVPT(string MDT, string MSCB, string MMH)
+        public void setLDT(string MDT, string MSSV)
         {
             this.MDT = MDT;
-            MDTLabel.Text = MDT;
-            User = "GVPT";
-            this.MSCB = MSCB;
-            this.MMH = MMH;
-            string query = "SELECT * FROM socauhoiDT('" + MDT + "') ORDER BY STTCH;";
-            SqlCommand cmd1 = new SqlCommand(query, Con);
-            SqlDataReader dr = null;
-            using (dr = cmd1.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    STTCB.Items.Add((int)dr["STTCH"]);
-                    STT.Add((int)dr["STTCH"]);
-                };
-            };
-        }
-
-        public void setDTGVQL(string MDT, string MSCB, string MMH)
-        {
-            this.MDT = MDT;
-            MDTLabel.Text = MDT;
-            User = "GVQL";
-            this.MSCB = MSCB;
-            this.MMH = MMH;
-            string query = "SELECT * FROM socauhoiDT('" + MDT + "') ORDER BY STTCH;";
-            SqlCommand cmd1 = new SqlCommand(query, Con);
-            SqlDataReader dr = null;
-            using (dr = cmd1.ExecuteReader())
-            {
-                while (dr.Read())
-                {
-                    STTCB.Items.Add((int)dr["STTCH"]);
-                    STT.Add((int)dr["STTCH"]);
-                };
-            };
-        }
-
-        public void setDTSV(string MDT, string MSSV)
-        {
-            this.MDT = MDT;
-            MDTLabel.Text = MDT;
-            User = "SV";
             this.MSSV = MSSV;
+            MDTLabel.Text = MDT;
             string query = "SELECT * FROM socauhoiDT('" + MDT + "') ORDER BY STTCH;";
             SqlCommand cmd1 = new SqlCommand(query, Con);
             SqlDataReader dr = null;
@@ -86,6 +41,13 @@ namespace Assignment2
                     STT.Add((int)dr["STTCH"]);
                 };
             };
+        }
+
+        private void SV_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SV UI = new SV();
+            UI.setSV(MSSV);
+            UI.Show();
         }
 
         private string getCH(string MCH)
@@ -164,59 +126,20 @@ namespace Assignment2
             }
         }
 
-        private void XDT_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Con.Close();
-            if (this.Route == "")
-            {
-                Application.Exit();
-                return;
-            }
-            if (this.Route == "GVPT")
-            {
-                ViewXDT UI = new ViewXDT();
-                UI.setGVPT(MSCB, MMH);
-                UI.Show();
-            }
-            if (this.Route == "GVQL")
-            {
-                GVQLUI UI = new GVQLUI();
-                UI.setGVQL(MSCB, MMH);
-                UI.Show();
-            }
-            if (this.Route == "SV")
-            {
-                SV UI = new SV();
-                UI.setSV(MSSV);
-                UI.Show();
-            }
-        }
-
         private void Exit_Click(object sender, EventArgs e)
         {
-            if(this.User == "GVPT")
-            {
-                this.Route = "GVPT";
-                this.Close();
-            }
-            if (this.User == "GVQL")
-            {
-                this.Route = "GVQL";
-                this.Close();
-            }
-            if (this.User == "SV")
-            {
-                this.Route = "SV";
-                this.Close();
-            }
+            this.Close();
         }
 
         private void XCH_B_Click(object sender, EventArgs e)
         {
             string STTCH = STTCB.SelectedItem.ToString();
             string MCH = "";
+            int DA = 0;
             string query = "SELECT * FROM DE_THI_BAO_GOM_CAU_HOI WHERE Ma_de_thi = '" + MDT + "' AND STTCH = " + STTCH + "";
+            string query1 = "SELECT Tra_loi FROM LAM_BAI WHERE Ma_de_thi = '" + MDT + "' AND STTCH = " + STTCH + " AND MSSV = '"+MSSV+"'";
             SqlCommand cmd = new SqlCommand(query, Con);
+            SqlCommand cmd1 = new SqlCommand(query1, Con);
             SqlDataReader dr = null;
             using (dr = cmd.ExecuteReader())
             {
@@ -225,8 +148,37 @@ namespace Assignment2
                     MCH = (string)dr["Ma_cau_hoi"];
                 };
             };
+            using (dr = cmd1.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    DA = (int)dr["Tra_loi"];
+                };
+            };
             dr.Close();
             CHTextArea.Text = getCH(MCH);
+            NTL.Text = "" + DA + "";
+        }
+
+        private void NTL_B_Click(object sender, EventArgs e)
+        {
+            if (NTL.Text != "1" && NTL.Text != "2" && NTL.Text != "3" && NTL.Text != "4" && NTL.Text != "5")
+            {
+                MessageBox.Show("Answer is not in the format 1 2 3 4 5");
+            }
+            else
+            {
+                try
+                {
+                    string query = "UPDATE LAM_BAI SET Tra_loi = '" + NTL.Text + "' WHERE Ma_de_thi = '" + MDT + "' AND MSSV = '" + MSSV + "' AND STTCH = "+STTCB.SelectedItem.ToString()+";";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
     }
 }

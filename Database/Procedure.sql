@@ -40,13 +40,13 @@ CREATE OR ALTER PROCEDURE setUpLamBai @DT AS varchar(10), @MSSV AS varchar(10)
 AS
 BEGIN
 	DECLARE @check INT;
-	SET @check = dbo.checkLamBai('2012440', 'CO12A1101');
+	SET @check = dbo.checkLamBai(@MSSV, @DT);
 	IF @check = 0 
 	BEGIN
 		DECLARE @MDT varchar(10);
 		DECLARE @STT int;
 		DECLARE @MCH varchar(10);
-		DECLARE cursorLB CURSOR FOR  SELECT * FROM DE_THI_BAO_GOM_CAU_HOI WHERE Ma_de_thi = 'CO12A1101'
+		DECLARE cursorLB CURSOR FOR  SELECT * FROM DE_THI_BAO_GOM_CAU_HOI WHERE Ma_de_thi = @DT
 
 		OPEN cursorLB        
 		FETCH NEXT FROM cursorLB  INTO @MDT, @MCH, @STT
