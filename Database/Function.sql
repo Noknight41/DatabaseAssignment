@@ -15,7 +15,7 @@ CREATE OR ALTER FUNCTION i5 (@LT AS int, @MH AS varchar(10), @MSSV AS varchar(10
 RETURNS	TABLE AS
 RETURN
 	SELECT DT.STTCH, L.Tra_loi
-	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi) JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON DT.Ma_cau_hoi = L.Ma_cau_hoi
+	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi) JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON (DT.Ma_de_thi = L.Ma_de_thi AND DT.STTCH = L.STTCH)
 	WHERE L.MSSV = @MSSV AND D.Trich_Mon_hoc = @MH AND D.Trich_Lan_thi = @LT
 GO
 
@@ -31,7 +31,7 @@ BEGIN
 	WHERE D.Trich_Mon_hoc = @MH AND D.Trich_Lan_thi = @LT AND L.MSSV = @MSSV
 
 	SELECT @correct = COUNT(*)
-	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi) JOIN CAU_HOI AS C ON C.Ma_cau_hoi = L.Ma_cau_hoi
+	FROM ((LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi) JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON (DT.Ma_de_thi = L.Ma_de_thi AND DT.STTCH = L.STTCH)) JOIN CAU_HOI AS C ON C.Ma_cau_hoi = DT.Ma_cau_hoi
 	WHERE D.Trich_Mon_hoc = @MH AND D.Trich_Lan_thi = @LT AND L.MSSV = @MSSV AND C.Vi_tri_dap_an_dung = L.Tra_loi
 
 	SELECT @grade = @correct * 10.0 / @total
@@ -60,8 +60,8 @@ BEGIN
 
 	DECLARE @correct INT
 	SELECT @correct = COUNT(*)
-	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi)
-	WHERE L.Ma_cau_hoi = @CH AND D.Trich_Lan_thi = @LT AND L.Tra_loi = @answer
+	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi) JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON (DT.Ma_de_thi = L.Ma_de_thi AND DT.STTCH = L.STTCH)
+	WHERE DT.Ma_cau_hoi = @CH AND D.Trich_Lan_thi = @LT AND L.Tra_loi = @answer
 	RETURN @correct
 END;
 GO
@@ -77,8 +77,8 @@ BEGIN
 
 	DECLARE @correct INT
 	SELECT @correct = COUNT(*)
-	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi)
-	WHERE L.Ma_cau_hoi = @CH AND D.Trich_Lan_thi = @LT AND L.Tra_loi != @answer
+	FROM (LAM_BAI AS L JOIN DE_THI AS D ON D.Ma_de_thi = L.Ma_de_thi) JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON (DT.Ma_de_thi = L.Ma_de_thi AND DT.STTCH = L.STTCH)
+	WHERE DT.Ma_cau_hoi = @CH AND D.Trich_Lan_thi = @LT AND L.Tra_loi != @answer
 	RETURN @correct
 END;
 GO
@@ -181,9 +181,9 @@ GO
 CREATE OR ALTER FUNCTION iii4 (@DT AS varchar(10), @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
-	SELECT DTCH.Ma_de_thi, DTCH.Ma_cau_hoi, DTCH.STTCH, LB.Tra_loi, LB.MSSV
-	FROM (DE_THI_BAO_GOM_CAU_HOI AS DTCH LEFT JOIN LAM_BAI AS LB ON (DTCH.Ma_cau_hoi = LB.Ma_cau_hoi AND DTCH.Ma_de_thi = LB.Ma_de_thi))
-	WHERE DTCH.Ma_de_thi = @DT AND LB.MSSV = @MSSV
+	SELECT DTCH.Ma_de_thi, DTCH.Ma_cau_hoi, DTCH.STTCH, L.Tra_loi, L.MSSV
+	FROM (DE_THI_BAO_GOM_CAU_HOI AS DTCH LEFT JOIN (LAM_BAI AS L JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON (DT.Ma_de_thi = L.Ma_de_thi AND DT.STTCH = L.STTCH)) ON (DTCH.Ma_cau_hoi = DT.Ma_cau_hoi AND DTCH.Ma_de_thi = L.Ma_de_thi))
+	WHERE DTCH.Ma_de_thi = @DT AND L.MSSV = @MSSV
 GO
 
 -- SV
@@ -209,7 +209,7 @@ CREATE OR ALTER FUNCTION iii7 (@DT AS varchar(10), @MSSV AS varchar(10))
 RETURNS	TABLE AS
 RETURN
 	SELECT C.Ma_mon_hoc_thuoc, C.STTCDR, COUNT(case when L.Tra_loi = C.Vi_tri_dap_an_dung then 1 else null end) AS Correct, COUNT (*) AS Total
-	FROM (LAM_BAI AS L JOIN DE_THI AS D ON L.Ma_de_thi = D.Ma_de_thi) JOIN CAU_HOI AS C ON C.Ma_cau_hoi = L.Ma_cau_hoi
+	FROM ((LAM_BAI AS L JOIN DE_THI AS D ON L.Ma_de_thi = D.Ma_de_thi) JOIN DE_THI_BAO_GOM_CAU_HOI AS DT ON (DT.Ma_de_thi = L.Ma_de_thi AND DT.STTCH = L.STTCH)) JOIN CAU_HOI AS C ON C.Ma_cau_hoi = DT.Ma_cau_hoi
 	WHERE D.Ma_de_thi = @DT AND L.MSSV = @MSSV
 	GROUP BY C.Ma_mon_hoc_thuoc, C.STTCDR
 GO

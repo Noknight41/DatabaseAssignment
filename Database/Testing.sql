@@ -58,7 +58,6 @@ FROM iii7 ('CO12A1101', '1812438');
 
 
 -- Them Sua Note, Xem Note
-EXEC SuaNoteDeThi @DT = 'CO12A1101', @Note = 'Nope';
 SELECT dbo.NoteDethi('CO12A1101');
 
 SELECT dbo.PassGVPT('PT1001');
@@ -86,7 +85,6 @@ SELECT * FROM FMTPTL('CH20120001', 3);
 SELECT * FROM FMTPTL('CH20120001', 4);
 
 SELECT * FROM viewDT();
-SELECT * FROM viewDTGV('CO2012');
 
 
 

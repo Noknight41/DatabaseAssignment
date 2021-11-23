@@ -45,7 +45,7 @@ BEGIN
 
 		WHILE @@FETCH_STATUS = 0          
 		BEGIN           
-			INSERT INTO LAM_BAI VALUES (@MSSV, @MDT, @STT, @MCH, 0)
+			INSERT INTO LAM_BAI VALUES (@MSSV, @MDT, @STT, 0)
 			FETCH NEXT FROM cursorLB INTO @MDT, @MCH, @STT
 		END
 		CLOSE cursorLB            
