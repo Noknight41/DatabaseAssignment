@@ -1860,7 +1860,9 @@ namespace Assignment2
             this.GVPTControl.Controls.Add(this.CH);
             this.GVPTControl.Controls.Add(this.XCH);
             this.GVPTControl.Controls.Add(this.TDT);
+            this.GVPTControl.Controls.Add(this.NDTDT);
             this.GVPTControl.Controls.Add(this.DT);
+            this.GVPTControl.Controls.Add(this.NDDT);
             this.GVPTControl.Controls.Add(this.XDT);
             this.GVPTControl.Controls.Add(this.FMT);
             this.GVPTControl.Controls.Add(this.PCH);
@@ -1869,8 +1871,6 @@ namespace Assignment2
             this.GVPTControl.Controls.Add(this.PTLFMT);
             this.GVPTControl.Controls.Add(this.PMTC);
             this.GVPTControl.Controls.Add(this.PMTCFMT);
-            this.GVPTControl.Controls.Add(this.NDTDT);
-            this.GVPTControl.Controls.Add(this.NDDT);
             this.GVPTControl.Controls.Add(this.Password);
             this.GVPTControl.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GVPTControl.Location = new System.Drawing.Point(0, 102);

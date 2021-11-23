@@ -293,7 +293,7 @@ RETURN
 	WHERE Ma_de_thi = @DT
 GO
 
--- CH
+-- Lay phan cau hoi va phan mo ta chung
 CREATE OR ALTER FUNCTION CH1 (@MCH AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -302,6 +302,7 @@ RETURN
 	WHERE C.Ma_cau_hoi = @MCH
 GO
 
+-- Lay dap an cua cau hoi
 CREATE OR ALTER FUNCTION CHDA (@MCH AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -310,6 +311,7 @@ RETURN
 	WHERE Ma_cau_hoi = @MCH
 GO
 
+-- Lay FMT tu ...
 CREATE OR ALTER FUNCTION FMTPMTC (@IDP AS varchar(10))
 RETURNS	TABLE AS
 RETURN
@@ -334,6 +336,7 @@ RETURN
 	WHERE Ma_cau_hoi = @MCH AND STT = @STT
 GO
 
+-- Xem cac de thi
 CREATE OR ALTER FUNCTION viewDT ()
 RETURNS	TABLE AS
 RETURN
@@ -341,13 +344,15 @@ RETURN
 	FROM DE_THI AS D JOIN MON_HOC AS M ON D.Trich_Mon_hoc = M.Ma_mon_hoc
 GO 
 
-CREATE OR ALTER FUNCTION viewDTGV (@MMH AS varchar(10))
+-- Xem cac de thi GVQL
+CREATE OR ALTER FUNCTION viewDTGVQL (@MMH AS varchar(10))
 RETURNS	TABLE AS
 RETURN
 	SELECT *
 	FROM DE_THI 
 	WHERE Trich_Mon_hoc = @MMH AND Ngay_duyet_de IS Null
 GO 
+
 
 
 

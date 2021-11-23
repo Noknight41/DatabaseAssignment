@@ -52,13 +52,13 @@ namespace Assignment2
             this.LT_B = new System.Windows.Forms.Button();
             this.asqnjc = new System.Windows.Forms.Label();
             this.ViewDiemThi = new System.Windows.Forms.DataGridView();
-            this.GVQLLogo = new System.Windows.Forms.Label();
-            this.Note = new System.Windows.Forms.Button();
-            this.Masosinhvien = new System.Windows.Forms.Label();
             this.PW = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.PW_Edit = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.TextBox();
+            this.GVQLLogo = new System.Windows.Forms.Label();
+            this.Note = new System.Windows.Forms.Button();
+            this.Masosinhvien = new System.Windows.Forms.Label();
             this.SVControl.SuspendLayout();
             this.XDT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VXDT)).BeginInit();
@@ -299,9 +299,9 @@ namespace Assignment2
             this.asqnjc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asqnjc.Location = new System.Drawing.Point(34, 29);
             this.asqnjc.Name = "asqnjc";
-            this.asqnjc.Size = new System.Drawing.Size(97, 24);
+            this.asqnjc.Size = new System.Drawing.Size(75, 24);
             this.asqnjc.TabIndex = 155;
-            this.asqnjc.Text = "Mã đề thi";
+            this.asqnjc.Text = "Lần thi";
             // 
             // ViewDiemThi
             // 
@@ -312,39 +312,6 @@ namespace Assignment2
             this.ViewDiemThi.RowTemplate.Height = 24;
             this.ViewDiemThi.Size = new System.Drawing.Size(1035, 512);
             this.ViewDiemThi.TabIndex = 0;
-            // 
-            // GVQLLogo
-            // 
-            this.GVQLLogo.AutoSize = true;
-            this.GVQLLogo.Font = new System.Drawing.Font("Arial Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GVQLLogo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.GVQLLogo.Location = new System.Drawing.Point(47, 21);
-            this.GVQLLogo.Name = "GVQLLogo";
-            this.GVQLLogo.Size = new System.Drawing.Size(80, 54);
-            this.GVQLLogo.TabIndex = 70;
-            this.GVQLLogo.Text = "SV";
-            // 
-            // Note
-            // 
-            this.Note.Location = new System.Drawing.Point(965, 30);
-            this.Note.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Note.Name = "Note";
-            this.Note.Size = new System.Drawing.Size(124, 54);
-            this.Note.TabIndex = 69;
-            this.Note.Text = "Log Out";
-            this.Note.UseVisualStyleBackColor = true;
-            this.Note.Click += new System.EventHandler(this.LogOutButton_Click);
-            // 
-            // Masosinhvien
-            // 
-            this.Masosinhvien.AutoSize = true;
-            this.Masosinhvien.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Masosinhvien.Location = new System.Drawing.Point(214, 43);
-            this.Masosinhvien.Name = "Masosinhvien";
-            this.Masosinhvien.Size = new System.Drawing.Size(66, 23);
-            this.Masosinhvien.TabIndex = 68;
-            this.Masosinhvien.Text = "MSSV";
-            this.Masosinhvien.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PW
             // 
@@ -387,6 +354,39 @@ namespace Assignment2
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(677, 30);
             this.Password.TabIndex = 153;
+            // 
+            // GVQLLogo
+            // 
+            this.GVQLLogo.AutoSize = true;
+            this.GVQLLogo.Font = new System.Drawing.Font("Arial Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GVQLLogo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.GVQLLogo.Location = new System.Drawing.Point(47, 21);
+            this.GVQLLogo.Name = "GVQLLogo";
+            this.GVQLLogo.Size = new System.Drawing.Size(80, 54);
+            this.GVQLLogo.TabIndex = 70;
+            this.GVQLLogo.Text = "SV";
+            // 
+            // Note
+            // 
+            this.Note.Location = new System.Drawing.Point(965, 30);
+            this.Note.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Note.Name = "Note";
+            this.Note.Size = new System.Drawing.Size(124, 54);
+            this.Note.TabIndex = 69;
+            this.Note.Text = "Log Out";
+            this.Note.UseVisualStyleBackColor = true;
+            this.Note.Click += new System.EventHandler(this.LogOutButton_Click);
+            // 
+            // Masosinhvien
+            // 
+            this.Masosinhvien.AutoSize = true;
+            this.Masosinhvien.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Masosinhvien.Location = new System.Drawing.Point(214, 43);
+            this.Masosinhvien.Name = "Masosinhvien";
+            this.Masosinhvien.Size = new System.Drawing.Size(66, 23);
+            this.Masosinhvien.TabIndex = 68;
+            this.Masosinhvien.Text = "MSSV";
+            this.Masosinhvien.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // SV
             // 

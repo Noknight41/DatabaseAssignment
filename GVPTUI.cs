@@ -17,7 +17,7 @@ namespace Assignment2
         string Route;
         string MSCB;
         string MMH;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=MyLogin;Password=123");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=GVPTLogin;Password=123");
        
         public ViewXDT()
         {
@@ -325,7 +325,7 @@ namespace Assignment2
 
         private void XDTpopulate()
         {
-            string query = "SELECT * FROM DE_THI";
+            string query = "SELECT * FROM DE_THI;";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -335,7 +335,7 @@ namespace Assignment2
 
         private void NDTDTpopulate()
         {
-            string query = "SELECT * FROM TAP_DE_THI_BAO_GOM_CAU_HOI";
+            string query = "SELECT * FROM TAP_DE_THI_BAO_GOM_CAU_HOI WHERE Ma_mon_hoc_TDT = '"+MMH+"'";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -652,7 +652,8 @@ namespace Assignment2
                     string cdr;
                     if (CHIDPMTC.Text == "") cdr = "null";
                     else cdr = "'" + CHIDPMTC.Text + "'";
-                    string query = "INSERT INTO CAU_HOI values('" + CH_MCH.Text + "', " + CHVTDA.SelectedItem.ToString() + " ,'" + MSCB + "', getdate(), '" + MMH + "', " + CHVTDA.SelectedItem.ToString() + ", " + cdr +")";
+                    string query = "INSERT INTO CAU_HOI values('" + CH_MCH.Text + "', " + CHVTDA.SelectedItem.ToString() + " ,'" + MSCB + "', getdate(), '" + MMH + "', " + CH_CDR.Text + ", " + cdr +")";
+                    Console.WriteLine(query);
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     CHpopulate();
@@ -1036,6 +1037,7 @@ namespace Assignment2
                 try
                 {
                     string query = "INSERT INTO DE_THI_BAO_GOM_CAU_HOI values('" + NDDTMDT.Text + "', '" + NDDTMCH.Text + "' , " + NDDTSTT.Text + ")";
+                    Console.WriteLine(query);
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     NDDTpopulate();

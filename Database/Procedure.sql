@@ -28,14 +28,6 @@ BEGIN
 END;
 GO
 
-CREATE OR ALTER PROCEDURE SuaNoteDeThi @DT AS varchar(10), @Note AS varchar(2048)
-AS
-BEGIN
-	UPDATE DE_THI SET Note = @Note
-	WHERE Ma_de_thi = @DT
-END;
-GO
-
 CREATE OR ALTER PROCEDURE setUpLamBai @DT AS varchar(10), @MSSV AS varchar(10)
 AS
 BEGIN
