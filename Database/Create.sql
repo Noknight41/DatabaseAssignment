@@ -113,32 +113,6 @@ GO
 	);
 	GO
 
-	CREATE TABLE LAM_BAI(
-		MSSV varchar(10) NOT NULL,
-		Ma_de_thi varchar(10) NOT NULL,
-		STTCH int NOT NULL,
-		Tra_loi int NOT NULL default 0,
-
-		CONSTRAINT LamDE_THI FOREIGN KEY (Ma_de_thi) REFERENCES 
-			DE_THI(Ma_de_thi) on delete no action on update cascade,
-		CONSTRAINT SVlamde FOREIGN KEY (MSSV) REFERENCES 
-			SINH_VIEN(MSSV) on delete no action on update cascade,
-		CONSTRAINT Lamde PRIMARY KEY (MSSV, Ma_de_thi, STTCH)
-	);
-	GO
-
-	CREATE TABLE NOTE(
-		MSSV varchar(10) NOT NULL,
-		Ma_de_thi varchar(10) NOT NULL,
-		Note varchar(2048) default '',
-		CONSTRAINT NoteDT FOREIGN KEY (Ma_de_thi) REFERENCES 
-			DE_THI(Ma_de_thi) on delete no action on update cascade,
-		CONSTRAINT NoteSV FOREIGN KEY (MSSV) REFERENCES 
-			SINH_VIEN(MSSV) on delete no action on update cascade,
-		CONSTRAINT NoteDe PRIMARY KEY (MSSV, Ma_de_thi)
-	);
-	GO
-
 	CREATE TABLE TAP_DE_THI_BAO_GOM_CAU_HOI(
 		Lan_thi int NOT NULL,
 		Ma_mon_hoc_TDT varchar(10) NOT NULL,
@@ -162,6 +136,32 @@ GO
 		CONSTRAINT CHDT FOREIGN KEY (Ma_cau_hoi) REFERENCES 
 			CAU_HOI(Ma_cau_hoi),
 		CONSTRAINT DTCH_PK PRIMARY KEY (Ma_de_thi, STTCH)
+	);
+	GO
+
+	CREATE TABLE LAM_BAI(
+		MSSV varchar(10) NOT NULL,
+		Ma_de_thi varchar(10) NOT NULL,
+		STTCH int NOT NULL,
+		Tra_loi int NOT NULL default 0,
+
+		CONSTRAINT LamDE_THI FOREIGN KEY (Ma_de_thi, STTCH) REFERENCES 
+			DE_THI_BAO_GOM_CAU_HOI(Ma_de_thi, STTCH) on delete no action on update cascade,
+		CONSTRAINT SVlamde FOREIGN KEY (MSSV) REFERENCES 
+			SINH_VIEN(MSSV) on delete no action on update cascade,
+		CONSTRAINT Lamde PRIMARY KEY (MSSV, Ma_de_thi, STTCH)
+	);
+	GO
+
+	CREATE TABLE NOTE(
+		MSSV varchar(10) NOT NULL,
+		Ma_de_thi varchar(10) NOT NULL,
+		Note varchar(2048) default '',
+		CONSTRAINT NoteDT FOREIGN KEY (Ma_de_thi) REFERENCES 
+			DE_THI(Ma_de_thi) on delete no action on update cascade,
+		CONSTRAINT NoteSV FOREIGN KEY (MSSV) REFERENCES 
+			SINH_VIEN(MSSV) on delete no action on update cascade,
+		CONSTRAINT NoteDe PRIMARY KEY (MSSV, Ma_de_thi)
 	);
 	GO
 

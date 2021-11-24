@@ -142,21 +142,6 @@ INSERT INTO CAU_HOI(Ma_cau_hoi, Vi_tri_dap_an_dung, MSCB_GV_tao, Thoi_gian_tao ,
 ('CH20140009', 1, 'PT1023', '2018-08-09', 'CO2014', 3, NULL);
 GO
 
---Lambai
-INSERT INTO LAM_BAI(MSSV, Ma_de_thi, Tra_loi, STTCH) VALUES 
-('1812438', 'CO12A1101',  2, 1),
-('1812438', 'CO12A1101',  1, 2),
-('1812438', 'CO12A1101',  1, 3),
-('1812438', 'CO13A1101',  3, 1),
-('1812438', 'CO13A1102',  3, 2),
-('1812438', 'CO13A1102',  3, 3),
-('1812438', 'CO14A1101',  2, 1),
-('1812438', 'CO14A1102',  1, 2),
-('1812438', 'CO14A1102',  1, 3);
-GO
-
-
-
 --TDTchuaCauhoi
 INSERT INTO TAP_DE_THI_BAO_GOM_CAU_HOI(Lan_thi, Ma_mon_hoc_TDT, Ma_cau_hoi) VALUES 
 (1, 'CO2012', 'CH20120001'),
@@ -214,8 +199,23 @@ INSERT INTO DE_THI_BAO_GOM_CAU_HOI(Ma_de_thi, Ma_cau_hoi, STTCH) VALUES
 
 ('CO13A1103', 'CH20130003', 1),
 ('CO13A1103', 'CH20130006', 2),
-('CO13A1103', 'CH20130009', 3)
+('CO13A1103', 'CH20130009', 3);
 GO
+
+--Lambai
+INSERT INTO LAM_BAI(MSSV, Ma_de_thi, Tra_loi, STTCH) VALUES 
+('1812438', 'CO12A1101',  2, 1),
+('1812438', 'CO12A1101',  1, 2),
+('1812438', 'CO12A1101',  1, 3),
+
+('1812438', 'CO13A1101',  3, 1),
+('1812438', 'CO13A1102',  3, 2),
+('1812438', 'CO13A1102',  3, 3);
+GO
+
+
+
+
 
 --Phantraloi
 INSERT INTO PHAN_TRA_LOI(Ma_cau_hoi, STT, Noi_dung) VALUES  
