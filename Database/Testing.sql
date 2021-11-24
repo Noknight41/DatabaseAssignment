@@ -3,17 +3,24 @@ GO
 
 --i4
 SELECT * FROM i4 (1,'CO2012');
+
+
 --i5
 SELECT * FROM i5(1,'CO2012','1812438') ORDER BY STTCH;
+
+
 --i6
+SELECT dbo.i6d (1,'CO2012', '1812438') AS GRADE;
 SELECT * FROM i6 (1,'CO2012');
 --i7
-SELECT dbo.i7d ('CH10102020', 1);
-SELECT dbo.i7s ('CH10102020', 1);
+SELECT dbo.i7d ('CH10102020', 1) AS NUMBER;
+SELECT dbo.i7s ('CH10102020', 1) AS NUMBER;
 
 SELECT * FROM CHi8 ('CO2012', 1, 1);
 SELECT * FROM CHi8 ('CO2012', 2, 1);
 SELECT * FROM CHi8 ('CO2012', 3, 1);
+SELECT dbo.CHi8d ('CO2012', 1, 1) AS Correct;
+SELECT dbo.CHi8t ('CO2012', 1, 1) AS Total;
 SELECT * FROM CDRi8 ('CO2012',1);
 --i8
 SELECT * FROM i8 ('CO2012',1);
@@ -53,16 +60,18 @@ SELECT * FROM iii5 (1,'CO2012', '1812438');
 SELECT DISTINCT MSSV, Ma_de_thi, GRADE FROM iii6 (1, '1812438');
 
 --iii7
-SELECT *, (Correct * 10.0 / Total) AS Grade
+SELECT *, (Correct * 100.0 / Total) AS Ratio
 FROM iii7 ('CO12A1101', '1812438');
 
 
 -- Them Sua Note, Xem Note
-SELECT dbo.NoteDethi('CO12A1101');
+SELECT dbo.NoteDethi('CO12A1101') AS Note;
 
-SELECT dbo.PassGVPT('PT1001');
-SELECT dbo.PassGVQL('QL1002');
-SELECT dbo.PassSV('1812438');
+SELECT dbo.PassGVPT('PT1001') AS Password1;
+
+
+SELECT dbo.PassGVQL('QL1002') AS Password1;;
+SELECT dbo.PassSV('1812438') AS Password1;;
 
 -- Kiem tra da lam bai ky nay chua
 SELECT dbo.checkLamBai('2012440', 'CO12A1101') AS DT;

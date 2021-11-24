@@ -127,7 +127,7 @@ GO
 CREATE OR ALTER FUNCTION i8 (@MH AS varchar(10), @LT AS INT)
 RETURNS	TABLE AS
 RETURN
-	SELECT Ma_mon_hoc, STT, (Dno * 1.0 / Tno) AS Ratio, @LT AS Lanthi
+	SELECT Ma_mon_hoc, STT, (Dno * 100.0 / Tno) AS Ratio, @LT AS Lanthi
 	FROM (SELECT * FROM CDRi8 (@MH, @LT)) AS D
 	WHERE Ma_mon_hoc = @MH AND Tno != 0
 GO

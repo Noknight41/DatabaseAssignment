@@ -9,7 +9,7 @@ BEGIN
 	DECLARE @MyField INT;
 	BEGIN
     SET @MyCursor = CURSOR FOR
-    SELECT TOP(3) D.Trich_Lan_thi FROM DE_THI AS D WHERE Trich_Mon_hoc = @MMH ORDER BY Trich_Lan_thi DESC    
+    SELECT TOP(3) D.Trich_Lan_thi FROM DE_THI AS D WHERE D.Trich_Mon_hoc = @MMH ORDER BY D.Trich_Lan_thi DESC    
 
     OPEN @MyCursor 
     FETCH NEXT FROM @MyCursor 
