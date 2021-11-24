@@ -15,7 +15,7 @@ namespace Assignment2
     {
         string Route;
         string MSSV;
-        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=MyLogin;Password=123");
+        SqlConnection Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=SVLogin;Password=123");
 
         public SV()
         {
