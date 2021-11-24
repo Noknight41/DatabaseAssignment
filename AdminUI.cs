@@ -418,7 +418,7 @@ namespace Assignment2
             {
                 try
                 {
-                    string query = "UPDATE CHUAN_DAU_RA SET Ten = '" + CDRName.Text + "' WHERE Ma_mon_hoc_thuoc = '" + CDR_MMH.Text + "' AND STT = '" + CDR_STT.Text + "';";
+                    string query = "UPDATE CHUAN_DAU_RA SET Ten = '" + CDRName.Text + "' WHERE Ma_mon_hoc = '" + CDR_MMH.Text + "' AND STT = '" + CDR_STT.Text + "';";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     CDRpopulate();
