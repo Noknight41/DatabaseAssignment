@@ -17,9 +17,11 @@ namespace Assignment2
         string MSCB;
         string MSSV;
         string MMH;
+        string route;
         public Login()
         {
             InitializeComponent();
+            this.route = "";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             Con = new SqlConnection(@"Data Source=LAPTOP-HK69CUKA\SQL1;Initial Catalog=Ass2;Persist Security Info=True;User ID=MyLogin;Password=123");
             Con.Open();
@@ -28,29 +30,29 @@ namespace Assignment2
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Con.Close();
-            if (User.SelectedItem == null)
+            if (this.route == "")
             {
                 Application.Exit();
                 return;
             }
-            if (User.SelectedItem.ToString() == "Admin")
+            if (this.route == "Admin")
             {
                 AdminUI UI = new AdminUI();
                 UI.Show();
             }
-            if(User.SelectedItem.ToString() == "GVPT")
+            if(this.route == "PT")
             {
                 ViewXDT UI = new ViewXDT();
                 UI.setGVPT(MSCB, MMH);
                 UI.Show();
             }
-            if (User.SelectedItem.ToString() == "GVQL")
+            if (this.route == "QL")
             {
                 GVQLUI UI = new GVQLUI();
                 UI.setGVQL(MSCB, MMH);
                 UI.Show();
             }
-            if (User.SelectedItem.ToString() == "SV")
+            if (this.route == "SV")
             {
                 SV UI = new SV();
                 UI.setSV(MSSV);
@@ -64,6 +66,19 @@ namespace Assignment2
             {
                 return;
             }
+            if (User.SelectedItem.ToString() == "Admin")
+            {
+                if(pw.Text == "123456")
+                {
+                    this.route = "Admin";
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Not Found");
+                    return;
+                }
+            }
             if(User.SelectedItem.ToString() == "GVPT")
             {
                 SqlCommand check_GVPT = new SqlCommand("SELECT * FROM GIANG_VIEN_PHU_TRACH WHERE ([MSCB] = @mscb AND [Pass] = @pw)", Con);
@@ -76,6 +91,8 @@ namespace Assignment2
                     reader.Read();
                     MSCB = ID.Text;
                     MMH = reader.GetString(1);
+                    this.route = "PT";
+                    this.Close();
                 }
                 else
                 {
@@ -100,6 +117,8 @@ namespace Assignment2
                     reader.Read();
                     MSCB = ID.Text;
                     MMH = reader.GetString(1);
+                    this.route = "QL";
+                    this.Close();
                 }
                 else
                 {
@@ -123,6 +142,8 @@ namespace Assignment2
                     //User Exists
                     reader.Read();
                     MSSV = ID.Text;
+                    this.route = "SV";
+                    this.Close();
                 }
                 else
                 {
